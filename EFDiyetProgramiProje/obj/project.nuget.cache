@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "a14G09tUnVu7OPr6mo78KpQlTlxzTZzV5+9Wse5mvPedgIumysgI8unl+BFWjB8TQPC+KydIObTIquDLNTzmSw==",
+  "dgSpecHash": "q9deQVqzlfByKuEexcFi7ZfKFADSWte5wewe942uHsv4OZ/ju69q9hXY2PrkKl6799odUCQAUqhpcAILuReJkQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\automapper.extensions.expressionmapping\\7.0.1\\automapper.extensions.expressionmapping.7.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
