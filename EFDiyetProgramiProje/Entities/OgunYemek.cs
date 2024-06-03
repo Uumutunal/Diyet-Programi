@@ -12,7 +12,6 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public int YemekId { get; set; }
         public int BirimAdedi { get; set; }
         public DateOnly Tarih { get; set; }
-        public int MyProperty { get; set; }
 
     }
 }
