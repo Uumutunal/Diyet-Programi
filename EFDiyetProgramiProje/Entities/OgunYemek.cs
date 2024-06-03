@@ -11,7 +11,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public int OgunId { get; set; }
         public int YemekId { get; set; }
         public int BirimAdedi { get; set; }
-        public DateOnly Tarih { get; set; } 
+        public DateOnly Tarih { get; set; }
 
     }
 }
