@@ -9,5 +9,6 @@ namespace EFDiyetProgramiProje_DAL.Entities
     public class YemekKategorisi
     {
         public string KategoriAdi { get; set; }
+        public List<Yemek> Yemekler { get; set; }
     }
 }

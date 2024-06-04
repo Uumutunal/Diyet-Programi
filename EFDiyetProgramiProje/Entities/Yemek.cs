@@ -14,6 +14,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public double Kalori { get; set; }
 
         public int KategoriId { get; set; }
-        public YemekKategorisi YemekKategorisi { get; set; }
+        public YemekKategori YemekKategori { get; set; }
+        public List<OgunYemek> OgunYemekler { get; set; }
     }
 }

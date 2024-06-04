@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EFDiyetProgramiProje_DAL.Entities
 {
-    public class KullaniciBilgisi
+    public class KullaniciBilgi
     {
         public int Yas { get; set; }
         public double Kilo { get; set; }

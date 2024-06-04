@@ -11,6 +11,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public int KullaniciId { get; set; }
         public int OgunYemekId { get; set; }
 
-
+        public List<OgunYemek> OgunYemekler { get; set; }
+        public Kullanici Kullanici { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
 
 
         public int KullaniciBilgisiId { get; set; }
-        public KullaniciBilgisi KullaniciBilgisi { get; set; }
+        public KullaniciBilgi KullaniciBilgi { get; set; }
 
     }
 }

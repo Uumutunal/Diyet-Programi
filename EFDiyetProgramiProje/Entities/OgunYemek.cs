@@ -13,5 +13,8 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public int BirimAdedi { get; set; }
         public DateOnly Tarih { get; set; }
 
+        public Yemek Yemek { get; set; }
+        public Ogun Ogun { get; set; }
+
     }
 }
