@@ -17,3 +17,4 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public YemekKategorisi YemekKategorisi { get; set; }
     }
 }
+//
