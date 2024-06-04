@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EFDiyetProgramiProje_BL.Models;
+using EFDiyetProgramiProje_DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,10 @@ namespace EFDiyetProgramiProje_BL.MappingProfiles
     {
         public OgunYemekMappingProfile()
         {
-            
+            CreateMap<YemekViewModel, Yemek>().ForMember(a => a.OgunYemekler, b => b.MapFrom(b => b.OgunYemekler)).ReverseMap();
+            CreateMap<OgunViewModel, Ogun>().ForMember(a => a.OgunYemekler, b => b.MapFrom(b => b.OgunYemekler)).ReverseMap();
+            CreateMap<KullaniciOgunYemekViewModel, KullaniciOgunYemek>().ForMember(a => a.OgunYemekler, b => b.MapFrom(b => b.OgunYemekler)).ReverseMap();
+
         }
     }
 }

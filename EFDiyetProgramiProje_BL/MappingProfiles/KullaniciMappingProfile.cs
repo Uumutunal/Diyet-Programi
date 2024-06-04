@@ -14,7 +14,7 @@ namespace EFDiyetProgramiProje_BL.MappingProfiles
         public KullaniciMappingProfile()
         {
             CreateMap<KullaniciBilgiViewModel, KullaniciBilgi>().ForMember(a => a.Kullanici, b => b.MapFrom(b => b.Kullanici)).ReverseMap();
-
+            CreateMap<KullaniciOgunYemekViewModel, KullaniciOgunYemek>().ForMember(a => a.Kullanici, b => b.MapFrom(b => b.Kullanici)).ReverseMap();
         }
     }
 }

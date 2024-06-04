@@ -1,3 +1,5 @@
+using EFDiyetProgramiProje_BL.Manager.Concrete;
+
 namespace EFDiyetProgramiProje_PL
 {
     public partial class GirisFormu : Form
@@ -5,6 +7,11 @@ namespace EFDiyetProgramiProje_PL
         public GirisFormu()
         {
             InitializeComponent();
+
+            KullaniciManager kullaniciManager = new KullaniciManager();
+
+
+
         }
     }
 }
