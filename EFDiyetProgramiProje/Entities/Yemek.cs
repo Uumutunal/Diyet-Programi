@@ -9,7 +9,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
 {
     public class Yemek : BaseEntity
     {
-        public string Ad { get; set; }
+        public string YemekAdi { get; set; }
         public string Birim { get; set; }
         public double Kalori { get; set; }
     }

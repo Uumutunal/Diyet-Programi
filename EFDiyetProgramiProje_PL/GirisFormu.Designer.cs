@@ -1,6 +1,6 @@
 ﻿namespace EFDiyetProgramiProje_PL
 {
-    partial class GirisForm
+    partial class GirisFormu
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,6 +35,8 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
             SuspendLayout();
             // 
             // textBox1
@@ -71,7 +73,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(194, 179);
+            button1.Location = new Point(194, 242);
             button1.Name = "button1";
             button1.Size = new Size(177, 23);
             button1.TabIndex = 4;
@@ -80,7 +82,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(194, 218);
+            button2.Location = new Point(194, 281);
             button2.Name = "button2";
             button2.Size = new Size(177, 23);
             button2.TabIndex = 5;
@@ -89,18 +91,42 @@
             // 
             // button3
             // 
-            button3.Location = new Point(194, 302);
+            button3.Location = new Point(194, 341);
             button3.Name = "button3";
             button3.Size = new Size(177, 23);
             button3.TabIndex = 6;
             button3.Text = "Kayıt Ol";
             button3.UseVisualStyleBackColor = true;
             // 
-            // GirisForm
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox1.Location = new Point(276, 167);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(95, 19);
+            checkBox1.TabIndex = 7;
+            checkBox1.Text = "Şifreyi Göster";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox2.Location = new Point(284, 204);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(87, 19);
+            checkBox2.TabIndex = 8;
+            checkBox2.Text = "Beni Hatırla";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // GirisFormu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(543, 399);
+            Controls.Add(checkBox2);
+            Controls.Add(checkBox1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -108,7 +134,7 @@
             Controls.Add(textBox2);
             Controls.Add(label1);
             Controls.Add(textBox1);
-            Name = "GirisForm";
+            Name = "GirisFormu";
             Text = "Giriş";
             ResumeLayout(false);
             PerformLayout();
@@ -123,5 +149,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
     }
 }

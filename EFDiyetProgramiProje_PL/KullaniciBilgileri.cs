@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EFDiyetProgramiProje_PL
 {
-    public partial class Form1 : Form
+    public partial class KullaniciBilgileri : Form
     {
-        public Form1()
+        public KullaniciBilgileri()
         {
             InitializeComponent();
         }

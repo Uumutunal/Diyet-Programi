@@ -1,8 +1,8 @@
 namespace EFDiyetProgramiProje_PL
 {
-    public partial class GirisForm : Form
+    public partial class GirisFormu : Form
     {
-        public GirisForm()
+        public GirisFormu()
         {
             InitializeComponent();
         }
