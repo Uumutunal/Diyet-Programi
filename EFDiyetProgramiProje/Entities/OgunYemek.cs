@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFDiyetProgramiProje_DAL.Repository.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EFDiyetProgramiProje_DAL.Entities
 {
-    public class OgunYemek
+    public class OgunYemek : BaseEntity
     {
         public int OgunId { get; set; }
         public int YemekId { get; set; }
