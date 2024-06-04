@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EFDiyetProgramiProje_DAL.Entities
 {
-    internal class OgunYemek
+    public class OgunYemek
     {
         public int OgunId { get; set; }
         public int YemekId { get; set; }

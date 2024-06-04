@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace EFDiyetProgramiProje_DAL.Entities
 {
-    internal class KullaniciOgunYemek
+    public class KullaniciOgunYemek
     {
         public int KullaniciId { get; set; }
         public int OgunYemekId { get; set; }
+
 
     }
 }

@@ -12,5 +12,6 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public double Kilo { get; set; }
         public double Boy { get; set; }
         public string Cinsiyet { get; set; }
+        public Kullanici Kullanici { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public string YemekAdi { get; set; }
         public string Birim { get; set; }
         public double Kalori { get; set; }
+
         public int KategoriId { get; set; }
+        public YemekKategorisi YemekKategorisi { get; set; }
     }
 }
