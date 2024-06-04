@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFDiyetProgramiProje_DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fbed360d56b6e7fe95541dc74141d2bbd580162")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d828b746ab474b3c7ebe4abebc380c4dbb09280b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFDiyetProgramiProje_DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFDiyetProgramiProje_DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

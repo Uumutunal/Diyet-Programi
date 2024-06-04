@@ -2831,19 +2831,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\nb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj",
+      "projectUniqueName": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj",
       "projectName": "EFDiyetProgramiProje_BL",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje_BL\\obj\\",
+      "projectPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj",
+      "packagesPath": "C:\\Users\\nb\\.nuget\\packages\\",
+      "outputPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje_BL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2857,8 +2857,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj"
+            "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj": {
+              "projectPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj"
             }
           }
         }
