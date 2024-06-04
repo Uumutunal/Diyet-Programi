@@ -4170,19 +4170,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\nb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
+      "projectUniqueName": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
       "projectName": "EFDiyetProgramiProje_DAL",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje\\obj\\",
+      "projectPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
+      "packagesPath": "C:\\Users\\nb\\.nuget\\packages\\",
+      "outputPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

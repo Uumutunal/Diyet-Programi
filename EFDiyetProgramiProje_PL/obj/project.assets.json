@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\nb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
+      "projectUniqueName": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
       "projectName": "EFDiyetProgramiProje_PL",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\okul3\\Proje 1\\vs\\EFDiyetProgramiProje\\EFDiyetProgramiProje_PL\\obj\\",
+      "projectPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
+      "packagesPath": "C:\\Users\\nb\\.nuget\\packages\\",
+      "outputPath": "D:\\BUSE\\Desktop\\EF PROJE\\ForklanmışProje\\EFDiyetProgramiProje_PL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
