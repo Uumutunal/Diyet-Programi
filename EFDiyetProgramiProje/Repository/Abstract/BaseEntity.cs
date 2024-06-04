@@ -13,6 +13,7 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
         public DateTime? CreatedTime { get; set; }
         public DateTime? ModifiedTime { get; set; }
         public DateTime? DeletedTime { get; set; }
-        public DataStatus? DataStatus { get; set; }
+        public DataStatus DataStatus { get; set; }
+
     }
 }

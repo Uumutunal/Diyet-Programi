@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             monthCalendar1 = new MonthCalendar();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             button1 = new Button();
             label9 = new Label();
             label10 = new Label();
@@ -51,9 +50,9 @@
             label14 = new Label();
             comboBox2 = new ComboBox();
             panel1 = new Panel();
+            button4 = new Button();
             label15 = new Label();
             label16 = new Label();
-            button4 = new Button();
             panel2 = new Panel();
             button5 = new Button();
             label17 = new Label();
@@ -267,6 +266,15 @@
             panel1.Size = new Size(231, 88);
             panel1.TabIndex = 51;
             // 
+            // button4
+            // 
+            button4.Location = new Point(135, 44);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 52;
+            button4.Text = "Sil";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -284,15 +292,6 @@
             label16.Size = new Size(82, 15);
             label16.TabIndex = 52;
             label16.Text = "Toplam Kalori:";
-            // 
-            // button4
-            // 
-            button4.Location = new Point(135, 44);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 52;
-            button4.Text = "Sil";
-            button4.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -411,7 +410,7 @@
             groupBox1.Size = new Size(192, 436);
             groupBox1.TabIndex = 56;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Günlük/Haftalık Rapor";
+            groupBox1.Text = "git remote show origin";
             // 
             // KullaniciKontrolPaneli
             // 
@@ -459,7 +458,6 @@
         #endregion
 
         private MonthCalendar monthCalendar1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button button1;
         private Label label9;
         private Label label10;
