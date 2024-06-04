@@ -12,7 +12,7 @@ namespace EFDiyetProgramiProje_BL.Models
         public string Ad { get; set; }
         public string Sifre { get; set; }
 
-        public int KullaniciBilgiId { get; set; }
+        public int? KullaniciBilgiId { get; set; }
         public KullaniciBilgiViewModel KullaniciBilgi { get; set; }
     }
 }

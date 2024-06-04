@@ -2827,7 +2827,8 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper.Extensions.ExpressionMapping >= 7.0.1",
-      "EFDiyetProgramiProje_DAL >= 1.0.0"
+      "EFDiyetProgramiProje_DAL >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 8.0.6"
     ]
   },
   "packageFolders": {
@@ -2881,6 +2882,10 @@
           "AutoMapper.Extensions.ExpressionMapping": {
             "target": "Package",
             "version": "[7.0.1, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.6, )"
           }
         },
         "imports": [

@@ -4,6 +4,7 @@ using EFDiyetProgramiProje_DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     [DbContext(typeof(DiyetProgramiDbContext))]
-    partial class DiyetProgramiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240604131712_mig2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +46,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("KullaniciBilgiId")
+                    b.Property<int>("KullaniciBilgiId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedTime")
@@ -56,8 +59,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("KullaniciBilgiId")
-                        .IsUnique()
-                        .HasFilter("[KullaniciBilgiId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Kullanicilar");
                 });
@@ -284,7 +286,9 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                 {
                     b.HasOne("EFDiyetProgramiProje_DAL.Entities.KullaniciBilgi", "KullaniciBilgi")
                         .WithOne("Kullanici")
-                        .HasForeignKey("EFDiyetProgramiProje_DAL.Entities.Kullanici", "KullaniciBilgiId");
+                        .HasForeignKey("EFDiyetProgramiProje_DAL.Entities.Kullanici", "KullaniciBilgiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("KullaniciBilgi");
                 });
