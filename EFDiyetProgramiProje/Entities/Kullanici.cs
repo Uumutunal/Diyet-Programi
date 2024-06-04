@@ -13,5 +13,6 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public string Sifre { get; set; }
         public int KullaniciBilgisiId { get; set; }
 
+
     }
 }
