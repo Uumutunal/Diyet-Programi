@@ -1,14 +1,13 @@
-﻿using EFDiyetProgramiProje_DAL.Repository.Abstract;
+﻿using EFDiyetProgramiProje_DAL.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFDiyetProgramiProje_DAL.Entities
+namespace EFDiyetProgramiProje_BL.Models
 {
-    public class Kullanici : BaseEntity
+    public class KullaniciViewModel
     {
         public string KullaniciAdi { get; set; }
         public string EPostaAdresi { get; set; }
@@ -17,10 +16,9 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public string Sifre3 { get; set; }
         public string Sifre4 { get; set; }
 
-
         public int? KullaniciBilgiId { get; set; }
-        public KullaniciBilgi KullaniciBilgi { get; set; }
-        public List<OgunYemek> OgunYemekler { get; set; }
+        public KullaniciBilgiViewModel KullaniciBilgi { get; set; }
+        public List<OgunYemekViewModel> OgunYemekler { get; set; }
 
     }
 }

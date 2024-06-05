@@ -1,13 +1,13 @@
-﻿using EFDiyetProgramiProje_DAL.Repository.Abstract;
+﻿using EFDiyetProgramiProje_DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFDiyetProgramiProje_DAL.Entities
+namespace EFDiyetProgramiProje_BL.Models
 {
-    public class Yemek : BaseEntity
+    public class YemekViewModel
     {
         public string YemekAdi { get; set; }
         public string Birim { get; set; }
@@ -16,7 +16,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public string Gorsel { get; set; }
 
         public int YemekKategoriId { get; set; }
-        public YemekKategori YemekKategori { get; set; }
-        public List<OgunYemek> OgunYemekler { get; set; }
+        public YemekKategoriViewModel YemekKategori { get; set; }
+        public List<OgunYemekViewModel> OgunYemekler { get; set; }
     }
 }

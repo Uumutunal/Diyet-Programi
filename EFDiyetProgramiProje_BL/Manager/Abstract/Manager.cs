@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EFDiyetProgramiProje_BL.Manager.Abstract
 {
-    public abstract class Manager<TModel, TEntity, TMapperProfile> : IManager<TModel>
+    public abstract class Manager<TModel, TEntity, TMapperProfile> : IManager<TModel> where TMapperProfile : Profile, new()
     {
 
         private IMapper _mapper;
@@ -26,7 +26,7 @@ namespace EFDiyetProgramiProje_BL.Manager.Abstract
             {
                 cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap();
 
-                //cfg.AddProfile<TMapperProfile>();
+                cfg.AddProfile<TMapperProfile>();
             });
 
             _mapper = new Mapper(_config);
