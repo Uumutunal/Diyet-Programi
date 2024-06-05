@@ -25,7 +25,7 @@ namespace EFDiyetProgramiProje_PL
 
             KullaniciViewModel kullanici = new KullaniciViewModel()
             {
-                Ad = "k1",
+                //Ad = "k1",
                 Sifre = "321",
                 //DataStatus = DataStatus.Added
             };
@@ -36,7 +36,7 @@ namespace EFDiyetProgramiProje_PL
 
             foreach ( var adminItem in admin )
             {
-                MessageBox.Show(adminItem.Ad);
+                //MessageBox.Show(adminItem.Ad);
             }
         }
     }

@@ -15,8 +15,6 @@ namespace EFDiyetProgramiProje_BL.MappingProfiles
         {
             CreateMap<YemekViewModel, Yemek>().ForMember(a => a.OgunYemekler, b => b.MapFrom(b => b.OgunYemekler)).ReverseMap();
             CreateMap<OgunViewModel, Ogun>().ForMember(a => a.OgunYemekler, b => b.MapFrom(b => b.OgunYemekler)).ReverseMap();
-            CreateMap<KullaniciOgunYemekViewModel, KullaniciOgunYemek>().ForMember(a => a.OgunYemekler, b => b.MapFrom(b => b.OgunYemekler)).ReverseMap();
-
         }
     }
 }

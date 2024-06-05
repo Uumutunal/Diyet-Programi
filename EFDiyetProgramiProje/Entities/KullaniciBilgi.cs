@@ -9,10 +9,15 @@ namespace EFDiyetProgramiProje_DAL.Entities
 {
     public class KullaniciBilgi : BaseEntity
     {
-        public int? Yas { get; set; }
-        public double? Kilo { get; set; }
-        public double? Boy { get; set; }
-        public string? Cinsiyet { get; set; }
+        public DateTime DogumTarihi { get; set; }
+        public int Yas { get; set; }
+        public double Kilo { get; set; }
+        public double HedefKilo { get; set; }
+        public double VucutKitleEndeksi { get; set; }
+        public int GunlukHedefKalori { get; set; }
+        public double BazalMetabolizmaHizi { get; set; }
+        public double Boy { get; set; }
+        public string Cinsiyet { get; set; }
         public Kullanici Kullanici { get; set; }
     }
 }
