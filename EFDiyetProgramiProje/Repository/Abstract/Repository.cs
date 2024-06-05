@@ -36,27 +36,44 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
         public IQueryable<T> GetAllWithIncludes()
         {
             IQueryable<T> query = GetAll();
+            // gönderilen türe ait olan bütün navigation propları include etmeli
+            // gönderilen türün özellikleri içerisinde döngü ile gezinsek ve IEntity den miras alanları include etsek
 
+            // türü bulabilmek için (T yi) T den bir nesne oluşturup, özellikleri içerisinde döngü ile gezinip, IEntity den miras alanları include edelim
+            T instance = new T(); // gönderilenden bir örnek al 
+            Type type = instance.GetType(); // onun türünü bul
 
-            T instance = new T();
-            Type type = instance.GetType();
+            // buna ait olan propertyleri elde et
+            PropertyInfo[] propertyInfos = type.GetProperties(); // o türün bütün public propertylerini verir bir diziye aktarır
 
-            PropertyInfo[] propertyInfos = type.GetProperties();
-
-            foreach (PropertyInfo propInfo in propertyInfos.Where(p => p.PropertyType.GetInterfaces().Where(i => i.Name == "IEntity" || i.Name == "IList").Any()).ToList())
+            // bu proplar içerisinde dönelim                                 IEntity den miras alan dediğimiz için 
+            foreach (PropertyInfo propInfo in propertyInfos.Where(pi => pi.PropertyType.GetInterfaces().Where(i => i.Name == "IEntity" || i.Name == "ICollection").Any()).ToList())
             {
-                query = query.Include(propInfo.Name);
+                if (propInfo.PropertyType.GetInterfaces().Any(i => i.Name == "ICollection"))
+                {
+
+
+                    var elementType = propInfo.PropertyType.GetGenericArguments().FirstOrDefault().BaseType.Name;
+
+                    if (elementType == "BaseEntity")
+                        query = query.Include(propInfo.Name);
+                }
+                else
+                    query = query.Include(propInfo.Name);
             }
 
             return query;
         }
-        public IQueryable<T> GetAllWithIncludes(params string[] mavigationProperties)
+        public IQueryable<T> GetAllWithIncludes(params string[] navigationProperties)
         {
             IQueryable<T> query = GetAll();
+            // sadece istenen türden navigationları include edecek           
 
-            foreach (var mavigationProperty in mavigationProperties)
+            // istenen navigation proplar içerisinde foreach ile dönüp include ediyoruz.
+
+            foreach (var navigationProperty in navigationProperties)
             {
-                query = query.Include(mavigationProperty);
+                query = query.Include(navigationProperty);
             }
 
             return query;
