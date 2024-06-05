@@ -11,7 +11,7 @@ namespace EFDiyetProgramiProje_BL.Models
     {
         public string KullaniciAdi { get; set; }
         public string EPostaAdresi { get; set; }
-        public string Sifre { get; set; }
+        public string? Sifre { get; set; }
         public string Sifre2 { get; set; }
         public string Sifre3 { get; set; }
         public string Sifre4 { get; set; }
