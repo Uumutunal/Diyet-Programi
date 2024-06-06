@@ -57,6 +57,7 @@ namespace EFDiyetProgramiProje_PL
                 this.Hide();
                 YoneticiKontrolPaneli yoneticiKontrolPaneli = new YoneticiKontrolPaneli();
                 yoneticiKontrolPaneli.ShowDialog();
+                this.Close();
             }
             else if (kullanici == null)
             {
@@ -71,6 +72,7 @@ namespace EFDiyetProgramiProje_PL
                 KullaniciKontrolPaneli kullaniciKontrolPaneli = new KullaniciKontrolPaneli(kullaniciId);
                 this.Hide();
                 kullaniciKontrolPaneli.ShowDialog();
+                this.Close();
             }
         }
     }

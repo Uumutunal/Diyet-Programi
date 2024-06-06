@@ -24,7 +24,6 @@ namespace EFDiyetProgramiProje_PL
         {
             InitializeComponent();
             dgvOgunListesi.DataSource = ogunManager.GetAll();
-            MessageBox.Show("Lütfen ürün seçiniz!");
             txtOgunAdi.Enabled = false;
             
          }
