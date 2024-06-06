@@ -16,5 +16,58 @@ namespace EFDiyetProgramiProje_PL
         {
             InitializeComponent();
         }
+
+        private void btnOgunEkleme_Click(object sender, EventArgs e)
+        {
+            YoneticiOgunEkle yoneticiOgunEkle = new YoneticiOgunEkle();
+            yoneticiOgunEkle.ShowDialog();
+        }
+
+        private void btnOgunGuncelleme_Click(object sender, EventArgs e)
+        {
+            YoneticiOgunGuncelle yoneticiOgunGuncelle = new YoneticiOgunGuncelle();
+            yoneticiOgunGuncelle.ShowDialog();
+        }
+
+        private void btnOgunSilme_Click(object sender, EventArgs e)
+        {
+            YoneticiOgunSilme yoneticiOgunSilme = new YoneticiOgunSilme();
+            yoneticiOgunSilme.ShowDialog();
+        }
+
+        private void btnYemekEkleme_Click(object sender, EventArgs e)
+        {
+            YoneticiYemekEkle yoneticiYemekEkle = new YoneticiYemekEkle();
+            yoneticiYemekEkle.ShowDialog();
+        }
+
+        private void btnYemekGuncelleme_Click(object sender, EventArgs e)
+        {
+            YoneticiYemekGuncelleme yoneticiYemekGuncelleme = new YoneticiYemekGuncelleme();
+            yoneticiYemekGuncelleme.ShowDialog();
+        }
+
+        private void btnYemekSilme_Click(object sender, EventArgs e)
+        {
+            YoneticiYemekSilme yoneticiYemekSilme = new YoneticiYemekSilme();
+            yoneticiYemekSilme.ShowDialog();
+        }
+
+        private void btnKullanicilariGoruntule_Click(object sender, EventArgs e)
+        {
+            YoneticiKullanicilariGoruntule yoneticiKullanicilariGoruntule = new YoneticiKullanicilariGoruntule();
+            yoneticiKullanicilariGoruntule.ShowDialog();
+        }
+
+        private void btnRaporGoster_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSifreDegistir_Click(object sender, EventArgs e)
+        {
+            YoneticiSifreDegistir yoneticiSifreDegistir =new YoneticiSifreDegistir();
+            yoneticiSifreDegistir.ShowDialog();
+        }
     }
 }

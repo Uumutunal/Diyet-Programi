@@ -28,112 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisFormu));
+            txtKullaniciAdi = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
+            txtSifre = new TextBox();
+            btnGiris = new Button();
+            btnSifremiUnuttum = new Button();
+            btnKayitOl = new Button();
+            chkSifreyiGoster = new CheckBox();
+            chkBeniHatirla = new CheckBox();
+            label3 = new Label();
+            ımageList1 = new ImageList(components);
+            label4 = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // txtKullaniciAdi
             // 
-            textBox1.Location = new Point(194, 86);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 23);
-            textBox1.TabIndex = 0;
+            txtKullaniciAdi.Location = new Point(110, 160);
+            txtKullaniciAdi.Margin = new Padding(3, 4, 3, 4);
+            txtKullaniciAdi.Name = "txtKullaniciAdi";
+            txtKullaniciAdi.Size = new Size(202, 27);
+            txtKullaniciAdi.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(88, 89);
+            label1.Location = new Point(9, 163);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(95, 20);
             label1.TabIndex = 1;
             label1.Text = "Kullanıcı Adı:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(131, 132);
+            label2.Location = new Point(58, 220);
             label2.Name = "label2";
-            label2.Size = new Size(33, 15);
+            label2.Size = new Size(42, 20);
             label2.TabIndex = 3;
             label2.Text = "Şifre:";
             // 
-            // textBox2
+            // txtSifre
             // 
-            textBox2.Location = new Point(194, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 23);
-            textBox2.TabIndex = 2;
+            txtSifre.Location = new Point(110, 217);
+            txtSifre.Margin = new Padding(3, 4, 3, 4);
+            txtSifre.Name = "txtSifre";
+            txtSifre.Size = new Size(202, 27);
+            txtSifre.TabIndex = 2;
+            txtSifre.TextChanged += txtSifre_TextChanged;
             // 
-            // button1
+            // btnGiris
             // 
-            button1.Location = new Point(194, 242);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Giriş";
-            button1.UseVisualStyleBackColor = true;
+            btnGiris.Location = new Point(69, 347);
+            btnGiris.Margin = new Padding(3, 4, 3, 4);
+            btnGiris.Name = "btnGiris";
+            btnGiris.Size = new Size(202, 31);
+            btnGiris.TabIndex = 4;
+            btnGiris.Text = "Giriş";
+            btnGiris.UseVisualStyleBackColor = true;
+            btnGiris.Click += btnGiris_Click;
             // 
-            // button2
+            // btnSifremiUnuttum
             // 
-            button2.Location = new Point(194, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(177, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Şifremi Unuttum";
-            button2.UseVisualStyleBackColor = true;
+            btnSifremiUnuttum.Location = new Point(69, 399);
+            btnSifremiUnuttum.Margin = new Padding(3, 4, 3, 4);
+            btnSifremiUnuttum.Name = "btnSifremiUnuttum";
+            btnSifremiUnuttum.Size = new Size(202, 31);
+            btnSifremiUnuttum.TabIndex = 5;
+            btnSifremiUnuttum.Text = "Şifremi Unuttum";
+            btnSifremiUnuttum.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnKayitOl
             // 
-            button3.Location = new Point(194, 341);
-            button3.Name = "button3";
-            button3.Size = new Size(177, 23);
-            button3.TabIndex = 6;
-            button3.Text = "Kayıt Ol";
-            button3.UseVisualStyleBackColor = true;
+            btnKayitOl.ImageAlign = ContentAlignment.MiddleRight;
+            btnKayitOl.ImageKey = "(none)";
+            btnKayitOl.Location = new Point(193, 101);
+            btnKayitOl.Margin = new Padding(3, 4, 3, 4);
+            btnKayitOl.Name = "btnKayitOl";
+            btnKayitOl.Size = new Size(117, 29);
+            btnKayitOl.TabIndex = 6;
+            btnKayitOl.Text = "Kayıt Ol";
+            btnKayitOl.UseVisualStyleBackColor = true;
+            btnKayitOl.Click += btnKayitOl_Click;
             // 
-            // checkBox1
+            // chkSifreyiGoster
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
-            checkBox1.Location = new Point(276, 167);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(95, 19);
-            checkBox1.TabIndex = 7;
-            checkBox1.Text = "Şifreyi Göster";
-            checkBox1.UseVisualStyleBackColor = true;
+            chkSifreyiGoster.AutoSize = true;
+            chkSifreyiGoster.CheckAlign = ContentAlignment.MiddleRight;
+            chkSifreyiGoster.Location = new Point(193, 266);
+            chkSifreyiGoster.Margin = new Padding(3, 4, 3, 4);
+            chkSifreyiGoster.Name = "chkSifreyiGoster";
+            chkSifreyiGoster.Size = new Size(119, 24);
+            chkSifreyiGoster.TabIndex = 7;
+            chkSifreyiGoster.Text = "Şifreyi Göster";
+            chkSifreyiGoster.UseVisualStyleBackColor = true;
+            chkSifreyiGoster.CheckedChanged += chkSifreyiGoster_CheckedChanged;
             // 
-            // checkBox2
+            // chkBeniHatirla
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
-            checkBox2.Location = new Point(284, 204);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(87, 19);
-            checkBox2.TabIndex = 8;
-            checkBox2.Text = "Beni Hatırla";
-            checkBox2.UseVisualStyleBackColor = true;
+            chkBeniHatirla.AutoSize = true;
+            chkBeniHatirla.CheckAlign = ContentAlignment.MiddleRight;
+            chkBeniHatirla.Location = new Point(203, 298);
+            chkBeniHatirla.Margin = new Padding(3, 4, 3, 4);
+            chkBeniHatirla.Name = "chkBeniHatirla";
+            chkBeniHatirla.Size = new Size(109, 24);
+            chkBeniHatirla.TabIndex = 8;
+            chkBeniHatirla.Text = "Beni Hatırla";
+            chkBeniHatirla.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(25, 105);
+            label3.Name = "label3";
+            label3.Size = new Size(162, 20);
+            label3.TabIndex = 10;
+            label3.Text = "Henüz üye değil misin?";
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanıcıgiriş.jpg");
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Impact", 18F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label4.ForeColor = Color.FromArgb(64, 64, 64);
+            label4.ImageKey = "kullanıcıgiriş.jpg";
+            label4.ImageList = ımageList1;
+            label4.Location = new Point(-8, 1);
+            label4.Name = "label4";
+            label4.Size = new Size(340, 83);
+            label4.TabIndex = 11;
+            label4.Text = "KULLANICI GİRİŞİ";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // GirisFormu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(543, 399);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            BackColor = Color.White;
+            ClientSize = new Size(329, 456);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(chkBeniHatirla);
+            Controls.Add(chkSifreyiGoster);
+            Controls.Add(btnKayitOl);
+            Controls.Add(btnSifremiUnuttum);
+            Controls.Add(btnGiris);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtSifre);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtKullaniciAdi);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "GirisFormu";
             Text = "Giriş";
             ResumeLayout(false);
@@ -142,14 +193,17 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtKullaniciAdi;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
+        private TextBox txtSifre;
+        private Button btnGiris;
+        private Button btnSifremiUnuttum;
+        private Button btnKayitOl;
+        private CheckBox chkSifreyiGoster;
+        private CheckBox chkBeniHatirla;
+        private Label label3;
+        private ImageList ımageList1;
+        private Label label4;
     }
 }

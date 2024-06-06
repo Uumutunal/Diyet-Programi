@@ -39,16 +39,17 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("EPostaAdresi")
+                    b.Property<string>("GuvenlikSorusu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuvenlikYaniti")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KullaniciAdi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("KullaniciBilgiId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedTime")
                         .HasColumnType("datetime2");
@@ -58,22 +59,15 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sifre2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sifre3")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sifre4")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("KullaniciBilgiId")
-                        .IsUnique()
-                        .HasFilter("[KullaniciBilgiId] IS NOT NULL");
 
                     b.ToTable("Kullanicilar");
                 });
@@ -117,6 +111,9 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<double>("Kilo")
                         .HasColumnType("float");
 
+                    b.Property<int?>("KullaniciId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ModifiedTime")
                         .HasColumnType("datetime2");
 
@@ -127,6 +124,10 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("KullaniciId")
+                        .IsUnique()
+                        .HasFilter("[KullaniciId] IS NOT NULL");
 
                     b.ToTable("KullaniciBilgiler");
                 });
@@ -284,13 +285,13 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.ToTable("YemekKategoriler");
                 });
 
-            modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.Kullanici", b =>
+            modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.KullaniciBilgi", b =>
                 {
-                    b.HasOne("EFDiyetProgramiProje_DAL.Entities.KullaniciBilgi", "KullaniciBilgi")
-                        .WithOne("Kullanici")
-                        .HasForeignKey("EFDiyetProgramiProje_DAL.Entities.Kullanici", "KullaniciBilgiId");
+                    b.HasOne("EFDiyetProgramiProje_DAL.Entities.Kullanici", "Kullanici")
+                        .WithOne("KullaniciBilgi")
+                        .HasForeignKey("EFDiyetProgramiProje_DAL.Entities.KullaniciBilgi", "KullaniciId");
 
-                    b.Navigation("KullaniciBilgi");
+                    b.Navigation("Kullanici");
                 });
 
             modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.OgunYemek", b =>
@@ -333,13 +334,10 @@ namespace EFDiyetProgramiProje_DAL.Migrations
 
             modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.Kullanici", b =>
                 {
-                    b.Navigation("OgunYemekler");
-                });
-
-            modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.KullaniciBilgi", b =>
-                {
-                    b.Navigation("Kullanici")
+                    b.Navigation("KullaniciBilgi")
                         .IsRequired();
+
+                    b.Navigation("OgunYemekler");
                 });
 
             modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.Ogun", b =>

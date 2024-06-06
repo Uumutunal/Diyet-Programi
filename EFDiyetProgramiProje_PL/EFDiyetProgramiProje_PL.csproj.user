@@ -1,19 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="KullaniciKontrolPaneli.cs">
+    <Compile Update="GirisFormu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="KayitFormu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GirisFormu.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="KullaniciBilgileri.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="KullaniciKontrolPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="YoneticiKontrolPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiKullanicilariGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiOgunEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiOgunGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiOgunSilme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiSifreDegistir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiYemekEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiYemekGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YoneticiYemekSilme.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

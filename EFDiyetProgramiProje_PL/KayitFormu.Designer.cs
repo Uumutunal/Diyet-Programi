@@ -29,146 +29,180 @@
         private void InitializeComponent()
         {
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtSifre = new TextBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtKullaniciAdi = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtSifreTekrar = new TextBox();
+            cmbGuvenlikSorusu = new ComboBox();
             label5 = new Label();
             label6 = new Label();
-            textBox5 = new TextBox();
-            button1 = new Button();
+            txtGuvenlikYaniti = new TextBox();
+            btnKayitOl = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            btnGiris = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(240, 105);
+            label2.Location = new Point(178, 139);
             label2.Name = "label2";
-            label2.Size = new Size(33, 15);
+            label2.Size = new Size(42, 20);
             label2.TabIndex = 7;
             label2.Text = "Şifre:";
             // 
-            // textBox2
+            // txtSifre
             // 
-            textBox2.Location = new Point(294, 102);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 23);
-            textBox2.TabIndex = 6;
+            txtSifre.Location = new Point(336, 136);
+            txtSifre.Margin = new Padding(3, 4, 3, 4);
+            txtSifre.Name = "txtSifre";
+            txtSifre.Size = new Size(202, 27);
+            txtSifre.TabIndex = 6;
+            txtSifre.TextChanged += txtSifre_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(197, 58);
+            label1.Location = new Point(178, 76);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(95, 20);
             label1.TabIndex = 5;
             label1.Text = "Kullanıcı Adı:";
             // 
-            // textBox1
+            // txtKullaniciAdi
             // 
-            textBox1.Location = new Point(294, 55);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 23);
-            textBox1.TabIndex = 4;
+            txtKullaniciAdi.Location = new Point(336, 73);
+            txtKullaniciAdi.Margin = new Padding(3, 4, 3, 4);
+            txtKullaniciAdi.Name = "txtKullaniciAdi";
+            txtKullaniciAdi.Size = new Size(202, 27);
+            txtKullaniciAdi.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(206, 152);
+            label3.Location = new Point(178, 202);
             label3.Name = "label3";
-            label3.Size = new Size(67, 15);
+            label3.Size = new Size(86, 20);
             label3.TabIndex = 9;
             label3.Text = "Şifre Tekrar:";
             // 
-            // textBox3
+            // txtSifreTekrar
             // 
-            textBox3.Location = new Point(294, 149);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(177, 23);
-            textBox3.TabIndex = 8;
+            txtSifreTekrar.Location = new Point(336, 199);
+            txtSifreTekrar.Margin = new Padding(3, 4, 3, 4);
+            txtSifreTekrar.Name = "txtSifreTekrar";
+            txtSifreTekrar.Size = new Size(202, 27);
+            txtSifreTekrar.TabIndex = 8;
+            txtSifreTekrar.TextChanged += txtSifreTekrar_TextChanged;
             // 
-            // label4
+            // cmbGuvenlikSorusu
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(187, 199);
-            label4.Name = "label4";
-            label4.Size = new Size(86, 15);
-            label4.TabIndex = 11;
-            label4.Text = "E-Posta Adresi:";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(294, 196);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(177, 23);
-            textBox4.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(294, 243);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(177, 23);
-            comboBox1.TabIndex = 12;
+            cmbGuvenlikSorusu.FormattingEnabled = true;
+            cmbGuvenlikSorusu.Items.AddRange(new object[] { "İlk Evcil Hayvanınızın Adı?", "En Sevdiğiniz Öğretmeniniz?", "Annenizin Doğum Yılı?" });
+            cmbGuvenlikSorusu.Location = new Point(336, 268);
+            cmbGuvenlikSorusu.Margin = new Padding(3, 4, 3, 4);
+            cmbGuvenlikSorusu.Name = "cmbGuvenlikSorusu";
+            cmbGuvenlikSorusu.Size = new Size(202, 28);
+            cmbGuvenlikSorusu.TabIndex = 12;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(178, 246);
+            label5.Location = new Point(178, 271);
             label5.Name = "label5";
-            label5.Size = new Size(95, 15);
+            label5.Size = new Size(116, 20);
             label5.TabIndex = 13;
             label5.Text = "Güvenlik Sorusu:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(146, 293);
+            label6.Location = new Point(178, 334);
             label6.Name = "label6";
-            label6.Size = new Size(127, 15);
+            label6.Size = new Size(156, 20);
             label6.TabIndex = 14;
             label6.Text = "Güvenlik Sorusu Yanıtı:";
             // 
-            // textBox5
+            // txtGuvenlikYaniti
             // 
-            textBox5.Location = new Point(294, 290);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(177, 23);
-            textBox5.TabIndex = 15;
+            txtGuvenlikYaniti.Location = new Point(336, 331);
+            txtGuvenlikYaniti.Margin = new Padding(3, 4, 3, 4);
+            txtGuvenlikYaniti.Name = "txtGuvenlikYaniti";
+            txtGuvenlikYaniti.Size = new Size(202, 27);
+            txtGuvenlikYaniti.TabIndex = 15;
             // 
-            // button1
+            // btnKayitOl
             // 
-            button1.Location = new Point(322, 346);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 34);
-            button1.TabIndex = 16;
-            button1.Text = "Kayıt Ol";
-            button1.UseVisualStyleBackColor = true;
+            btnKayitOl.Location = new Point(178, 409);
+            btnKayitOl.Margin = new Padding(3, 4, 3, 4);
+            btnKayitOl.Name = "btnKayitOl";
+            btnKayitOl.Size = new Size(173, 45);
+            btnKayitOl.TabIndex = 16;
+            btnKayitOl.Text = "Kayıt Ol";
+            btnKayitOl.UseVisualStyleBackColor = true;
+            btnKayitOl.Click += btnKayitOl_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            pictureBox1.Location = new Point(552, 136);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(39, 27);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            pictureBox2.Location = new Point(552, 199);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 27);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 18;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // btnGiris
+            // 
+            btnGiris.Location = new Point(418, 409);
+            btnGiris.Margin = new Padding(3, 4, 3, 4);
+            btnGiris.Name = "btnGiris";
+            btnGiris.Size = new Size(173, 45);
+            btnGiris.TabIndex = 19;
+            btnGiris.Text = "Giriş Ekranına Dön";
+            btnGiris.UseVisualStyleBackColor = true;
+            btnGiris.Click += btnGiris_Click;
             // 
             // KayitFormu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(698, 463);
-            Controls.Add(button1);
-            Controls.Add(textBox5);
+            ClientSize = new Size(798, 617);
+            Controls.Add(btnGiris);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(btnKayitOl);
+            Controls.Add(txtGuvenlikYaniti);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(comboBox1);
-            Controls.Add(label4);
-            Controls.Add(textBox4);
+            Controls.Add(cmbGuvenlikSorusu);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txtSifreTekrar);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtSifre);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtKullaniciAdi);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "KayitFormu";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -176,17 +210,18 @@
         #endregion
 
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtSifre;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtKullaniciAdi;
         private Label label3;
-        private TextBox textBox3;
-        private Label label4;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
+        private TextBox txtSifreTekrar;
+        private ComboBox cmbGuvenlikSorusu;
         private Label label5;
         private Label label6;
-        private TextBox textBox5;
-        private Button button1;
+        private TextBox txtGuvenlikYaniti;
+        private Button btnKayitOl;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Button btnGiris;
     }
 }

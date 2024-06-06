@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EFDiyetProgramiProje_DAL.Entities
 {
-    public class KullaniciBilgi : BaseEntity
+    public class KullaniciBilgi:BaseEntity
     {
         public DateTime DogumTarihi { get; set; }
         public int Yas { get; set; }
@@ -18,6 +18,7 @@ namespace EFDiyetProgramiProje_DAL.Entities
         public double BazalMetabolizmaHizi { get; set; }
         public double Boy { get; set; }
         public string Cinsiyet { get; set; }
+        public int? KullaniciId { get; set; }
         public Kullanici Kullanici { get; set; }
     }
 }

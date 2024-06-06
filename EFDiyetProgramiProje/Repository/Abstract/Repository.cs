@@ -116,8 +116,8 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
 
         public void Update(T entity)
         {
-
             entity.CreatedTime = entities.AsNoTracking().FirstOrDefault(e => e.Id == entity.Id).CreatedTime;
+
 
             //entity.DataStatus = DataStatus.Modified != DataStatus.Deleted ? DataStatus.Modified : DataStatus.Deleted;
 
@@ -128,9 +128,9 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
                 entity.ModifiedTime = DateTime.Now;
             }
 
-            //view modelde createddate olmadığı için updateten önce createddatei getirim tekrar atamalıyız
+            //view modelde createddate olmadığı için updateten önce createddatei getirip tekrar atamalıyız
 
-
+            
             entities.Update(entity);
             _db.SaveChanges();
 

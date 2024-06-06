@@ -28,148 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtDogumTarihi = new TextBox();
+            txtKilo = new TextBox();
+            txtBoy = new TextBox();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            button1 = new Button();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
+            btnKullaniciBilgiGuncelle = new Button();
+            label1 = new Label();
+            txtHedefKilo = new TextBox();
+            cmbCinsiyet = new ComboBox();
+            label2 = new Label();
+            lblKullaniciAdi = new Label();
             SuspendLayout();
             // 
-            // textBox4
+            // txtDogumTarihi
             // 
-            textBox4.Location = new Point(228, 200);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(105, 23);
-            textBox4.TabIndex = 22;
+            txtDogumTarihi.Location = new Point(282, 204);
+            txtDogumTarihi.Margin = new Padding(3, 4, 3, 4);
+            txtDogumTarihi.Name = "txtDogumTarihi";
+            txtDogumTarihi.Size = new Size(119, 27);
+            txtDogumTarihi.TabIndex = 20;
             // 
-            // textBox3
+            // txtKilo
             // 
-            textBox3.Location = new Point(228, 153);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(105, 23);
-            textBox3.TabIndex = 20;
+            txtKilo.Location = new Point(282, 141);
+            txtKilo.Margin = new Padding(3, 4, 3, 4);
+            txtKilo.Name = "txtKilo";
+            txtKilo.Size = new Size(119, 27);
+            txtKilo.TabIndex = 18;
             // 
-            // textBox2
+            // txtBoy
             // 
-            textBox2.Location = new Point(228, 106);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(105, 23);
-            textBox2.TabIndex = 18;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(228, 59);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(105, 23);
-            textBox1.TabIndex = 16;
+            txtBoy.Location = new Point(282, 79);
+            txtBoy.Margin = new Padding(3, 4, 3, 4);
+            txtBoy.Name = "txtBoy";
+            txtBoy.Size = new Size(119, 27);
+            txtBoy.TabIndex = 16;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(19, 200);
+            label5.Location = new Point(94, 267);
             label5.Name = "label5";
-            label5.Size = new Size(52, 15);
+            label5.Size = new Size(63, 20);
             label5.TabIndex = 27;
             label5.Text = "Cinsiyet:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(44, 153);
+            label6.Location = new Point(94, 204);
             label6.Name = "label6";
-            label6.Size = new Size(27, 15);
+            label6.Size = new Size(183, 20);
             label6.TabIndex = 26;
-            label6.Text = "Yaş:";
+            label6.Text = "Doğum Tarihi (gg.aa.yyyy):";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(41, 106);
+            label7.Location = new Point(94, 141);
             label7.Name = "label7";
-            label7.Size = new Size(30, 15);
+            label7.Size = new Size(72, 20);
             label7.TabIndex = 25;
-            label7.Text = "Kilo:";
+            label7.Text = "Kilo (kg) :";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(41, 59);
+            label8.Location = new Point(94, 79);
             label8.Name = "label8";
-            label8.Size = new Size(30, 15);
+            label8.Size = new Size(71, 20);
             label8.TabIndex = 24;
-            label8.Text = "Boy:";
+            label8.Text = "Boy (cm):";
             // 
-            // button1
+            // btnKullaniciBilgiGuncelle
             // 
-            button1.Location = new Point(82, 278);
-            button1.Name = "button1";
-            button1.Size = new Size(171, 48);
-            button1.TabIndex = 32;
-            button1.Text = "Bilgilerimi Güncelle";
-            button1.UseVisualStyleBackColor = true;
+            btnKullaniciBilgiGuncelle.Location = new Point(94, 396);
+            btnKullaniciBilgiGuncelle.Margin = new Padding(3, 4, 3, 4);
+            btnKullaniciBilgiGuncelle.Name = "btnKullaniciBilgiGuncelle";
+            btnKullaniciBilgiGuncelle.Size = new Size(307, 64);
+            btnKullaniciBilgiGuncelle.TabIndex = 32;
+            btnKullaniciBilgiGuncelle.Text = "Bilgilerimi Güncelle";
+            btnKullaniciBilgiGuncelle.UseVisualStyleBackColor = true;
+            btnKullaniciBilgiGuncelle.Click += btnKullaniciBilgiGuncelle_Click;
             // 
-            // label12
+            // label1
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(103, 59);
-            label12.Name = "label12";
-            label12.Size = new Size(95, 15);
-            label12.TabIndex = 28;
-            label12.Text = "Boyunuzu giriniz";
+            label1.AutoSize = true;
+            label1.Location = new Point(94, 336);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 20);
+            label1.TabIndex = 34;
+            label1.Text = "Hedef Kilo (kg):";
             // 
-            // label11
+            // txtHedefKilo
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(103, 106);
-            label11.Name = "label11";
-            label11.Size = new Size(30, 15);
-            label11.TabIndex = 29;
-            label11.Text = "Kilo:";
+            txtHedefKilo.Location = new Point(282, 336);
+            txtHedefKilo.Margin = new Padding(3, 4, 3, 4);
+            txtHedefKilo.Name = "txtHedefKilo";
+            txtHedefKilo.Size = new Size(119, 27);
+            txtHedefKilo.TabIndex = 33;
             // 
-            // label10
+            // cmbCinsiyet
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(103, 153);
-            label10.Name = "label10";
-            label10.Size = new Size(27, 15);
-            label10.TabIndex = 30;
-            label10.Text = "Yaş:";
+            cmbCinsiyet.FormattingEnabled = true;
+            cmbCinsiyet.Items.AddRange(new object[] { "Kadın", "Erkek" });
+            cmbCinsiyet.Location = new Point(282, 267);
+            cmbCinsiyet.Name = "cmbCinsiyet";
+            cmbCinsiyet.Size = new Size(119, 28);
+            cmbCinsiyet.TabIndex = 35;
             // 
-            // label9
+            // label2
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(103, 200);
-            label9.Name = "label9";
-            label9.Size = new Size(52, 15);
-            label9.TabIndex = 31;
-            label9.Text = "Cinsiyet:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            label2.Location = new Point(95, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(116, 23);
+            label2.TabIndex = 37;
+            label2.Text = "Kullanıcı Adı:";
+            // 
+            // lblKullaniciAdi
+            // 
+            lblKullaniciAdi.AutoSize = true;
+            lblKullaniciAdi.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            lblKullaniciAdi.Location = new Point(282, 28);
+            lblKullaniciAdi.Name = "lblKullaniciAdi";
+            lblKullaniciAdi.Size = new Size(0, 23);
+            lblKullaniciAdi.TabIndex = 38;
             // 
             // KullaniciBilgileri
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(395, 430);
-            Controls.Add(button1);
-            Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(label11);
-            Controls.Add(label12);
+            ClientSize = new Size(451, 573);
+            Controls.Add(lblKullaniciAdi);
+            Controls.Add(label2);
+            Controls.Add(cmbCinsiyet);
+            Controls.Add(label1);
+            Controls.Add(txtHedefKilo);
+            Controls.Add(btnKullaniciBilgiGuncelle);
             Controls.Add(label5);
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(label8);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtDogumTarihi);
+            Controls.Add(txtKilo);
+            Controls.Add(txtBoy);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "KullaniciBilgileri";
             Text = "KullaniciBilgileri";
             ResumeLayout(false);
@@ -177,18 +185,22 @@
         }
 
         #endregion
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtDogumTarihi;
+        private TextBox txtKilo;
+        private TextBox txtBoy;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
-        private Button button1;
+        private Button btnKullaniciBilgiGuncelle;
         private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
+        private Label label1;
+        private TextBox txtHedefKilo;
+        private ComboBox cmbCinsiyet;
+        private Label label2;
+        private Label lblKullaniciAdi;
     }
 }

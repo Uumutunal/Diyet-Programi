@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FeSc/6e1wFAn1yPlinumXlsuRnRP+8sgDJThjjkOf07j1QRDLJOgoIHeXRacuJDIKDGixKZ7NXIXV83niE2CoQ==",
+  "dgSpecHash": "A0M+5XsWlFX3PzqMW4HMKMi5wcnrYZNF6kHcEJvypEQ6pz3xc88yv+nQ15yuOOSQLGzd40IpNOYodkE30XJz9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\proje05062024\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
+  "projectFilePath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\deneme1\\EFDiyetProgramiProje\\EFDiyetProgramiProje_DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\casper\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\casper\\.nuget\\packages\\automapper.extensions.expressionmapping\\7.0.1\\automapper.extensions.expressionmapping.7.0.1.nupkg.sha512",

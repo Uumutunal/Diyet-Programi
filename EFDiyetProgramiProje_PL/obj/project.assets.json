@@ -4523,11 +4523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\proje05062024\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
+      "projectUniqueName": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\deneme1\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
       "projectName": "EFDiyetProgramiProje_PL",
-      "projectPath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\proje05062024\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
+      "projectPath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\deneme1\\EFDiyetProgramiProje_PL\\EFDiyetProgramiProje_PL.csproj",
       "packagesPath": "C:\\Users\\casper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\proje05062024\\EFDiyetProgramiProje_PL\\obj\\",
+      "outputPath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\deneme1\\EFDiyetProgramiProje_PL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4549,8 +4549,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\proje05062024\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj": {
-              "projectPath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\proje05062024\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj"
+            "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\deneme1\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj": {
+              "projectPath": "C:\\Users\\casper\\OneDrive\\Masaüstü\\EF PROJE\\deneme1\\EFDiyetProgramiProje_BL\\EFDiyetProgramiProje_BL.csproj"
             }
           }
         }

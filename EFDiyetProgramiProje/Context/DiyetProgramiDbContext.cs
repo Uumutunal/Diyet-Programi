@@ -20,7 +20,7 @@ namespace EFDiyetProgramiProje_DAL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-HLJBBVE\\MSSQLSERVER01;database=DiyetProgramiDb;uid=sa;pwd=123;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-4UHFHR4;database=DiyetProgramiDbnew;uid=sa;pwd=1357;trustservercertificate=true");
         }
     }
 }
