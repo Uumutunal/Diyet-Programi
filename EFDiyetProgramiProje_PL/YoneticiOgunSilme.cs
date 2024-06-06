@@ -27,7 +27,7 @@ namespace EFDiyetProgramiProje_PL
             txtOgunAdi.Enabled = false;
             
          }
-
+         //
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (dgvOgunListesi.SelectedRows.Count < 1)
