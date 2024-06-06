@@ -10,7 +10,7 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
     public interface IEntity
     {
         public int Id { get; set; }
-        public DateTime? CreatedTime { get; set; }
+        public DateTime CreatedTime { get; set; }
         public DateTime? ModifiedTime { get; set; }
         public DateTime? DeletedTime { get; set; }
         public DataStatus DataStatus { get; set; }

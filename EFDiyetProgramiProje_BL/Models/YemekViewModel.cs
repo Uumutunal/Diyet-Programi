@@ -9,6 +9,7 @@ namespace EFDiyetProgramiProje_BL.Models
 {
     public class YemekViewModel
     {
+        public int Id { get; set; }
         public string? YemekAdi { get; set; }
         public string? Birim { get; set; }
         public double? Kalori { get; set; }

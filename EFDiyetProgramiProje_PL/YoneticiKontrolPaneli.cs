@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFDiyetProgramiProje_BL.Manager.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace EFDiyetProgramiProje_PL
 {
     public partial class YoneticiKontrolPaneli : Form
     {
+
         public YoneticiKontrolPaneli()
         {
             InitializeComponent();

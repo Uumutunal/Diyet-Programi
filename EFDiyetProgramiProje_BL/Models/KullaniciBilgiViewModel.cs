@@ -9,6 +9,7 @@ namespace EFDiyetProgramiProje_BL.Models
 {
     public class KullaniciBilgiViewModel
     {
+        public int Id { get; set; }
         public DateTime? DogumTarihi { get; set; }
         public int? Yas { get; set; }
         public double? Kilo { get; set; }

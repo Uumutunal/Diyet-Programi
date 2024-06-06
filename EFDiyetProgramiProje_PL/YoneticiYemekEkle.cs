@@ -43,7 +43,7 @@ namespace EFDiyetProgramiProje_PL
             string kategoriAdi = (string)(cbKategoriSec.SelectedItem);
 
             var kategori = yemekKategori.Search(s => s.KategoriAdi == kategoriAdi).FirstOrDefault();
-            yeniYemek.YemekKategori = kategori;
+            yeniYemek.YemekKategoriId = kategori.Id;
 
             bool kaloriDene = Double.TryParse(txtKalori.Text, out double kalori);
 

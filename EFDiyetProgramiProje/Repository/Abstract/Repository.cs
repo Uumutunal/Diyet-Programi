@@ -26,6 +26,7 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
         {
             entity.DeletedTime = DateTime.Now;
             entity.DataStatus = DataStatus.Deleted;
+
             Update(entity);
         }
 
@@ -117,6 +118,7 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
 
         public void Update(T entity)
         {
+
             entity.CreatedTime = entities.AsNoTracking().FirstOrDefault(e => e.Id == entity.Id).CreatedTime;
 
 
@@ -131,9 +133,22 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
 
             //view modelde createddate olmadığı için updateten önce createddatei getirip tekrar atamalıyız
 
-            
-            entities.Update(entity);
+
+
+            var existingEntity = entities.Local.FirstOrDefault(e => e.Id == entity.Id);
+
+            if (existingEntity != null)
+            {
+                // If the entity is already tracked, update its properties
+                entities.Entry(existingEntity).CurrentValues.SetValues(entity);
+            }
+            else
+            {
+                entities.Update(entity);
+            }
+
             _db.SaveChanges();
+
 
         }
     }

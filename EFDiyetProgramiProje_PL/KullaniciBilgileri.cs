@@ -42,8 +42,11 @@ namespace EFDiyetProgramiProje_PL
                 txtBoy.Text = Convert.ToString(kullaniciBilgiViewModel.Boy);
                 txtHedefKilo.Text = Convert.ToString(kullaniciBilgiViewModel.HedefKilo);
                 txtKilo.Text = Convert.ToString(kullaniciBilgiViewModel.Kilo);
-                //düzelt
-                txtDogumTarihi.Text = Convert.ToString(kullaniciBilgiViewModel.DogumTarihi.Value.Day + "." + kullaniciBilgiViewModel.DogumTarihi.Value.Month + "." + kullaniciBilgiViewModel.DogumTarihi.Value.Year);
+
+                string gun = kullaniciBilgiViewModel.DogumTarihi.Value.Day < 10 ? "0" + kullaniciBilgiViewModel.DogumTarihi.Value.Day : kullaniciBilgiViewModel.DogumTarihi.Value.Day.ToString();
+                string ay = kullaniciBilgiViewModel.DogumTarihi.Value.Month < 10 ? "0" + kullaniciBilgiViewModel.DogumTarihi.Value.Month : kullaniciBilgiViewModel.DogumTarihi.Value.Month.ToString();
+
+                txtDogumTarihi.Text = Convert.ToString(gun + "." + ay + "." + kullaniciBilgiViewModel.DogumTarihi.Value.Year);
                 cmbCinsiyet.Text = kullaniciBilgiViewModel.Cinsiyet;
             }
 
@@ -136,7 +139,6 @@ namespace EFDiyetProgramiProje_PL
                     kullaniciBilgiViewModel.Yas = yas;
                     kullaniciBilgiViewModel.VucutKitleEndeksi = vucutKitleEndeksiHesabı;
 
-                    //hata
                     kullaniciBilgiManager.Update(kullaniciBilgiViewModel);
                 }
                 MessageBox.Show("Kullanıcı bilgileri başarı ile güncellendi!");

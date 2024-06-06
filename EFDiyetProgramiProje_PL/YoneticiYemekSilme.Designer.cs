@@ -170,6 +170,7 @@
             cbYemekSecSil.Name = "cbYemekSecSil";
             cbYemekSecSil.Size = new Size(227, 23);
             cbYemekSecSil.TabIndex = 46;
+            cbYemekSecSil.SelectedIndexChanged += cbYemekSecSil_SelectedIndexChanged;
             // 
             // cbKategoriSecSil
             // 

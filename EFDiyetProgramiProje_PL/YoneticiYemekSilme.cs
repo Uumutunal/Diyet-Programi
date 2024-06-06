@@ -19,18 +19,21 @@ namespace EFDiyetProgramiProje_PL
     {
         YemekManager yemekManager = new YemekManager();
         YemekKategoriManager yemekKategori = new YemekKategoriManager();
+
+        YemekViewModel yeniYemek = new YemekViewModel();
         public YoneticiYemekSilme()
         {
             InitializeComponent();
 
-            var kategoriler = yemekKategori.GetAll();
+
+            var kategoriler = yemekKategori.GetAll().ToList();
 
             foreach (var kategori in kategoriler)
             {
                 cbKategoriSecSil.Items.Add(kategori.KategoriAdi);
             }
 
-            var yemekler = yemekManager.GetAll();
+            var yemekler = yemekManager.GetAll().ToList();
 
             foreach (var yemek in yemekler)
             {
@@ -42,20 +45,23 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnYemekOgunleEkle_Click(object sender, EventArgs e)
         {
-            try
+
+            yeniYemek = yemekManager.Search(s => s.YemekAdi == cbYemekSecSil.Text.ToString()).FirstOrDefault();
+
+            int a = 2;
+
+            yemekManager.Delete(yeniYemek);
+
+            MessageBox.Show("Yemek Silindi");
+            cbYemekSecSil.Items.Clear();
+            cbYemekSecSil.Text = "";
+
+            var yemekler = yemekManager.GetAll().ToList();
+
+            foreach (var yemek in yemekler)
             {
-                var yemek = yemekManager.Search(s => s.YemekAdi == cbYemekSecSil.Text.ToString()).FirstOrDefault();
-                int a = 2;
 
-                yemekManager.Delete(yemek);
-
-                MessageBox.Show("Yemek Silindi");
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("silinemedi");
-
+                cbYemekSecSil.Items.Add(yemek.YemekAdi);
             }
 
         }
@@ -63,13 +69,22 @@ namespace EFDiyetProgramiProje_PL
         private void cbKategoriSecSil_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbYemekSecSil.Items.Clear();
-            var yemekler = yemekManager.GetAllWithIncludes();
+            var yemekler = yemekManager.GetAllWithIncludes().ToList();
 
             foreach (var yemek in yemekler)
             {
                 if (yemek.YemekKategori.KategoriAdi == cbKategoriSecSil.Text)
                     cbYemekSecSil.Items.Add(yemek.YemekAdi);
             }
+        }
+
+        private void cbYemekSecSil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            yeniYemek = yemekManager.Search(s => s.YemekAdi == cbYemekSecSil.Text.ToString()).FirstOrDefault();
+
+            rtxtTarifiGuncelleme.Text = yeniYemek.Tarif;
+            //pbYemekGörseliGuncelleme = yemek.Gorsel;
         }
     }
 }
