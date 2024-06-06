@@ -10,7 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
-using System.Text;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EFDiyetProgramiProje_DAL.Enums;
@@ -24,6 +24,7 @@ namespace EFDiyetProgramiProje_PL
     {
         KullaniciManager kullaniciManager = new KullaniciManager();
         KullaniciBilgiManager kullaniciBilgiManager = new KullaniciBilgiManager();
+        KullaniciBilgiViewModel? kullaniciBilgiViewModel;
         private int kullaniciId;
 
 
@@ -32,7 +33,21 @@ namespace EFDiyetProgramiProje_PL
             InitializeComponent();
             kullaniciId = mevcutKullaniciId;
             var kullanici = kullaniciManager.Search(k => k.Id == kullaniciId).FirstOrDefault();
+            kullaniciBilgiViewModel = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
+
             lblKullaniciAdi.Text = kullanici.KullaniciAdi;
+
+            if (kullaniciBilgiViewModel != null)
+            {
+                txtBoy.Text = Convert.ToString(kullaniciBilgiViewModel.Boy);
+                txtHedefKilo.Text = Convert.ToString(kullaniciBilgiViewModel.HedefKilo);
+                txtKilo.Text = Convert.ToString(kullaniciBilgiViewModel.Kilo);
+                //düzelt
+                txtDogumTarihi.Text = Convert.ToString(kullaniciBilgiViewModel.DogumTarihi.Value.Day + "." + kullaniciBilgiViewModel.DogumTarihi.Value.Month + "." + kullaniciBilgiViewModel.DogumTarihi.Value.Year);
+                cmbCinsiyet.Text = kullaniciBilgiViewModel.Cinsiyet;
+            }
+
+
         }
 
         private void btnKullaniciBilgiGuncelle_Click(object sender, EventArgs e)
@@ -51,7 +66,6 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
-                MessageBox.Show("Kullanıcı bilgileri başarı ile güncellendi!");
                 string dogumTarihitxt = txtDogumTarihi.Text;
                 string format = "dd.MM.yyyy";
                 DateTime dogumTarihidate = DateTime.ParseExact(dogumTarihitxt, format, CultureInfo.InvariantCulture);
@@ -87,8 +101,8 @@ namespace EFDiyetProgramiProje_PL
                     yasFaktoru = 0.25;
                 }
                 double vucutKitleEndeksiHesabı = vucutKitleEndeksi + yasFaktoru;
-                 var kullaniciBilgi = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
-                if (kullaniciBilgi == null)
+                //var kullaniciBilgi = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
+                if (kullaniciBilgiViewModel == null)
                 {
 
                     KullaniciBilgiViewModel yeniKullaniciBilgi = new KullaniciBilgiViewModel()
@@ -110,21 +124,22 @@ namespace EFDiyetProgramiProje_PL
                 else
                 {
 
-                    kullaniciBilgi.Kilo = Convert.ToInt32(txtKilo.Text);
+                    kullaniciBilgiViewModel.Kilo = Convert.ToInt32(txtKilo.Text);
 
-                    kullaniciBilgi.Cinsiyet = cmbCinsiyet.Text;
+                    kullaniciBilgiViewModel.Cinsiyet = cmbCinsiyet.Text;
 
-                    kullaniciBilgi.Boy = Convert.ToInt32(txtBoy.Text);
+                    kullaniciBilgiViewModel.Boy = Convert.ToInt32(txtBoy.Text);
 
-                    kullaniciBilgi.HedefKilo = Convert.ToInt32(txtHedefKilo.Text);
+                    kullaniciBilgiViewModel.HedefKilo = Convert.ToInt32(txtHedefKilo.Text);
 
-                    kullaniciBilgi.DogumTarihi = Convert.ToDateTime(txtDogumTarihi.Text);
-                    kullaniciBilgi.Yas = yas;
-                    kullaniciBilgi.VucutKitleEndeksi = vucutKitleEndeksiHesabı;
+                    kullaniciBilgiViewModel.DogumTarihi = Convert.ToDateTime(txtDogumTarihi.Text);
+                    kullaniciBilgiViewModel.Yas = yas;
+                    kullaniciBilgiViewModel.VucutKitleEndeksi = vucutKitleEndeksiHesabı;
 
                     //hata
-                    kullaniciBilgiManager.Update(kullaniciBilgi);
+                    kullaniciBilgiManager.Update(kullaniciBilgiViewModel);
                 }
+                MessageBox.Show("Kullanıcı bilgileri başarı ile güncellendi!");
 
                 this.Close();
                 KullaniciKontrolPaneli kullaniciKontrolPanel = new KullaniciKontrolPaneli(kullaniciId);

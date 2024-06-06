@@ -31,6 +31,7 @@ namespace EFDiyetProgramiProje_PL
         private void txtSifre_TextChanged(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
+            pictureBox1.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
         }
         int sayac = 0;
 
@@ -52,6 +53,7 @@ namespace EFDiyetProgramiProje_PL
         private void txtSifreTekrar_TextChanged(object sender, EventArgs e)
         {
             txtSifreTekrar.UseSystemPasswordChar = true;
+            pictureBox2.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
         }
         int sayac2 = 0;
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -71,8 +73,7 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            GirisFormu yeniGirisFormu = new GirisFormu();
-            yeniGirisFormu.ShowDialog();
+
             this.Close();
         }
 

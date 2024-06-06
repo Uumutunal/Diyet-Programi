@@ -29,6 +29,7 @@ namespace EFDiyetProgramiProje_PL
         private void txtSifre_TextChanged(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
+            chkSifreyiGoster.Checked = false;
         }
 
         private void chkSifreyiGoster_CheckedChanged(object sender, EventArgs e)
@@ -41,7 +42,8 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            string adminsifre = "Aa1234.5";
+            //Aa1234.5
+            string adminsifre = "123";
             string sifrelenmis = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
             var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmis).FirstOrDefault();
             if (txtKullaniciAdi.Text==null||txtSifre.Text==null)
@@ -67,8 +69,8 @@ namespace EFDiyetProgramiProje_PL
 
                 int kullaniciId = kullanici.Id;
                 KullaniciKontrolPaneli kullaniciKontrolPaneli = new KullaniciKontrolPaneli(kullaniciId);
+                this.Hide();
                 kullaniciKontrolPaneli.ShowDialog();
-                this.Close();
             }
         }
     }

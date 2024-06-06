@@ -29,6 +29,7 @@ namespace EFDiyetProgramiProje_DAL.Repository.Abstract
             Update(entity);
         }
 
+
         public IQueryable<T> GetAll()
         {
             return entities.Where(e => e.DataStatus != DataStatus.Deleted).AsNoTracking();

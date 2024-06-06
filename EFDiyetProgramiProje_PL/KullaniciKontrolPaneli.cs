@@ -24,12 +24,12 @@ namespace EFDiyetProgramiProje_PL
         public KullaniciKontrolPaneli(int mevcutKullaniciId)
         {
             InitializeComponent();
-            this.kullaniciId = mevcutKullaniciId;
+            kullaniciId = mevcutKullaniciId;
             var mevcutKullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId== kullaniciId).FirstOrDefault();
 
             if (mevcutKullaniciBilgileri == null)
             {
-                this.Close();
+                //this.Close();
                 MessageBox.Show("Yeni kayıt yaptığınız için öncelikle kullanıcı bilgilerinizi girmelisiniz!");
                 KullaniciBilgileri kullaniciBilgileri = new KullaniciBilgileri(kullaniciId);
                 kullaniciBilgileri.ShowDialog();
@@ -50,7 +50,7 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKullaniciBilgiGuncelle_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
             KullaniciBilgileri kullaniciBilgileri = new KullaniciBilgileri(kullaniciId);
             kullaniciBilgileri.ShowDialog();
         }
