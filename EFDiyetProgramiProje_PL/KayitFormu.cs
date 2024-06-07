@@ -157,7 +157,7 @@ namespace EFDiyetProgramiProje_PL
             else
             {
                 MessageBox.Show("Kayıt Başarılı! Giriş Yapabilirsiniz.");
-                string sifrelenmis =Sha256Hasher.ComputeSha256Hash(sifre);
+                string sifrelenmis = Sha256Hasher.ComputeSha256Hash(sifre);
                 KullaniciViewModel yeniKullanici = new KullaniciViewModel()
                 {
                     KullaniciAdi = kullaniciAdi,
@@ -166,15 +166,12 @@ namespace EFDiyetProgramiProje_PL
                     GuvenlikYaniti = guvenlikYaniti
                 };
                 kullaniciManager.Insert(yeniKullanici);
-                foreach (Control c in this.Controls)
-                {
-                    c.Enabled = false;
-                }
-                btnGiris.Enabled = true;
                 this.Close();
 
             }
         }
+
+
     }
 }
 

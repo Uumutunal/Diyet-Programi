@@ -19,13 +19,13 @@ namespace EFDiyetProgramiProje_PL
     public partial class KullaniciKontrolPaneli : Form
     {
         KullaniciManager kullaniciManager = new KullaniciManager();
-        KullaniciBilgiManager kullaniciBilgiManager =new KullaniciBilgiManager();
+        KullaniciBilgiManager kullaniciBilgiManager = new KullaniciBilgiManager();
         private int kullaniciId;
         public KullaniciKontrolPaneli(int mevcutKullaniciId)
         {
             InitializeComponent();
             kullaniciId = mevcutKullaniciId;
-            var mevcutKullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId== kullaniciId).FirstOrDefault();
+            var mevcutKullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
 
             if (mevcutKullaniciBilgileri == null)
             {
@@ -36,7 +36,7 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
-                var kullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault(); 
+                var kullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
                 lblGunlukHedefKalori.Text = Convert.ToString(kullaniciBilgileri.GunlukHedefKalori);
                 lblBMI.Text = Convert.ToString(kullaniciBilgileri.VucutKitleEndeksi);
                 lblBMR.Text = Convert.ToString(kullaniciBilgileri.BazalMetabolizmaHizi);
@@ -50,11 +50,17 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKullaniciBilgiGuncelle_Click(object sender, EventArgs e)
         {
-            
+
             KullaniciBilgileri kullaniciBilgileri = new KullaniciBilgileri(kullaniciId);
             kullaniciBilgileri.ShowDialog();
-            this.Close();
         }
 
+        private void btnKullaniciGuncelle_Click(object sender, EventArgs e)
+        {
+            KullaniciGuncelle kullaniciGuncelle = new KullaniciGuncelle(kullaniciId);
+            kullaniciGuncelle.ShowDialog();
+            this.Hide();
+            this.Close();
+        }
     }
 }

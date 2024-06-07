@@ -55,6 +55,7 @@
             btnGiris.TabIndex = 33;
             btnGiris.Text = "Giriş Ekranına Dön";
             btnGiris.UseVisualStyleBackColor = true;
+            btnGiris.Click += btnGiris_Click;
             // 
             // pbYeniSifreTekrar
             // 
@@ -85,7 +86,7 @@
             btnKayitOl.Name = "btnKayitOl";
             btnKayitOl.Size = new Size(173, 45);
             btnKayitOl.TabIndex = 30;
-            btnKayitOl.Text = "Kayıt Ol";
+            btnKayitOl.Text = "Şifre Güncelle";
             btnKayitOl.UseVisualStyleBackColor = true;
             btnKayitOl.Click += btnKayitOl_Click;
             // 

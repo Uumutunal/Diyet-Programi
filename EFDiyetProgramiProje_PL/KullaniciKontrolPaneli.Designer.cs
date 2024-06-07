@@ -43,7 +43,7 @@
             label4 = new Label();
             button2 = new Button();
             yemekler = new ListBox();
-            button3 = new Button();
+            btnKullaniciGuncelle = new Button();
             comboBox1 = new ComboBox();
             label13 = new Label();
             label14 = new Label();
@@ -218,15 +218,16 @@
             yemekler.Size = new Size(153, 484);
             yemekler.TabIndex = 45;
             // 
-            // button3
+            // btnKullaniciGuncelle
             // 
-            button3.Location = new Point(34, 657);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(152, 60);
-            button3.TabIndex = 46;
-            button3.Text = "Kullanıcı Bilgilerimi Değiştir";
-            button3.UseVisualStyleBackColor = true;
+            btnKullaniciGuncelle.Location = new Point(34, 657);
+            btnKullaniciGuncelle.Margin = new Padding(3, 4, 3, 4);
+            btnKullaniciGuncelle.Name = "btnKullaniciGuncelle";
+            btnKullaniciGuncelle.Size = new Size(152, 60);
+            btnKullaniciGuncelle.TabIndex = 46;
+            btnKullaniciGuncelle.Text = "Kullanıcı Bilgilerimi Değiştir";
+            btnKullaniciGuncelle.UseVisualStyleBackColor = true;
+            btnKullaniciGuncelle.Click += btnKullaniciGuncelle_Click;
             // 
             // comboBox1
             // 
@@ -555,7 +556,7 @@
             Controls.Add(panel1);
             Controls.Add(label13);
             Controls.Add(comboBox1);
-            Controls.Add(button3);
+            Controls.Add(btnKullaniciGuncelle);
             Controls.Add(yemekler);
             Controls.Add(button2);
             Controls.Add(label4);
@@ -604,7 +605,7 @@
         private Label label4;
         private Button button2;
         private ListBox yemekler;
-        private Button button3;
+        private Button btnKullaniciGuncelle;
         private ComboBox comboBox1;
         private Label label13;
         private Label label14;

@@ -124,7 +124,7 @@ namespace EFDiyetProgramiProje_PL
             string guvenlikYaniti = txtGuvenlikYaniti.Text;
             string sifrelenmisYeniSifre = Sha256Hasher.ComputeSha256Hash(txtYeniSifre.Text);
             string yeniSifre = txtYeniSifre.Text;
-            string yeniSifreTekrar = txtYeniSifreTekrar.Text; 
+            string yeniSifreTekrar = txtYeniSifreTekrar.Text;
             var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == kullaniciAdi && k.GuvenlikSorusu == guvenlikSorusu && k.GuvenlikYaniti == guvenlikYaniti).FirstOrDefault();
             if (txtKullaniciAdi.Text == null || cmbGuvenlikSorusu.Text == null || txtGuvenlikYaniti.Text == null || txtYeniSifre.Text == null || txtYeniSifreTekrar.Text == null)
                 MessageBox.Show("Yukarıdaki kısımlar booş bırakılamaz! Lütfen tüm bilgileri giriniz.");
@@ -145,7 +145,7 @@ namespace EFDiyetProgramiProje_PL
                 MessageBox.Show("Kullanıcı bilgileriniz ve güvenlik sorusu cevabınız doğru eşleşti! Yeni şifre oluşturabilirsiniz!");
                 MessageBox.Show("Şifre tekrarında girdiğiniz şifrenin aynısını girmelisiniz! Lütfen şifrenizi kontrol edin!");
             }
-            else if ((sifrelenmisYeniSifre == kullanici.Sifre) || (sifrelenmisYeniSifre==kullanici.Sifre2) || (sifrelenmisYeniSifre==kullanici.Sifre3))
+            else if ((sifrelenmisYeniSifre == kullanici.Sifre) || (sifrelenmisYeniSifre == kullanici.Sifre2) || (sifrelenmisYeniSifre == kullanici.Sifre3))
             {
                 MessageBox.Show("Kullanıcı bilgileriniz ve güvenlik sorusu cevabınız doğru eşleşti! Yeni şifre oluşturabilirsiniz!");
                 MessageBox.Show("Yeni şifreniz son üç şifreniz ile aynı olamaz! Lütfen farklı bir şifre deneyiniz!");
@@ -162,8 +162,12 @@ namespace EFDiyetProgramiProje_PL
                 GirisFormu girisFormu = new GirisFormu();
                 girisFormu.ShowDialog();
             }
-           
 
+
+        }
+
+        private void btnGiris_Click(object sender, EventArgs e)
+        {
         }
     }
 }
