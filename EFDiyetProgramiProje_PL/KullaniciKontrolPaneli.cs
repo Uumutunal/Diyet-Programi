@@ -50,9 +50,10 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKullaniciBilgiGuncelle_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            
             KullaniciBilgileri kullaniciBilgileri = new KullaniciBilgileri(kullaniciId);
             kullaniciBilgileri.ShowDialog();
+            this.Close();
         }
 
     }

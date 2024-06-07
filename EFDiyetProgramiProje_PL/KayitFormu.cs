@@ -171,6 +171,7 @@ namespace EFDiyetProgramiProje_PL
                     c.Enabled = false;
                 }
                 btnGiris.Enabled = true;
+                this.Close();
 
             }
         }

@@ -43,10 +43,11 @@ namespace EFDiyetProgramiProje_PL
                 txtHedefKilo.Text = Convert.ToString(kullaniciBilgiViewModel.HedefKilo);
                 txtKilo.Text = Convert.ToString(kullaniciBilgiViewModel.Kilo);
 
-                string gun = kullaniciBilgiViewModel.DogumTarihi.Value.Day < 10 ? "0" + kullaniciBilgiViewModel.DogumTarihi.Value.Day : kullaniciBilgiViewModel.DogumTarihi.Value.Day.ToString();
-                string ay = kullaniciBilgiViewModel.DogumTarihi.Value.Month < 10 ? "0" + kullaniciBilgiViewModel.DogumTarihi.Value.Month : kullaniciBilgiViewModel.DogumTarihi.Value.Month.ToString();
+                //string gun = kullaniciBilgiViewModel.DogumTarihi.Value.Day < 10 ? "0" + kullaniciBilgiViewModel.DogumTarihi.Value.Day : kullaniciBilgiViewModel.DogumTarihi.Value.Day.ToString();
+                //string ay = kullaniciBilgiViewModel.DogumTarihi.Value.Month < 10 ? "0" + kullaniciBilgiViewModel.DogumTarihi.Value.Month : kullaniciBilgiViewModel.DogumTarihi.Value.Month.ToString();
+                //txtDogumTarihi.Text = Convert.ToString(gun + "." + ay + "." +kullaniciBilgiViewModel.DogumTarihi.Value.Year);
 
-                txtDogumTarihi.Text = Convert.ToString(gun + "." + ay + "." + kullaniciBilgiViewModel.DogumTarihi.Value.Year);
+                txtDogumTarihi.Text = kullaniciBilgiViewModel.DogumTarihi.Value.ToShortDateString();
                 cmbCinsiyet.Text = kullaniciBilgiViewModel.Cinsiyet;
             }
 
@@ -138,6 +139,8 @@ namespace EFDiyetProgramiProje_PL
                     kullaniciBilgiViewModel.DogumTarihi = Convert.ToDateTime(txtDogumTarihi.Text);
                     kullaniciBilgiViewModel.Yas = yas;
                     kullaniciBilgiViewModel.VucutKitleEndeksi = vucutKitleEndeksiHesabı;
+                    kullaniciBilgiViewModel.BazalMetabolizmaHizi = BMR;
+                    kullaniciBilgiViewModel.GunlukHedefKalori = gunlukHedefKalori;
 
                     kullaniciBilgiManager.Update(kullaniciBilgiViewModel);
                 }
@@ -148,19 +151,5 @@ namespace EFDiyetProgramiProje_PL
                 kullaniciKontrolPanel.ShowDialog();
             }
         }
-
-
-        //private void KullaniciBilgileri_Load(object sender, EventArgs e)
-        //{
-        //    kullaniciBilgi = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
-        //    if ( ku != null)
-        //    {
-        //        txtBoy.Text = Convert.ToString(kullaniciBilgi.Boy);
-        //        txtDogumTarihi.Text = kullaniciBilgi.DogumTarihi.ToShortDateString();
-        //        txtHedefKilo.Text = Convert.ToString(kullaniciBilgi.HedefKilo);
-        //        txtKilo.Text = Convert.ToString(kullaniciBilgi.Kilo);
-        //        cmbCinsiyet.Text = kullaniciBilgi.Cinsiyet;
-        //    }
-        //}
     }
 }

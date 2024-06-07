@@ -99,6 +99,7 @@
             btnSifremiUnuttum.TabIndex = 5;
             btnSifremiUnuttum.Text = "Şifremi Unuttum";
             btnSifremiUnuttum.UseVisualStyleBackColor = true;
+            btnSifremiUnuttum.Click += btnSifremiUnuttum_Click;
             // 
             // btnKayitOl
             // 
@@ -137,6 +138,7 @@
             chkBeniHatirla.TabIndex = 8;
             chkBeniHatirla.Text = "Beni Hatırla";
             chkBeniHatirla.UseVisualStyleBackColor = true;
+            chkBeniHatirla.CheckedChanged += chkBeniHatirla_CheckedChanged;
             // 
             // label3
             // 
