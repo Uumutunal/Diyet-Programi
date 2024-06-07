@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class m1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,11 +20,12 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GuvenlikSorusu = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GuvenlikYaniti = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HatirlaSifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sifre2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sifre3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sifre4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataStatus = table.Column<int>(type: "int", nullable: false)
@@ -41,7 +42,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OgunAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataStatus = table.Column<int>(type: "int", nullable: false)
@@ -58,7 +59,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataStatus = table.Column<int>(type: "int", nullable: false)
@@ -74,17 +75,17 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DogumTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Yas = table.Column<int>(type: "int", nullable: false),
-                    Kilo = table.Column<double>(type: "float", nullable: false),
-                    HedefKilo = table.Column<double>(type: "float", nullable: false),
-                    VucutKitleEndeksi = table.Column<double>(type: "float", nullable: false),
-                    GunlukHedefKalori = table.Column<int>(type: "int", nullable: false),
-                    BazalMetabolizmaHizi = table.Column<double>(type: "float", nullable: false),
-                    Boy = table.Column<double>(type: "float", nullable: false),
-                    Cinsiyet = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DogumTarihi = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Yas = table.Column<int>(type: "int", nullable: true),
+                    Kilo = table.Column<double>(type: "float", nullable: true),
+                    HedefKilo = table.Column<double>(type: "float", nullable: true),
+                    VucutKitleEndeksi = table.Column<double>(type: "float", nullable: true),
+                    GunlukHedefKalori = table.Column<int>(type: "int", nullable: true),
+                    BazalMetabolizmaHizi = table.Column<double>(type: "float", nullable: true),
+                    Boy = table.Column<double>(type: "float", nullable: true),
+                    Cinsiyet = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KullaniciId = table.Column<int>(type: "int", nullable: true),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataStatus = table.Column<int>(type: "int", nullable: false)
@@ -105,13 +106,13 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    YemekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Birim = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Kalori = table.Column<double>(type: "float", nullable: false),
-                    Tarif = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gorsel = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    YemekKategoriId = table.Column<int>(type: "int", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    YemekAdi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Birim = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Kalori = table.Column<double>(type: "float", nullable: true),
+                    Tarif = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gorsel = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    YemekKategoriId = table.Column<int>(type: "int", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataStatus = table.Column<int>(type: "int", nullable: false)
@@ -123,8 +124,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                         name: "FK_Yemekler_YemekKategoriler_YemekKategoriId",
                         column: x => x.YemekKategoriId,
                         principalTable: "YemekKategoriler",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -138,7 +138,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     KullaniciId = table.Column<int>(type: "int", nullable: false),
                     BirimAdedi = table.Column<int>(type: "int", nullable: false),
                     Tarih = table.Column<DateOnly>(type: "date", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataStatus = table.Column<int>(type: "int", nullable: false)

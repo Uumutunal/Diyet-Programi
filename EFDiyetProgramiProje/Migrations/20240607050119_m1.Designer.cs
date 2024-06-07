@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     [DbContext(typeof(DiyetProgramiDbContext))]
-    [Migration("20240607004008_m1")]
+    [Migration("20240607050119_m1")]
     partial class m1
     {
         /// <inheritdoc />
@@ -47,6 +47,10 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GuvenlikYaniti")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HatirlaSifre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
