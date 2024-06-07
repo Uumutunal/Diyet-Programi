@@ -170,8 +170,6 @@ namespace EFDiyetProgramiProje_PL
 
             }
         }
-
-
     }
 }
 

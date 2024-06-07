@@ -55,6 +55,7 @@
             btnGiris.TabIndex = 63;
             btnGiris.Text = "Giriş Ekranına Dön";
             btnGiris.UseVisualStyleBackColor = true;
+            btnGiris.Click += btnGiris_Click;
             // 
             // pictureBox2
             // 
@@ -65,6 +66,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 62;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += txtSifreTekrar_TextChanged;
             // 
             // pictureBox1
             // 
@@ -75,6 +77,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 61;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnKayitOl
             // 
@@ -85,6 +88,7 @@
             btnKayitOl.TabIndex = 60;
             btnKayitOl.Text = "Kayıt Ol";
             btnKayitOl.UseVisualStyleBackColor = true;
+            btnKayitOl.Click += btnKayitOl_Click;
             // 
             // txtGuvenlikYaniti
             // 
@@ -138,6 +142,7 @@
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.Size = new Size(202, 27);
             txtSifreTekrar.TabIndex = 54;
+            txtSifreTekrar.TextChanged += txtSifreTekrar_TextChanged;
             // 
             // label2
             // 
@@ -155,6 +160,7 @@
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(202, 27);
             txtSifre.TabIndex = 52;
+            txtSifre.TextChanged += txtSifre_TextChanged;
             // 
             // label1
             // 

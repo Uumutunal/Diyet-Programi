@@ -124,7 +124,7 @@ namespace EFDiyetProgramiProje_PL
                     };
 
                     kullaniciBilgiManager.Insert(yeniKullaniciBilgi);
-                    this.Close();
+                    this.Hide();
                     KullaniciKontrolPaneli kullaniciKontrolPanel = new KullaniciKontrolPaneli(kullaniciId);
                     kullaniciKontrolPanel.ShowDialog();
                 }

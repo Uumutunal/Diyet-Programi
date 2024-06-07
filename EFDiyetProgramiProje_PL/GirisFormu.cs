@@ -50,7 +50,6 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            //Aa1234.5
             string adminsifre = "123";
             string sifrelenmis = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
             var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmis).FirstOrDefault();
