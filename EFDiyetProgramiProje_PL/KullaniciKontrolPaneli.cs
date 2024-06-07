@@ -52,15 +52,23 @@ namespace EFDiyetProgramiProje_PL
         {
 
             KullaniciBilgileri kullaniciBilgileri = new KullaniciBilgileri(kullaniciId);
+            this.Hide();
             kullaniciBilgileri.ShowDialog();
+            this.Show();
         }
 
         private void btnKullaniciGuncelle_Click(object sender, EventArgs e)
         {
             KullaniciGuncelle kullaniciGuncelle = new KullaniciGuncelle(kullaniciId);
-            kullaniciGuncelle.ShowDialog();
             this.Hide();
-            this.Close();
+            kullaniciGuncelle.ShowDialog();
+            this.Show();
+
+        }
+
+        private void btnOturumuKapat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

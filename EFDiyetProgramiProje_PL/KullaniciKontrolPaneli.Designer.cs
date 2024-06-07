@@ -76,6 +76,7 @@
             label12 = new Label();
             label11 = new Label();
             lblBoy = new Label();
+            btnOturumuKapat = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -220,7 +221,7 @@
             // 
             // btnKullaniciGuncelle
             // 
-            btnKullaniciGuncelle.Location = new Point(34, 657);
+            btnKullaniciGuncelle.Location = new Point(34, 630);
             btnKullaniciGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnKullaniciGuncelle.Name = "btnKullaniciGuncelle";
             btnKullaniciGuncelle.Size = new Size(152, 60);
@@ -542,11 +543,23 @@
             lblBoy.TabIndex = 36;
             lblBoy.Text = "Boy";
             // 
+            // btnOturumuKapat
+            // 
+            btnOturumuKapat.Location = new Point(34, 713);
+            btnOturumuKapat.Margin = new Padding(3, 4, 3, 4);
+            btnOturumuKapat.Name = "btnOturumuKapat";
+            btnOturumuKapat.Size = new Size(152, 60);
+            btnOturumuKapat.TabIndex = 57;
+            btnOturumuKapat.Text = "Oturumu Kapat";
+            btnOturumuKapat.UseVisualStyleBackColor = true;
+            btnOturumuKapat.Click += btnOturumuKapat_Click;
+            // 
             // KullaniciKontrolPaneli
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1715, 800);
+            Controls.Add(btnOturumuKapat);
             Controls.Add(groupBox1);
             Controls.Add(label22);
             Controls.Add(label21);
@@ -638,5 +651,6 @@
         private Label label11;
         private Label label9;
         private Label lblAlinanKalori;
+        private Button btnOturumuKapat;
     }
 }

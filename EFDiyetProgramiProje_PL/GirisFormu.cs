@@ -80,15 +80,16 @@ namespace EFDiyetProgramiProje_PL
                 KullaniciKontrolPaneli kullaniciKontrolPaneli = new KullaniciKontrolPaneli(kullaniciId);
                 this.Hide();
                 kullaniciKontrolPaneli.ShowDialog();
-                this.Close();
+                this.Show();
             }
         }
 
         private void btnSifremiUnuttum_Click(object sender, EventArgs e)
         {
             SifremiUnuttum sifremiUnuttum = new SifremiUnuttum();
+            this.Hide();
             sifremiUnuttum.ShowDialog();
-            this.Close();
+            this.Show();
         }
 
         private void chkBeniHatirla_CheckedChanged(object sender, EventArgs e)

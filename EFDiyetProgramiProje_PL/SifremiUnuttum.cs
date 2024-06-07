@@ -168,6 +168,7 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
+            this.Hide();
         }
     }
 }

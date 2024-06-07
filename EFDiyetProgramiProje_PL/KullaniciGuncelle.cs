@@ -135,7 +135,8 @@ namespace EFDiyetProgramiProje_PL
         }
 
         private void btnKullaniciPanelineDon_Click(object sender, EventArgs e)
-        { 
+        {
+            this.Hide();
         }
 
         private void txtYeniSifre_TextChanged(object sender, EventArgs e)
