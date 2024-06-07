@@ -172,12 +172,15 @@
             // 
             // pbYemekGörseliGuncelleme
             // 
+            pbYemekGörseliGuncelleme.BackColor = Color.DarkGray;
             pbYemekGörseliGuncelleme.Location = new Point(160, 348);
             pbYemekGörseliGuncelleme.Margin = new Padding(3, 2, 3, 2);
             pbYemekGörseliGuncelleme.Name = "pbYemekGörseliGuncelleme";
             pbYemekGörseliGuncelleme.Size = new Size(227, 111);
+            pbYemekGörseliGuncelleme.SizeMode = PictureBoxSizeMode.StretchImage;
             pbYemekGörseliGuncelleme.TabIndex = 26;
             pbYemekGörseliGuncelleme.TabStop = false;
+            pbYemekGörseliGuncelleme.Click += pbYemekGörseliGuncelleme_Click;
             // 
             // rtxtTarifiGuncelleme
             // 

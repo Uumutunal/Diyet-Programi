@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFDiyetProgramiProje_DAL", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFDiyetProgramiProje_BL", "EFDiyetProgramiProje_BL\EFDiyetProgramiProje_BL.csproj", "{90A40690-9426-4548-A9CA-5D45FA9A52B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDiyetProgramiProje_PL", "EFDiyetProgramiProje_PL\EFDiyetProgramiProje_PL.csproj", "{4B824A97-E816-4625-877F-6AAE3B40C768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFDiyetProgramiProje_PL", "EFDiyetProgramiProje_PL\EFDiyetProgramiProje_PL.csproj", "{4B824A97-E816-4625-877F-6AAE3B40C768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

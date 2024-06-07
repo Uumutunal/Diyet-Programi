@@ -31,7 +31,7 @@ namespace EFDiyetProgramiProje_PL
         private void txtSifre_TextChanged(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
-            pictureBox1.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            //pictureBox1.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
         }
         int sayac = 0;
 
@@ -41,19 +41,19 @@ namespace EFDiyetProgramiProje_PL
             if (sayac % 2 != 0)
             {
                 txtSifre.UseSystemPasswordChar = false;
-                pictureBox1.Image = Resources.png_transparent_eye_eyes_password_security_show_password_essential_icon_thumbnail;
+                //pictureBox1.Image = Resources.png_transparent_eye_eyes_password_security_show_password_essential_icon_thumbnail;
             }
             else
             {
                 txtSifre.UseSystemPasswordChar = true;
-                pictureBox1.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+                //pictureBox1.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
             }
         }
 
         private void txtSifreTekrar_TextChanged(object sender, EventArgs e)
         {
             txtSifreTekrar.UseSystemPasswordChar = true;
-            pictureBox2.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            //pictureBox2.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
         }
 
         int sayac2 = 0;
@@ -63,12 +63,12 @@ namespace EFDiyetProgramiProje_PL
             if (sayac2 % 2 != 0)
             {
                 txtSifreTekrar.UseSystemPasswordChar = false;
-                pictureBox2.Image = Resources.png_transparent_eye_eyes_password_security_show_password_essential_icon_thumbnail;
+                //pictureBox2.Image = Resources.png_transparent_eye_eyes_password_security_show_password_essential_icon_thumbnail;
             }
             else
             {
                 txtSifreTekrar.UseSystemPasswordChar = true;
-                pictureBox2.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+                //pictureBox2.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
             }
         }
 

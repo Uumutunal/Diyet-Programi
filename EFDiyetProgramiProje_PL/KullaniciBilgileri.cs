@@ -35,7 +35,7 @@ namespace EFDiyetProgramiProje_PL
             var kullanici = kullaniciManager.Search(k => k.Id == kullaniciId).FirstOrDefault();
             kullaniciBilgiViewModel = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
 
-            lblKullaniciAdi.Text = kullanici.KullaniciAdi;
+            //lblKullaniciAdi.Text = kullanici.KullaniciAdi;
 
             if (kullaniciBilgiViewModel != null)
             {
@@ -149,7 +149,7 @@ namespace EFDiyetProgramiProje_PL
                 }
                 MessageBox.Show("Kullanıcı bilgileri başarı ile güncellendi!");
 
-                
+
             }
         }
     }

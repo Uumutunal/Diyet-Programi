@@ -20,10 +20,17 @@ namespace EFDiyetProgramiProje_PL
 
         YemekManager yemekManager = new YemekManager();
         YemekKategoriManager yemekKategori = new YemekKategoriManager();
-
+        string imageDirectory;
         public YoneticiYemekEkle()
         {
             InitializeComponent();
+
+            imageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images");
+
+            if (!Directory.Exists(imageDirectory))
+            {
+                Directory.CreateDirectory(imageDirectory);
+            }
 
             var kategoriler = yemekKategori.GetAll();
 
@@ -49,15 +56,26 @@ namespace EFDiyetProgramiProje_PL
 
             if (kaloriDene)
                 yeniYemek.Kalori = kalori;
-            
+
             yeniYemek.Birim = txtBirim.Text;
             //görseli düzelt
-            //yeniYemek.Gorsel = pbYemekGörseli.Text;
+
+            yeniYemek.Gorsel = pbYemekGörseli.ImageLocation;
+
+            string ImagePath = pbYemekGörseli.ImageLocation;
+            string savedImagePath = null;
+            if (!string.IsNullOrEmpty(ImagePath))
+            {
+                string extension = Path.GetExtension(ImagePath);
+                string fileName = Guid.NewGuid().ToString() + extension;
+                savedImagePath = Path.Combine(imageDirectory, fileName);
+                File.Copy(ImagePath, savedImagePath);
+            }
 
 
             yemekManager.Insert(yeniYemek);
 
-            MessageBox.Show("Yeni Yemek Eklendi");  
+            MessageBox.Show("Yeni Yemek Eklendi");
         }
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
@@ -74,6 +92,19 @@ namespace EFDiyetProgramiProje_PL
             foreach (var kategori in kategoriler)
             {
                 cbKategoriSec.Items.Add(kategori.KategoriAdi);
+            }
+        }
+
+        private void pbYemekGörseli_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Image Files |*.jpg;*.jpeg;*.png;*.bmp",
+                Title = "Resim Seç"
+            };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbYemekGörseli.ImageLocation = openFileDialog.FileName;
             }
         }
     }

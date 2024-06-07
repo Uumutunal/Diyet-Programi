@@ -75,7 +75,7 @@ namespace EFDiyetProgramiProje_PL
             txtYemekAdiGuncelleme.Text = yemek.YemekAdi;
             rtxtTarifiGuncelleme.Text = yemek.Tarif;
             //txtKategoriAdiGuncelleme.Text = yemek.YemekKategori.KategoriAdi;
-            //pbYemekGörseliGuncelleme = yemek.Gorsel;
+            pbYemekGörseliGuncelleme.ImageLocation = yemek.Gorsel;
 
         }
 
@@ -96,7 +96,7 @@ namespace EFDiyetProgramiProje_PL
 
             yemek.YemekAdi = txtYemekAdiGuncelleme.Text;
             yemek.Tarif = rtxtTarifiGuncelleme.Text;
-
+            yemek.Gorsel = pbYemekGörseliGuncelleme.ImageLocation;
 
             yemekManager.Update(yemek);
             MessageBox.Show("Yemek Güncellendi");
@@ -119,6 +119,19 @@ namespace EFDiyetProgramiProje_PL
             {
                 cbYeniKategori.Items.Add(kategori.KategoriAdi);
                 cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
+            }
+        }
+
+        private void pbYemekGörseliGuncelleme_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Image Files |*.jpg;*.jpeg;*.png;*.bmp",
+                Title = "Resim Seç"
+            };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbYemekGörseliGuncelleme.ImageLocation = openFileDialog.FileName;
             }
         }
     }

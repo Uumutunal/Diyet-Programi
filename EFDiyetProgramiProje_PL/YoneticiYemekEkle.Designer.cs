@@ -134,12 +134,15 @@
             // 
             // pbYemekGörseli
             // 
+            pbYemekGörseli.BackColor = Color.Silver;
             pbYemekGörseli.Location = new Point(164, 317);
             pbYemekGörseli.Margin = new Padding(3, 2, 3, 2);
             pbYemekGörseli.Name = "pbYemekGörseli";
             pbYemekGörseli.Size = new Size(227, 109);
+            pbYemekGörseli.SizeMode = PictureBoxSizeMode.StretchImage;
             pbYemekGörseli.TabIndex = 10;
             pbYemekGörseli.TabStop = false;
+            pbYemekGörseli.Click += pbYemekGörseli_Click;
             // 
             // rtxtTarifi
             // 

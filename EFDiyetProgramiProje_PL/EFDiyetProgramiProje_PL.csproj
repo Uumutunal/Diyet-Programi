@@ -26,4 +26,16 @@
     <ProjectReference Include="..\EFDiyetProgramiProje_BL\EFDiyetProgramiProje_BL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="KayitFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="KullaniciBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="KullaniciKontrolPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
