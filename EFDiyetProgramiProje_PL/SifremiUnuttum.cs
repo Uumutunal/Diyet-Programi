@@ -1,5 +1,6 @@
 ﻿using EFDiyetProgramiProje_BL.Manager.Concrete;
 using EFDiyetProgramiProje_PL.Properties;
+using EFDiyetProgramiProje_PL.StaticMethods;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,6 +122,7 @@ namespace EFDiyetProgramiProje_PL
             string kullaniciAdi = txtKullaniciAdi.Text;
             string guvenlikSorusu = cmbGuvenlikSorusu.Text;
             string guvenlikYaniti = txtGuvenlikYaniti.Text;
+            string sifrelenmisYeniSifre = Sha256Hasher.ComputeSha256Hash(txtYeniSifre.Text);
             string yeniSifre = txtYeniSifre.Text;
             string yeniSifreTekrar = txtYeniSifreTekrar.Text; 
             var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == kullaniciAdi && k.GuvenlikSorusu == guvenlikSorusu && k.GuvenlikYaniti == guvenlikYaniti).FirstOrDefault();
@@ -143,7 +145,7 @@ namespace EFDiyetProgramiProje_PL
                 MessageBox.Show("Kullanıcı bilgileriniz ve güvenlik sorusu cevabınız doğru eşleşti! Yeni şifre oluşturabilirsiniz!");
                 MessageBox.Show("Şifre tekrarında girdiğiniz şifrenin aynısını girmelisiniz! Lütfen şifrenizi kontrol edin!");
             }
-            else if ((yeniSifre == kullanici.Sifre) || (yeniSifre==kullanici.Sifre2) || (yeniSifre==kullanici.Sifre3))
+            else if ((sifrelenmisYeniSifre == kullanici.Sifre) || (sifrelenmisYeniSifre==kullanici.Sifre2) || (sifrelenmisYeniSifre==kullanici.Sifre3))
             {
                 MessageBox.Show("Kullanıcı bilgileriniz ve güvenlik sorusu cevabınız doğru eşleşti! Yeni şifre oluşturabilirsiniz!");
                 MessageBox.Show("Yeni şifreniz son üç şifreniz ile aynı olamaz! Lütfen farklı bir şifre deneyiniz!");
@@ -154,10 +156,14 @@ namespace EFDiyetProgramiProje_PL
                 kullanici.Sifre4 = kullanici.Sifre3;
                 kullanici.Sifre3 = kullanici.Sifre2;
                 kullanici.Sifre2 = kullanici.Sifre;
-                kullanici.Sifre = yeniSifre;
+                kullanici.Sifre = sifrelenmisYeniSifre;
                 kullaniciManager.Update(kullanici);
                 this.Close();
+                GirisFormu girisFormu = new GirisFormu();
+                girisFormu.ShowDialog();
             }
+           
+
         }
     }
 }

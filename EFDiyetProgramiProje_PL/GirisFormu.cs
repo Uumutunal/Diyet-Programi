@@ -11,6 +11,7 @@ namespace EFDiyetProgramiProje_PL
     public partial class GirisFormu : Form
     {
         KullaniciManager kullaniciManager = new KullaniciManager();
+        KullaniciViewModel kullanici;
 
 
         public GirisFormu()
@@ -26,12 +27,19 @@ namespace EFDiyetProgramiProje_PL
             yeniKayitFormu.ShowDialog();
         }
 
+        private void txtSifre_Enter(object sender, EventArgs e)
+        {
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
+            if (kullanici != null)
+            {
+                txtSifre.Text = kullanici.HatirlaSifre;
+            }
+        }
         private void txtSifre_TextChanged(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
             chkSifreyiGoster.Checked = false;
         }
-
         private void chkSifreyiGoster_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSifreyiGoster.Checked)
@@ -80,17 +88,22 @@ namespace EFDiyetProgramiProje_PL
         {
             SifremiUnuttum sifremiUnuttum = new SifremiUnuttum();
             sifremiUnuttum.ShowDialog();
+            this.Close();
         }
 
         private void chkBeniHatirla_CheckedChanged(object sender, EventArgs e)
         {
-            var kullanici = kullaniciManager.Search(k=>k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
-            if(kullanici != null)
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
+            if (kullanici != null)
             {
-                txtSifre.Text = kullanici.Sifre;
+                kullanici.HatirlaSifre = txtSifre.Text;
+                kullaniciManager.Update(kullanici);
             }
-          
+            
+
 
         }
+
+ 
     }
 }
