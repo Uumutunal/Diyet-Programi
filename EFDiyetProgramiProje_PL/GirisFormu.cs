@@ -11,6 +11,7 @@ namespace EFDiyetProgramiProje_PL
     public partial class GirisFormu : Form
     {
         KullaniciManager kullaniciManager = new KullaniciManager();
+        KullaniciViewModel kullanici;
 
 
         public GirisFormu()
@@ -23,15 +24,22 @@ namespace EFDiyetProgramiProje_PL
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
             KayitFormu yeniKayitFormu = new KayitFormu();
-            yeniKayitFormu.Show();
+            yeniKayitFormu.ShowDialog();
         }
 
+        private void txtSifre_Enter(object sender, EventArgs e)
+        {
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
+            if (kullanici != null)
+            {
+                txtSifre.Text = kullanici.HatirlaSifre;
+            }
+        }
         private void txtSifre_TextChanged(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
             chkSifreyiGoster.Checked = false;
         }
-
         private void chkSifreyiGoster_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSifreyiGoster.Checked)
@@ -42,17 +50,16 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            //Aa1234.5
             string adminsifre = "123";
             string sifrelenmis = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
             var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmis).FirstOrDefault();
-            if (txtKullaniciAdi.Text==null||txtSifre.Text==null)
+            if (txtKullaniciAdi.Text == null || txtSifre.Text == null)
             {
                 MessageBox.Show("Kullanýcý adý ve Þifre boþ býrakýlamaz! Lütfen yukarýdaki kýsýmlarý doldurun!");
             }
-            else if (txtKullaniciAdi.Text == "admin" && txtSifre.Text==adminsifre)
+            else if (txtKullaniciAdi.Text == "admin" && txtSifre.Text == adminsifre)
             {
-                
+
                 MessageBox.Show("Admin giriþi baþarýlý!");
                 this.Hide();
                 YoneticiKontrolPaneli yoneticiKontrolPaneli = new YoneticiKontrolPaneli();
@@ -65,15 +72,38 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
-                
+
                 MessageBox.Show("Kullanýcý giriþi baþarýlý!");
 
                 int kullaniciId = kullanici.Id;
                 KullaniciKontrolPaneli kullaniciKontrolPaneli = new KullaniciKontrolPaneli(kullaniciId);
                 this.Hide();
                 kullaniciKontrolPaneli.ShowDialog();
-                this.Close();
+                this.Show();
             }
         }
+
+        private void btnSifremiUnuttum_Click(object sender, EventArgs e)
+        {
+            SifremiUnuttum sifremiUnuttum = new SifremiUnuttum();
+            this.Hide();
+            sifremiUnuttum.ShowDialog();
+            this.Show();
+        }
+
+        private void chkBeniHatirla_CheckedChanged(object sender, EventArgs e)
+        {
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
+            if (kullanici != null)
+            {
+                kullanici.HatirlaSifre = txtSifre.Text;
+                kullaniciManager.Update(kullanici);
+            }
+            
+
+
+        }
+
+ 
     }
 }

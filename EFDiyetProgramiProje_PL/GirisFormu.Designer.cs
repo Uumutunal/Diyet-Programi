@@ -78,6 +78,7 @@
             txtSifre.Size = new Size(202, 27);
             txtSifre.TabIndex = 2;
             txtSifre.TextChanged += txtSifre_TextChanged;
+            txtSifre.Enter += txtSifre_Enter;
             // 
             // btnGiris
             // 
@@ -99,6 +100,7 @@
             btnSifremiUnuttum.TabIndex = 5;
             btnSifremiUnuttum.Text = "Şifremi Unuttum";
             btnSifremiUnuttum.UseVisualStyleBackColor = true;
+            btnSifremiUnuttum.Click += btnSifremiUnuttum_Click;
             // 
             // btnKayitOl
             // 
@@ -137,6 +139,7 @@
             chkBeniHatirla.TabIndex = 8;
             chkBeniHatirla.Text = "Beni Hatırla";
             chkBeniHatirla.UseVisualStyleBackColor = true;
+            chkBeniHatirla.CheckedChanged += chkBeniHatirla_CheckedChanged;
             // 
             // label3
             // 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     [DbContext(typeof(DiyetProgramiDbContext))]
-    [Migration("20240606085421_mig2")]
-    partial class mig2
+    [Migration("20240607055910_m2")]
+    partial class m2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DataStatus")
@@ -48,6 +48,9 @@ namespace EFDiyetProgramiProje_DAL.Migrations
 
                     b.Property<string>("GuvenlikYaniti")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HatirlaSifre")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KullaniciAdi")
@@ -92,7 +95,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<string>("Cinsiyet")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DataStatus")
@@ -142,7 +145,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DataStatus")
@@ -174,7 +177,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<int>("BirimAdedi")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DataStatus")
@@ -220,7 +223,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<string>("Birim")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DataStatus")
@@ -262,7 +265,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DataStatus")

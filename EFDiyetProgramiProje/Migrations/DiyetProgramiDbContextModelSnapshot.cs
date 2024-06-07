@@ -47,6 +47,9 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HatirlaSifre")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("KullaniciAdi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

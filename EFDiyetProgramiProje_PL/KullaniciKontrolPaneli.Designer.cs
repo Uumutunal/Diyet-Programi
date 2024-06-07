@@ -43,7 +43,7 @@
             label4 = new Label();
             button2 = new Button();
             yemekler = new ListBox();
-            button3 = new Button();
+            btnKullaniciGuncelle = new Button();
             comboBox1 = new ComboBox();
             label13 = new Label();
             label14 = new Label();
@@ -76,6 +76,7 @@
             label12 = new Label();
             label11 = new Label();
             lblBoy = new Label();
+            btnOturumuKapat = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -218,15 +219,16 @@
             yemekler.Size = new Size(153, 484);
             yemekler.TabIndex = 45;
             // 
-            // button3
+            // btnKullaniciGuncelle
             // 
-            button3.Location = new Point(34, 657);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(152, 60);
-            button3.TabIndex = 46;
-            button3.Text = "Kullanıcı Bilgilerimi Değiştir";
-            button3.UseVisualStyleBackColor = true;
+            btnKullaniciGuncelle.Location = new Point(34, 630);
+            btnKullaniciGuncelle.Margin = new Padding(3, 4, 3, 4);
+            btnKullaniciGuncelle.Name = "btnKullaniciGuncelle";
+            btnKullaniciGuncelle.Size = new Size(152, 60);
+            btnKullaniciGuncelle.TabIndex = 46;
+            btnKullaniciGuncelle.Text = "Kullanıcı Bilgilerimi Değiştir";
+            btnKullaniciGuncelle.UseVisualStyleBackColor = true;
+            btnKullaniciGuncelle.Click += btnKullaniciGuncelle_Click;
             // 
             // comboBox1
             // 
@@ -541,11 +543,23 @@
             lblBoy.TabIndex = 36;
             lblBoy.Text = "Boy";
             // 
+            // btnOturumuKapat
+            // 
+            btnOturumuKapat.Location = new Point(34, 713);
+            btnOturumuKapat.Margin = new Padding(3, 4, 3, 4);
+            btnOturumuKapat.Name = "btnOturumuKapat";
+            btnOturumuKapat.Size = new Size(152, 60);
+            btnOturumuKapat.TabIndex = 57;
+            btnOturumuKapat.Text = "Oturumu Kapat";
+            btnOturumuKapat.UseVisualStyleBackColor = true;
+            btnOturumuKapat.Click += btnOturumuKapat_Click;
+            // 
             // KullaniciKontrolPaneli
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1715, 800);
+            Controls.Add(btnOturumuKapat);
             Controls.Add(groupBox1);
             Controls.Add(label22);
             Controls.Add(label21);
@@ -555,7 +569,7 @@
             Controls.Add(panel1);
             Controls.Add(label13);
             Controls.Add(comboBox1);
-            Controls.Add(button3);
+            Controls.Add(btnKullaniciGuncelle);
             Controls.Add(yemekler);
             Controls.Add(button2);
             Controls.Add(label4);
@@ -604,7 +618,7 @@
         private Label label4;
         private Button button2;
         private ListBox yemekler;
-        private Button button3;
+        private Button btnKullaniciGuncelle;
         private ComboBox comboBox1;
         private Label label13;
         private Label label14;
@@ -637,5 +651,6 @@
         private Label label11;
         private Label label9;
         private Label lblAlinanKalori;
+        private Button btnOturumuKapat;
     }
 }
