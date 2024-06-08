@@ -330,5 +330,48 @@ namespace EFDiyetProgramiProje_PL
             YemekListele(3);
 
         }
+
+        private void btnGunSonuRaporu_Click(object sender, EventArgs e)
+        {
+            DateTime selectedDateTime = monthCalendar1.SelectionRange.Start;
+            DateOnly selectedDate = ConvertToDateTimeOnly(selectedDateTime);
+
+            var yemekTuketimleri = OgunYemekManager.Search(y => y.Tarih == selectedDate);
+
+
+            if (yemekTuketimleri == null || !yemekTuketimleri.Any())
+            {
+                MessageBox.Show("Seçilen tarihe ait yemek tüketim bilgisi bulunamadı.");
+                return;
+            }
+
+            double toplamKalori = 0;
+            Dictionary<string, double> ogunKalorileri = new Dictionary<string, double>
+                {
+             { "Sabah", 0 },
+             { "Öğle", 0 },
+             { "Akşam", 0 }
+             };
+
+            pnlRapor.Controls.Clear();
+
+            var enCokKaloriTuketilenOgun = ogunKalorileri.OrderByDescending(k => k.Value).FirstOrDefault();
+            string raporMesaji = $"Gün Sonu Raporu ({selectedDate.ToShortDateString()})\n" +
+                                 $"Toplam Kalori: {toplamKalori}\n" +
+                                 $"En Çok Kalori Tüketilen Öğün: {enCokKaloriTuketilenOgun.Key} ({enCokKaloriTuketilenOgun.Value} kalori)";
+
+            Label lblRaporMesaji = new Label
+            {
+                Text = raporMesaji,
+                AutoSize = true,
+                Location = new Point(10, 10)
+            };
+            pnlRapor.Controls.Add(lblRaporMesaji);
+        }
+
+        private DateOnly ConvertToDateTimeOnly(DateTime dateTime)
+        {
+            return new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
+        }
     }
 }

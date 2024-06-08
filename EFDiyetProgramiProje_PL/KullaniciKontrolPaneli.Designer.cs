@@ -529,6 +529,7 @@
             btnGunSonuRaporu.Text = "Gün Sonu Raporu";
             btnGunSonuRaporu.TextAlign = ContentAlignment.BottomCenter;
             btnGunSonuRaporu.UseVisualStyleBackColor = true;
+            btnGunSonuRaporu.Click += btnGunSonuRaporu_Click;
             // 
             // btnKiyasRaporu
             // 

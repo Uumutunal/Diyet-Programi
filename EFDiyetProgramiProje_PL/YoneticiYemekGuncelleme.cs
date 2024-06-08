@@ -104,6 +104,7 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
         {
+            /*
             YemekKategoriViewModel yeniKategori = new YemekKategoriViewModel();
             yeniKategori.KategoriAdi = cbYeniKategori.Text;
             cbKategoriSecGuncelleme.Text = cbYeniKategori.Text;
@@ -120,6 +121,19 @@ namespace EFDiyetProgramiProje_PL
                 cbYeniKategori.Items.Add(kategori.KategoriAdi);
                 cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
             }
+            */
+            KullaniciYeniKategoriEkle kullaniciYeniKategoriEkle = new KullaniciYeniKategoriEkle();
+            kullaniciYeniKategoriEkle.Show();
+
+            cbKategoriSecGuncelleme.Items.Clear();
+
+            var kategoriler = yemekKategori.GetAll();
+
+            foreach (var kategori in kategoriler)
+            {
+                cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
+            }
+            cbKategoriSecGuncelleme.Text = "Kategori seçiniz...";
         }
 
         private void pbYemekGörseliGuncelleme_Click(object sender, EventArgs e)

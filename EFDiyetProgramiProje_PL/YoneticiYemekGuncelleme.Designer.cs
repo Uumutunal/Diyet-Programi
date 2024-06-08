@@ -55,6 +55,7 @@
             txtKalori = new TextBox();
             cbYeniKategori = new ComboBox();
             btnKategoriEkle = new Button();
+            label16 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbYemekGörseliGuncelleme).BeginInit();
             SuspendLayout();
             // 
@@ -292,12 +293,22 @@
             btnKategoriEkle.UseVisualStyleBackColor = true;
             btnKategoriEkle.Click += btnKategoriEkle_Click;
             // 
+            // label16
+            // 
+            label16.ImageKey = "linefood.png";
+            label16.ImageList = ımageList1;
+            label16.Location = new Point(442, 430);
+            label16.Name = "label16";
+            label16.Size = new Size(61, 215);
+            label16.TabIndex = 48;
+            // 
             // YoneticiYemekGuncelleme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(505, 523);
+            Controls.Add(label16);
             Controls.Add(btnKategoriEkle);
             Controls.Add(cbYeniKategori);
             Controls.Add(label13);
@@ -357,5 +368,6 @@
         private TextBox txtKalori;
         private ComboBox cbYeniKategori;
         private Button btnKategoriEkle;
+        private Label label16;
     }
 }
