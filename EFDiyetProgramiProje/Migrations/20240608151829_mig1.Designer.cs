@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     [DbContext(typeof(DiyetProgramiDbContext))]
-    [Migration("20240607061406_mig1")]
+    [Migration("20240608151829_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -43,11 +43,9 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("GuvenlikSorusu")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GuvenlikYaniti")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HatirlaSifre")
@@ -76,6 +74,16 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Kullanicilar");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataStatus = 0,
+                            KullaniciAdi = "admin",
+                            Sifre = "123"
+                        });
                 });
 
             modelBuilder.Entity("EFDiyetProgramiProje_DAL.Entities.KullaniciBilgi", b =>

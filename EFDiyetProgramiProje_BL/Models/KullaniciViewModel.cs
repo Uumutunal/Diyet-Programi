@@ -11,8 +11,8 @@ namespace EFDiyetProgramiProje_BL.Models
     {
         public int Id { get; set; }
         public string KullaniciAdi { get; set; }
-        public string GuvenlikSorusu { get; set; }
-        public string GuvenlikYaniti { get; set; }
+        public string? GuvenlikSorusu { get; set; }
+        public string? GuvenlikYaniti { get; set; }
         public string? HatirlaSifre {  get; set; }
         public string Sifre { get; set; }
         public string? Sifre2 { get; set; }

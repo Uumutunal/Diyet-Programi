@@ -1,6 +1,0 @@
-﻿Build started at 23:46...
-1>------ Build started: Project: EFDiyetProgramiProje_DAL, Configuration: Debug Any CPU ------
-1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
-1>EFDiyetProgramiProje_DAL -> C:\Users\casper\OneDrive\Masaüstü\EF PROJE\deneme1\EFDiyetProgramiProje\bin\Debug\net8.0\EFDiyetProgramiProje_DAL.dll
-========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
-========== Build completed at 23:46 and took 00,538 seconds ==========

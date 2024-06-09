@@ -50,14 +50,13 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            string adminsifre = "123";
-            string sifrelenmis = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
-            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmis).FirstOrDefault();
+            var admin = kullaniciManager.Search(k => k.KullaniciAdi == "admin").FirstOrDefault();
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
             if (txtKullaniciAdi.Text == null || txtSifre.Text == null)
             {
                 MessageBox.Show("Kullanýcý adý ve Þifre boþ býrakýlamaz! Lütfen yukarýdaki kýsýmlarý doldurun!");
             }
-            else if (txtKullaniciAdi.Text == "admin" && txtSifre.Text == adminsifre)
+            else if (txtKullaniciAdi.Text == admin.KullaniciAdi && txtSifre.Text == admin.Sifre)
             {
 
                 MessageBox.Show("Admin giriþi baþarýlý!");
@@ -112,8 +111,6 @@ namespace EFDiyetProgramiProje_PL
                 kullanici.HatirlaSifre = txtSifre.Text;
                 kullaniciManager.Update(kullanici);
             }
-            
-
 
         }
 

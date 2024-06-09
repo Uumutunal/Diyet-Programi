@@ -34,13 +34,19 @@
             ımageList1 = new ImageList(components);
             label2 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtEskiSifre = new TextBox();
+            txtYeniSifre = new TextBox();
+            txtYeniSifreTekrar = new TextBox();
             label3 = new Label();
             label4 = new Label();
             label6 = new Label();
-            button1 = new Button();
+            btnSifreDegistir = new Button();
+            pbEskiSifre = new PictureBox();
+            pbYeniSifreTekrar = new PictureBox();
+            pbYeniSifre = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbEskiSifre).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbYeniSifreTekrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbYeniSifre).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -64,7 +70,7 @@
             // 
             label2.ImageKey = "passwordline - Kopya.jpg";
             label2.ImageList = ımageList1;
-            label2.Location = new Point(368, 0);
+            label2.Location = new Point(417, 0);
             label2.Name = "label2";
             label2.Size = new Size(78, 303);
             label2.TabIndex = 0;
@@ -80,26 +86,29 @@
             label5.TabIndex = 29;
             label5.Text = "ŞİFRE DEĞİŞTİR";
             // 
-            // textBox1
+            // txtEskiSifre
             // 
-            textBox1.Location = new Point(193, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(172, 27);
-            textBox1.TabIndex = 30;
+            txtEskiSifre.Location = new Point(193, 90);
+            txtEskiSifre.Name = "txtEskiSifre";
+            txtEskiSifre.Size = new Size(172, 27);
+            txtEskiSifre.TabIndex = 30;
+            txtEskiSifre.TextChanged += txtEskiSifre_TextChanged;
             // 
-            // textBox2
+            // txtYeniSifre
             // 
-            textBox2.Location = new Point(193, 134);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(172, 27);
-            textBox2.TabIndex = 30;
+            txtYeniSifre.Location = new Point(193, 134);
+            txtYeniSifre.Name = "txtYeniSifre";
+            txtYeniSifre.Size = new Size(172, 27);
+            txtYeniSifre.TabIndex = 30;
+            txtYeniSifre.TextChanged += txtYeniSifre_TextChanged;
             // 
-            // textBox3
+            // txtYeniSifreTekrar
             // 
-            textBox3.Location = new Point(193, 181);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(172, 27);
-            textBox3.TabIndex = 30;
+            txtYeniSifreTekrar.Location = new Point(193, 181);
+            txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
+            txtYeniSifreTekrar.Size = new Size(172, 27);
+            txtYeniSifreTekrar.TabIndex = 30;
+            txtYeniSifreTekrar.TextChanged += txtYeniSifreTekrar_TextChanged;
             // 
             // label3
             // 
@@ -128,34 +137,74 @@
             label6.TabIndex = 31;
             label6.Text = "Yeni Şifre Tekrar:";
             // 
-            // button1
+            // btnSifreDegistir
             // 
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button1.Location = new Point(130, 231);
-            button1.Name = "button1";
-            button1.Size = new Size(189, 40);
-            button1.TabIndex = 32;
-            button1.Text = "Şifreyi Değiştir";
-            button1.UseVisualStyleBackColor = true;
+            btnSifreDegistir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnSifreDegistir.Location = new Point(133, 233);
+            btnSifreDegistir.Name = "btnSifreDegistir";
+            btnSifreDegistir.Size = new Size(189, 40);
+            btnSifreDegistir.TabIndex = 32;
+            btnSifreDegistir.Text = "Şifreyi Değiştir";
+            btnSifreDegistir.UseVisualStyleBackColor = true;
+            btnSifreDegistir.Click += btnSifreDegistir_Click;
+            // 
+            // pbEskiSifre
+            // 
+            pbEskiSifre.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            pbEskiSifre.Location = new Point(376, 90);
+            pbEskiSifre.Name = "pbEskiSifre";
+            pbEskiSifre.Size = new Size(35, 27);
+            pbEskiSifre.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbEskiSifre.TabIndex = 49;
+            pbEskiSifre.TabStop = false;
+            pbEskiSifre.Click += pbEskiSifre_Click;
+            // 
+            // pbYeniSifreTekrar
+            // 
+            pbYeniSifreTekrar.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            pbYeniSifreTekrar.Location = new Point(376, 181);
+            pbYeniSifreTekrar.Name = "pbYeniSifreTekrar";
+            pbYeniSifreTekrar.Size = new Size(35, 27);
+            pbYeniSifreTekrar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbYeniSifreTekrar.TabIndex = 50;
+            pbYeniSifreTekrar.TabStop = false;
+            pbYeniSifreTekrar.Click += pbYeniSifreTekrar_Click;
+            // 
+            // pbYeniSifre
+            // 
+            pbYeniSifre.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            pbYeniSifre.Location = new Point(376, 134);
+            pbYeniSifre.Name = "pbYeniSifre";
+            pbYeniSifre.Size = new Size(35, 27);
+            pbYeniSifre.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbYeniSifre.TabIndex = 51;
+            pbYeniSifre.TabStop = false;
+            pbYeniSifre.Click += pbYeniSifre_Click;
             // 
             // YoneticiSifreDegistir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(446, 300);
-            Controls.Add(button1);
+            ClientSize = new Size(495, 300);
+            Controls.Add(pbEskiSifre);
+            Controls.Add(pbYeniSifreTekrar);
+            Controls.Add(pbYeniSifre);
+            Controls.Add(btnSifreDegistir);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtYeniSifreTekrar);
+            Controls.Add(txtYeniSifre);
+            Controls.Add(txtEskiSifre);
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "YoneticiSifreDegistir";
             Text = "YoneticiSifreDegistir";
+            ((System.ComponentModel.ISupportInitialize)pbEskiSifre).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbYeniSifreTekrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbYeniSifre).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,12 +215,15 @@
         private ImageList ımageList1;
         private Label label2;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtEskiSifre;
+        private TextBox txtYeniSifre;
+        private TextBox txtYeniSifreTekrar;
         private Label label3;
         private Label label4;
         private Label label6;
-        private Button button1;
+        private Button btnSifreDegistir;
+        private PictureBox pbEskiSifre;
+        private PictureBox pbYeniSifreTekrar;
+        private PictureBox pbYeniSifre;
     }
 }
