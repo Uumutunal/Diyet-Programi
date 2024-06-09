@@ -140,8 +140,8 @@ namespace EFDiyetProgramiProje_PL
                 cbYeniKategori.Items.Add(kategori.KategoriAdi);
                 cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
             }
-
             */
+
 
             KullaniciYeniKategoriEkle kullaniciYeniKategoriEkle = new KullaniciYeniKategoriEkle();
             kullaniciYeniKategoriEkle.Show();
