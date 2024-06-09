@@ -216,11 +216,19 @@ namespace EFDiyetProgramiProje_PL
             adet.Width = 80;
 
             PictureBox gorsel = new PictureBox();
-            gorsel.SizeMode = PictureBoxSizeMode.StretchImage;
-            gorsel.Left = 120;
-            gorsel.Top = 10;
-            gorsel.Size = new Size(75, 75);
-            gorsel.ImageLocation = eklenenYemek.Gorsel;
+
+            if (eklenenYemek.Gorsel != null)
+            {
+                using (MemoryStream ms = new MemoryStream(eklenenYemek.Gorsel))
+                {
+
+                    gorsel.SizeMode |= PictureBoxSizeMode.Zoom;
+                    gorsel.Left = 120;
+                    gorsel.Top = 10;
+                    gorsel.Size = new Size(75, 75);
+                    gorsel.Image = Image.FromStream(ms);
+                }
+            }
 
 
             Button silButon = new Button();
@@ -328,6 +336,11 @@ namespace EFDiyetProgramiProje_PL
             YemekListele(1);
             YemekListele(2);
             YemekListele(3);
+
+        }
+
+        private void btnGunSonuRaporu_Click(object sender, EventArgs e)
+        {
 
         }
     }

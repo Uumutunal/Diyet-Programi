@@ -69,12 +69,11 @@ namespace EFDiyetProgramiProje_PL
         private void cbKategoriSecSil_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbYemekSecSil.Items.Clear();
-            var yemekler = yemekManager.GetAllWithIncludes().ToList();
-
+            var kategori = yemekKategori.Search(y => y.KategoriAdi == cbKategoriSecSil.Text).FirstOrDefault();
+            var yemekler = yemekManager.Search(y => y.YemekKategoriId == kategori.Id);
             foreach (var yemek in yemekler)
             {
-                if (yemek.YemekKategori.KategoriAdi == cbKategoriSecSil.Text)
-                    cbYemekSecSil.Items.Add(yemek.YemekAdi);
+                cbYemekSecSil.Items.Add(yemek.YemekAdi);
             }
         }
 
@@ -85,6 +84,16 @@ namespace EFDiyetProgramiProje_PL
 
             rtxtTarifiGuncelleme.Text = yeniYemek.Tarif;
             //pbYemekGörseliGuncelleme = yemek.Gorsel;
+            if (yeniYemek.Gorsel != null)
+            {
+                using (MemoryStream ms = new MemoryStream(yeniYemek.Gorsel))
+                {
+
+                    pbYemekGörseliGuncelleme.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    pbYemekGörseliGuncelleme.Image = Image.FromStream(ms);
+                }
+            }
         }
     }
 }

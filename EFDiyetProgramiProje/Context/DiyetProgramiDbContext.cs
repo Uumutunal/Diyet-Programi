@@ -24,7 +24,7 @@ namespace EFDiyetProgramiProje_DAL.Context
             //optionsBuilder.UseSqlServer("server=DESKTOP-4UHFHR4;database=DiyetProgrami070624new;uid=sa;pwd=1357;trustservercertificate=true");
 
             //Umut
-            optionsBuilder.UseSqlServer("server=DESKTOP-HLJBBVE\\MSSQLSERVER01;database=DiyetProgramiDb3;uid=sa;pwd=123;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-4UHFHR4;database=DiyetPrograminewbranch;uid=sa;pwd=1357;trustservercertificate=true");
 
         }
     }

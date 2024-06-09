@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     [DbContext(typeof(DiyetProgramiDbContext))]
-    [Migration("20240607061406_mig1")]
-    partial class mig1
+    [Migration("20240609115709_m1")]
+    partial class m1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -232,8 +232,8 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Gorsel")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Gorsel")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<double?>("Kalori")
                         .HasColumnType("float");

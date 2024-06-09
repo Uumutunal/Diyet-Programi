@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EFDiyetProgramiProje_DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class m1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -110,7 +110,7 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     Birim = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Kalori = table.Column<double>(type: "float", nullable: true),
                     Tarif = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gorsel = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gorsel = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     YemekKategoriId = table.Column<int>(type: "int", nullable: true),
                     CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
