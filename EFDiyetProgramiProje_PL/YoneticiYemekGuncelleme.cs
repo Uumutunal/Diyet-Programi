@@ -39,12 +39,14 @@ namespace EFDiyetProgramiProje_PL
 
                 cbYemekSecGuncelleme.Items.Add(yemek.YemekAdi);
             }
+            //cbYemekSecGuncelleme.DataSource = (yemekManager.GetAll())[1];
         }
 
         private void cbKategoriSecGuncelleme_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbYemekSecGuncelleme.Items.Clear();
-            var yemekler = yemekManager.GetAllWithIncludes();
+            var kategori = yemekKategori.Search(y => y.KategoriAdi == cbKategoriSecGuncelleme.Text).FirstOrDefault();
+            var yemekler = yemekManager.Search(y=> y.YemekKategoriId==kategori.Id);
 
 
             cbYeniKategori.Text = cbKategoriSecGuncelleme.Text;
@@ -60,7 +62,6 @@ namespace EFDiyetProgramiProje_PL
 
             foreach (var yemek in yemekler)
             {
-                if (yemek.YemekKategori.KategoriAdi == cbKategoriSecGuncelleme.Text)
                     cbYemekSecGuncelleme.Items.Add(yemek.YemekAdi);
             }
         }
@@ -75,7 +76,16 @@ namespace EFDiyetProgramiProje_PL
             txtYemekAdiGuncelleme.Text = yemek.YemekAdi;
             rtxtTarifiGuncelleme.Text = yemek.Tarif;
             //txtKategoriAdiGuncelleme.Text = yemek.YemekKategori.KategoriAdi;
-            pbYemekGörseliGuncelleme.ImageLocation = yemek.Gorsel;
+            if (yemek.Gorsel != null)
+            {
+                using (MemoryStream ms = new MemoryStream(yemek.Gorsel))
+                {
+
+                    pbYemekGörseliGuncelleme.SizeMode = PictureBoxSizeMode.Zoom;
+                   
+                    pbYemekGörseliGuncelleme.Image = Image.FromStream(ms);
+                }
+            }
 
         }
 
@@ -96,7 +106,11 @@ namespace EFDiyetProgramiProje_PL
 
             yemek.YemekAdi = txtYemekAdiGuncelleme.Text;
             yemek.Tarif = rtxtTarifiGuncelleme.Text;
-            yemek.Gorsel = pbYemekGörseliGuncelleme.ImageLocation;
+
+            string filePath = pbYemekGörseliGuncelleme.ImageLocation;
+            byte[] imageData = File.ReadAllBytes(filePath);
+            yemek.Gorsel = imageData;
+
 
             yemekManager.Update(yemek);
             MessageBox.Show("Yemek Güncellendi");

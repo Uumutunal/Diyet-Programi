@@ -58,24 +58,13 @@ namespace EFDiyetProgramiProje_PL
                 yeniYemek.Kalori = kalori;
 
             yeniYemek.Birim = txtBirim.Text;
-            //görseli düzelt
 
-            yeniYemek.Gorsel = pbYemekGörseli.ImageLocation;
-
-            string ImagePath = pbYemekGörseli.ImageLocation;
-            string savedImagePath = null;
-            if (!string.IsNullOrEmpty(ImagePath))
-            {
-                string extension = Path.GetExtension(ImagePath);
-                string fileName = Guid.NewGuid().ToString() + extension;
-                savedImagePath = Path.Combine(imageDirectory, fileName);
-                File.Copy(ImagePath, savedImagePath);
-            }
+            string filePath = pbYemekGörseli.ImageLocation;
+            byte[] imageData = File.ReadAllBytes(filePath);
+            yeniYemek.Gorsel = imageData;
 
 
             yemekManager.Insert(yeniYemek);
-
-            MessageBox.Show("Yeni Yemek Eklendi");
         }
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
@@ -97,6 +86,11 @@ namespace EFDiyetProgramiProje_PL
 
         private void pbYemekGörseli_Click(object sender, EventArgs e)
         {
+            
+            //görseli düzelt
+
+
+
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
                 Filter = "Image Files |*.jpg;*.jpeg;*.png;*.bmp",
@@ -104,7 +98,9 @@ namespace EFDiyetProgramiProje_PL
             };
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                
                 pbYemekGörseli.ImageLocation = openFileDialog.FileName;
+                
             }
         }
     }

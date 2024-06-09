@@ -15,6 +15,7 @@ using EFDiyetProgramiProje_DAL.Entities;
 using EFDiyetProgramiProje_DAL.Enums;
 using System.Globalization;
 using System.Xml.Serialization;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EFDiyetProgramiProje_PL
 {
@@ -97,13 +98,12 @@ namespace EFDiyetProgramiProje_PL
         {
             //cbKategoriler.Items.AddRange(yemekManager.GetAll().ToArray());
             var kategori = YemekKategoriManager.Search(s => s.KategoriAdi == cbKategoriler.Text).FirstOrDefault();
-            var yemekler = yemekManager.Search(s => s.YemekKategoriId == kategori.Id);
-            lbYemekler.Items.Clear();
-            foreach (var yemek in yemekler)
-            {
-                lbYemekler.Items.Add(yemek.YemekAdi);
-            }
-
+            int katId = kategori.Id;
+            dgvYemekler.DataSource = yemekManager.Search(k => k.YemekKategoriId == katId);
+        
+            dgvYemekler.Columns[0].Visible = false;
+            dgvYemekler.Columns[6].Visible = false;
+            dgvYemekler.Columns[7].Visible = false;
         }
 
         private void lbYemekler_SelectedIndexChanged(object sender, EventArgs e)
@@ -216,11 +216,19 @@ namespace EFDiyetProgramiProje_PL
             adet.Width = 80;
 
             PictureBox gorsel = new PictureBox();
-            gorsel.SizeMode = PictureBoxSizeMode.StretchImage;
-            gorsel.Left = 120;
-            gorsel.Top = 10;
-            gorsel.Size = new Size(75, 75);
-            gorsel.ImageLocation = eklenenYemek.Gorsel;
+
+            if (eklenenYemek.Gorsel != null)
+            {
+                using (MemoryStream ms = new MemoryStream(eklenenYemek.Gorsel))
+                {
+
+                    gorsel.SizeMode |= PictureBoxSizeMode.Zoom;
+                    gorsel.Left = 120;
+                    gorsel.Top = 10;
+                    gorsel.Size = new Size(75, 75);
+                    gorsel.Image = Image.FromStream(ms);
+                }
+            }
 
 
             Button silButon = new Button();

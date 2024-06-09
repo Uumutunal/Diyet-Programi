@@ -229,8 +229,8 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Gorsel")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Gorsel")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<double?>("Kalori")
                         .HasColumnType("float");
