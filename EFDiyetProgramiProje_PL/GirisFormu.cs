@@ -11,7 +11,6 @@ namespace EFDiyetProgramiProje_PL
     public partial class GirisFormu : Form
     {
         KullaniciManager kullaniciManager = new KullaniciManager();
-        KullaniciViewModel kullanici;
 
 
         public GirisFormu()
@@ -27,14 +26,7 @@ namespace EFDiyetProgramiProje_PL
             yeniKayitFormu.ShowDialog();
         }
 
-        private void txtSifre_Enter(object sender, EventArgs e)
-        {
-            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
-            if (kullanici != null)
-            {
-                txtSifre.Text = kullanici.HatirlaSifre;
-            }
-        }
+
         private void txtSifre_TextChanged(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
@@ -50,13 +42,20 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            var admin = kullaniciManager.Search(k => k.KullaniciAdi == "admin").FirstOrDefault();
-            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
+
+            string sifrelenmisSifre = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
+
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmisSifre).FirstOrDefault();
+
             if (txtKullaniciAdi.Text == null || txtSifre.Text == null)
             {
                 MessageBox.Show("Kullanýcý adý ve Þifre boþ býrakýlamaz! Lütfen yukarýdaki kýsýmlarý doldurun!");
             }
-            else if (txtKullaniciAdi.Text == admin.KullaniciAdi && txtSifre.Text == admin.Sifre)
+            else if (kullanici == null)
+            {
+                MessageBox.Show("Böyle bir kullanýcý bulunamadý! Lütfen kullanýcý adýnýzý ve þifrenizi tekrar giriniz!");
+            }
+            else if (kullanici.KullaniciAdi == "admin" && kullanici.Sifre == sifrelenmisSifre)
             {
 
                 MessageBox.Show("Admin giriþi baþarýlý!");
@@ -64,10 +63,6 @@ namespace EFDiyetProgramiProje_PL
                 YoneticiKontrolPaneli yoneticiKontrolPaneli = new YoneticiKontrolPaneli();
                 yoneticiKontrolPaneli.ShowDialog();
                 this.Close();
-            }
-            else if (kullanici == null)
-            {
-                MessageBox.Show("Böyle bir kullanýcý bulunamadý! Lütfen kullanýcý adýnýzý ve þifrenizi tekrar giriniz!");
             }
             else
             {
@@ -99,21 +94,6 @@ namespace EFDiyetProgramiProje_PL
             {
                 MessageBox.Show("Kullanýcý bulunamadý, kullanýcý adýný doðru girdiðinizden amin olun!");
             }
-
-
         }
-
-        private void chkBeniHatirla_CheckedChanged(object sender, EventArgs e)
-        {
-            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
-            if (kullanici != null)
-            {
-                kullanici.HatirlaSifre = txtSifre.Text;
-                kullaniciManager.Update(kullanici);
-            }
-
-        }
-
- 
     }
 }

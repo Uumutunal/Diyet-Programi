@@ -1,10 +1,13 @@
 ﻿using EFDiyetProgramiProje_DAL.Entities;
+using EFDiyetProgramiProje_PL.StaticMethods;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 
 namespace EFDiyetProgramiProje_DAL.Context
 {
@@ -38,7 +41,7 @@ namespace EFDiyetProgramiProje_DAL.Context
             {
                 Id = 1,
                 KullaniciAdi = "admin",
-                Sifre = "123"
+                Sifre = Sha256Hasher.ComputeSha256Hash("123")
             });
         }
     }

@@ -25,9 +25,9 @@ namespace EFDiyetProgramiProje_PL
             InitializeComponent();
             dgvOgunListesi.DataSource = ogunManager.GetAll();
             txtOgunAdi.Enabled = false;
-            
-         }
-         //
+
+        }
+        //
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (dgvOgunListesi.SelectedRows.Count < 1)

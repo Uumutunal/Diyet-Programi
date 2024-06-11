@@ -56,18 +56,18 @@
             // 
             label1.ImageKey = "öğünline1.jpg";
             label1.ImageList = ımageList1;
-            label1.Location = new Point(-5, -2);
+            label1.Location = new Point(-4, -2);
             label1.Name = "label1";
-            label1.Size = new Size(82, 322);
+            label1.Size = new Size(72, 242);
             label1.TabIndex = 0;
             // 
             // label2
             // 
             label2.ImageKey = "öğünline1 - Kopya.jpg";
             label2.ImageList = ımageList1;
-            label2.Location = new Point(341, -2);
+            label2.Location = new Point(361, -2);
             label2.Name = "label2";
-            label2.Size = new Size(82, 322);
+            label2.Size = new Size(72, 242);
             label2.TabIndex = 0;
             // 
             // label5
@@ -75,9 +75,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label5.ForeColor = SystemColors.ActiveCaption;
-            label5.Location = new Point(100, 9);
+            label5.Location = new Point(115, 5);
             label5.Name = "label5";
-            label5.Size = new Size(204, 54);
+            label5.Size = new Size(163, 43);
             label5.TabIndex = 20;
             label5.Text = "ÖĞÜN EKLE";
             // 
@@ -85,24 +85,27 @@
             // 
             dgvOgunListesi.BackgroundColor = SystemColors.ButtonFace;
             dgvOgunListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOgunListesi.Location = new Point(83, 66);
+            dgvOgunListesi.Location = new Point(73, 50);
+            dgvOgunListesi.Margin = new Padding(3, 2, 3, 2);
             dgvOgunListesi.Name = "dgvOgunListesi";
             dgvOgunListesi.RowHeadersWidth = 51;
-            dgvOgunListesi.Size = new Size(252, 129);
+            dgvOgunListesi.Size = new Size(282, 97);
             dgvOgunListesi.TabIndex = 21;
             // 
             // txtOgunEkle
             // 
-            txtOgunEkle.Location = new Point(181, 210);
+            txtOgunEkle.Location = new Point(220, 161);
+            txtOgunEkle.Margin = new Padding(3, 2, 3, 2);
             txtOgunEkle.Name = "txtOgunEkle";
-            txtOgunEkle.Size = new Size(154, 27);
+            txtOgunEkle.Size = new Size(135, 23);
             txtOgunEkle.TabIndex = 22;
             // 
             // btnEkle
             // 
-            btnEkle.Location = new Point(215, 243);
+            btnEkle.Location = new Point(250, 185);
+            btnEkle.Margin = new Padding(3, 2, 3, 2);
             btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(120, 29);
+            btnEkle.Size = new Size(105, 22);
             btnEkle.TabIndex = 23;
             btnEkle.Text = "KAYDET";
             btnEkle.UseVisualStyleBackColor = true;
@@ -111,9 +114,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(100, 213);
+            label3.Location = new Point(150, 163);
             label3.Name = "label3";
-            label3.Size = new Size(75, 20);
+            label3.Size = new Size(61, 15);
             label3.TabIndex = 24;
             label3.Text = "Öğün Adı:";
             // 
@@ -122,18 +125,18 @@
             lblEkleHata.AutoSize = true;
             lblEkleHata.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblEkleHata.ForeColor = Color.Red;
-            lblEkleHata.Location = new Point(181, 291);
+            lblEkleHata.Location = new Point(158, 218);
             lblEkleHata.Name = "lblEkleHata";
-            lblEkleHata.Size = new Size(51, 20);
+            lblEkleHata.Size = new Size(39, 15);
             lblEkleHata.TabIndex = 33;
             lblEkleHata.Text = "label4";
             // 
             // YoneticiOgunEkle
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(419, 320);
+            ClientSize = new Size(430, 240);
             Controls.Add(lblEkleHata);
             Controls.Add(label3);
             Controls.Add(btnEkle);
@@ -142,6 +145,7 @@
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "YoneticiOgunEkle";
             Text = "YoneticiOgunEkle";
             ((System.ComponentModel.ISupportInitialize)dgvOgunListesi).EndInit();

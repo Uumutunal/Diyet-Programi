@@ -45,17 +45,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(115, 215);
+            label3.Location = new Point(141, 154);
             label3.Name = "label3";
-            label3.Size = new Size(75, 20);
+            label3.Size = new Size(61, 15);
             label3.TabIndex = 31;
             label3.Text = "Öğün Adı:";
             // 
             // btnGuncelle
             // 
-            btnGuncelle.Location = new Point(230, 245);
+            btnGuncelle.Location = new Point(241, 177);
+            btnGuncelle.Margin = new Padding(3, 2, 3, 2);
             btnGuncelle.Name = "btnGuncelle";
-            btnGuncelle.Size = new Size(120, 29);
+            btnGuncelle.Size = new Size(105, 22);
             btnGuncelle.TabIndex = 30;
             btnGuncelle.Text = "KAYDET";
             btnGuncelle.UseVisualStyleBackColor = true;
@@ -63,19 +64,21 @@
             // 
             // txtYeniOgunAdi
             // 
-            txtYeniOgunAdi.Location = new Point(196, 212);
+            txtYeniOgunAdi.Location = new Point(212, 152);
+            txtYeniOgunAdi.Margin = new Padding(3, 2, 3, 2);
             txtYeniOgunAdi.Name = "txtYeniOgunAdi";
-            txtYeniOgunAdi.Size = new Size(154, 27);
+            txtYeniOgunAdi.Size = new Size(135, 23);
             txtYeniOgunAdi.TabIndex = 29;
             // 
             // dgvOgunListesi
             // 
             dgvOgunListesi.BackgroundColor = SystemColors.ButtonFace;
             dgvOgunListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOgunListesi.Location = new Point(98, 68);
+            dgvOgunListesi.Location = new Point(86, 51);
+            dgvOgunListesi.Margin = new Padding(3, 2, 3, 2);
             dgvOgunListesi.Name = "dgvOgunListesi";
             dgvOgunListesi.RowHeadersWidth = 51;
-            dgvOgunListesi.Size = new Size(252, 129);
+            dgvOgunListesi.Size = new Size(261, 97);
             dgvOgunListesi.TabIndex = 28;
             // 
             // label5
@@ -83,9 +86,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label5.ForeColor = SystemColors.ActiveCaption;
-            label5.Location = new Point(81, 9);
+            label5.Location = new Point(86, 6);
             label5.Name = "label5";
-            label5.Size = new Size(293, 54);
+            label5.Size = new Size(233, 43);
             label5.TabIndex = 27;
             label5.Text = "ÖĞÜN GÜNCELLE";
             // 
@@ -93,9 +96,9 @@
             // 
             label2.ImageKey = "öğünline1 - Kopya.jpg";
             label2.ImageList = ımageList1;
-            label2.Location = new Point(356, -10);
+            label2.Location = new Point(363, -8);
             label2.Name = "label2";
-            label2.Size = new Size(78, 332);
+            label2.Size = new Size(68, 249);
             label2.TabIndex = 25;
             // 
             // ımageList1
@@ -110,9 +113,9 @@
             // 
             label1.ImageKey = "öğünline1.jpg";
             label1.ImageList = ımageList1;
-            label1.Location = new Point(-3, -10);
+            label1.Location = new Point(-3, -8);
             label1.Name = "label1";
-            label1.Size = new Size(78, 332);
+            label1.Size = new Size(68, 249);
             label1.TabIndex = 26;
             // 
             // lblGuncelleHata
@@ -120,18 +123,18 @@
             lblGuncelleHata.AutoSize = true;
             lblGuncelleHata.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblGuncelleHata.ForeColor = Color.Red;
-            lblGuncelleHata.Location = new Point(179, 287);
+            lblGuncelleHata.Location = new Point(157, 215);
             lblGuncelleHata.Name = "lblGuncelleHata";
-            lblGuncelleHata.Size = new Size(51, 20);
+            lblGuncelleHata.Size = new Size(39, 15);
             lblGuncelleHata.TabIndex = 32;
             lblGuncelleHata.Text = "label4";
             // 
             // YoneticiOgunGuncelle
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(431, 318);
+            ClientSize = new Size(431, 241);
             Controls.Add(lblGuncelleHata);
             Controls.Add(label3);
             Controls.Add(btnGuncelle);
@@ -140,6 +143,7 @@
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "YoneticiOgunGuncelle";
             Text = "YoneticiOgunGuncelle";
             ((System.ComponentModel.ISupportInitialize)dgvOgunListesi).EndInit();

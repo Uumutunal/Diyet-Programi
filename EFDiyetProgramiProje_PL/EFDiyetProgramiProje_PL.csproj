@@ -36,7 +36,7 @@
     <Compile Update="KullaniciKontrolPaneli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="KullaniciYeniKategoriEkle.cs">
+    <Compile Update="YoneticiYeniKategoriEkle.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

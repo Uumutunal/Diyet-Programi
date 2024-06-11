@@ -48,9 +48,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label5.ForeColor = SystemColors.ActiveCaption;
-            label5.Location = new Point(91, 19);
+            label5.Location = new Point(80, 14);
             label5.Name = "label5";
-            label5.Size = new Size(308, 54);
+            label5.Size = new Size(249, 43);
             label5.TabIndex = 46;
             label5.Text = "YÖNETİCİ EKRANI";
             // 
@@ -60,9 +60,10 @@
             btnSifreDegistir.ImageAlign = ContentAlignment.TopCenter;
             btnSifreDegistir.ImageKey = "icons8-password-50.png";
             btnSifreDegistir.ImageList = ımageList1;
-            btnSifreDegistir.Location = new Point(336, 392);
+            btnSifreDegistir.Location = new Point(294, 294);
+            btnSifreDegistir.Margin = new Padding(3, 2, 3, 2);
             btnSifreDegistir.Name = "btnSifreDegistir";
-            btnSifreDegistir.Size = new Size(129, 120);
+            btnSifreDegistir.Size = new Size(113, 90);
             btnSifreDegistir.TabIndex = 37;
             btnSifreDegistir.Text = "Şifre Değiştir";
             btnSifreDegistir.TextAlign = ContentAlignment.BottomCenter;
@@ -92,9 +93,10 @@
             btnYemekSilme.ImageAlign = ContentAlignment.TopCenter;
             btnYemekSilme.ImageKey = "icons8-no-food-50.png";
             btnYemekSilme.ImageList = ımageList1;
-            btnYemekSilme.Location = new Point(336, 255);
+            btnYemekSilme.Location = new Point(294, 191);
+            btnYemekSilme.Margin = new Padding(3, 2, 3, 2);
             btnYemekSilme.Name = "btnYemekSilme";
-            btnYemekSilme.Size = new Size(129, 120);
+            btnYemekSilme.Size = new Size(113, 90);
             btnYemekSilme.TabIndex = 38;
             btnYemekSilme.Text = "   Yemek     Silme";
             btnYemekSilme.TextAlign = ContentAlignment.BottomCenter;
@@ -107,9 +109,10 @@
             btnRaporGoster.ImageAlign = ContentAlignment.TopCenter;
             btnRaporGoster.ImageKey = "icons8-report-50.png";
             btnRaporGoster.ImageList = ımageList1;
-            btnRaporGoster.Location = new Point(186, 392);
+            btnRaporGoster.Location = new Point(163, 294);
+            btnRaporGoster.Margin = new Padding(3, 2, 3, 2);
             btnRaporGoster.Name = "btnRaporGoster";
-            btnRaporGoster.Size = new Size(129, 120);
+            btnRaporGoster.Size = new Size(113, 90);
             btnRaporGoster.TabIndex = 39;
             btnRaporGoster.Text = "Rapor Göster";
             btnRaporGoster.TextAlign = ContentAlignment.BottomCenter;
@@ -122,9 +125,10 @@
             btnKullanicilariGoruntule.ImageAlign = ContentAlignment.TopCenter;
             btnKullanicilariGoruntule.ImageKey = "icons8-users-50.png";
             btnKullanicilariGoruntule.ImageList = ımageList1;
-            btnKullanicilariGoruntule.Location = new Point(40, 392);
+            btnKullanicilariGoruntule.Location = new Point(35, 294);
+            btnKullanicilariGoruntule.Margin = new Padding(3, 2, 3, 2);
             btnKullanicilariGoruntule.Name = "btnKullanicilariGoruntule";
-            btnKullanicilariGoruntule.Size = new Size(129, 120);
+            btnKullanicilariGoruntule.Size = new Size(113, 90);
             btnKullanicilariGoruntule.TabIndex = 40;
             btnKullanicilariGoruntule.Text = "Kullanıcıları Görüntüle";
             btnKullanicilariGoruntule.TextAlign = ContentAlignment.BottomCenter;
@@ -137,9 +141,10 @@
             btnYemekGuncelleme.ImageAlign = ContentAlignment.TopCenter;
             btnYemekGuncelleme.ImageKey = "icons8-food-donor-50.png";
             btnYemekGuncelleme.ImageList = ımageList1;
-            btnYemekGuncelleme.Location = new Point(186, 255);
+            btnYemekGuncelleme.Location = new Point(163, 191);
+            btnYemekGuncelleme.Margin = new Padding(3, 2, 3, 2);
             btnYemekGuncelleme.Name = "btnYemekGuncelleme";
-            btnYemekGuncelleme.Size = new Size(129, 120);
+            btnYemekGuncelleme.Size = new Size(113, 90);
             btnYemekGuncelleme.TabIndex = 41;
             btnYemekGuncelleme.Text = "Yemek Güncelleme";
             btnYemekGuncelleme.TextAlign = ContentAlignment.BottomCenter;
@@ -152,9 +157,10 @@
             btnYemekEkleme.ImageAlign = ContentAlignment.TopCenter;
             btnYemekEkleme.ImageKey = "icons8-cooking-50.png";
             btnYemekEkleme.ImageList = ımageList1;
-            btnYemekEkleme.Location = new Point(40, 255);
+            btnYemekEkleme.Location = new Point(35, 191);
+            btnYemekEkleme.Margin = new Padding(3, 2, 3, 2);
             btnYemekEkleme.Name = "btnYemekEkleme";
-            btnYemekEkleme.Size = new Size(129, 120);
+            btnYemekEkleme.Size = new Size(113, 90);
             btnYemekEkleme.TabIndex = 42;
             btnYemekEkleme.Text = "Yemek Ekleme";
             btnYemekEkleme.TextAlign = ContentAlignment.BottomCenter;
@@ -167,9 +173,10 @@
             btnOgunSilme.ImageAlign = ContentAlignment.TopCenter;
             btnOgunSilme.ImageKey = "icons8-dead-food-50.png";
             btnOgunSilme.ImageList = ımageList1;
-            btnOgunSilme.Location = new Point(336, 105);
+            btnOgunSilme.Location = new Point(294, 79);
+            btnOgunSilme.Margin = new Padding(3, 2, 3, 2);
             btnOgunSilme.Name = "btnOgunSilme";
-            btnOgunSilme.Size = new Size(129, 120);
+            btnOgunSilme.Size = new Size(113, 90);
             btnOgunSilme.TabIndex = 43;
             btnOgunSilme.Text = "    Öğün       Silme";
             btnOgunSilme.TextAlign = ContentAlignment.BottomCenter;
@@ -182,9 +189,10 @@
             btnOgunGuncelleme.ImageAlign = ContentAlignment.TopCenter;
             btnOgunGuncelleme.ImageKey = "icons8-meal-50 (1).png";
             btnOgunGuncelleme.ImageList = ımageList1;
-            btnOgunGuncelleme.Location = new Point(186, 105);
+            btnOgunGuncelleme.Location = new Point(163, 79);
+            btnOgunGuncelleme.Margin = new Padding(3, 2, 3, 2);
             btnOgunGuncelleme.Name = "btnOgunGuncelleme";
-            btnOgunGuncelleme.Size = new Size(129, 120);
+            btnOgunGuncelleme.Size = new Size(113, 90);
             btnOgunGuncelleme.TabIndex = 44;
             btnOgunGuncelleme.Text = "Öğün Güncelleme";
             btnOgunGuncelleme.TextAlign = ContentAlignment.BottomCenter;
@@ -197,9 +205,10 @@
             btnOgunEkleme.ImageAlign = ContentAlignment.TopCenter;
             btnOgunEkleme.ImageKey = "icons8-meal-50.png";
             btnOgunEkleme.ImageList = ımageList1;
-            btnOgunEkleme.Location = new Point(40, 105);
+            btnOgunEkleme.Location = new Point(35, 79);
+            btnOgunEkleme.Margin = new Padding(3, 2, 3, 2);
             btnOgunEkleme.Name = "btnOgunEkleme";
-            btnOgunEkleme.Size = new Size(129, 120);
+            btnOgunEkleme.Size = new Size(113, 90);
             btnOgunEkleme.TabIndex = 45;
             btnOgunEkleme.Text = "Öğün Ekleme";
             btnOgunEkleme.TextAlign = ContentAlignment.BottomCenter;
@@ -208,9 +217,10 @@
             // 
             // YoneticiKontrolPaneli
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(497, 534);
+            BackColor = Color.White;
+            ClientSize = new Size(435, 400);
             Controls.Add(label5);
             Controls.Add(btnSifreDegistir);
             Controls.Add(btnYemekSilme);
@@ -221,6 +231,7 @@
             Controls.Add(btnOgunSilme);
             Controls.Add(btnOgunGuncelleme);
             Controls.Add(btnOgunEkleme);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "YoneticiKontrolPaneli";
             Text = "YoneticiKontrolPaneli";
             ResumeLayout(false);

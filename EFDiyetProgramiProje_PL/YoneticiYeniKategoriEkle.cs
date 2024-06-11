@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace EFDiyetProgramiProje_PL
 {
-    public partial class KullaniciYeniKategoriEkle : Form
+    public partial class YoneticiYeniKategoriEkle : Form
     {
         YemekKategoriManager yemekKategoriManager = new YemekKategoriManager();
-        public KullaniciYeniKategoriEkle()
+        public YoneticiYeniKategoriEkle()
         {
             InitializeComponent();
         }

@@ -15,6 +15,8 @@ using EFDiyetProgramiProje_DAL.Entities;
 using EFDiyetProgramiProje_DAL.Enums;
 using System.Globalization;
 using System.Xml.Serialization;
+using Microsoft.Identity.Client.NativeInterop;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EFDiyetProgramiProje_PL
 {
@@ -26,10 +28,13 @@ namespace EFDiyetProgramiProje_PL
         YemekManager yemekManager = new YemekManager();
         YemekKategoriManager YemekKategoriManager = new YemekKategoriManager();
         OgunYemekManager OgunYemekManager = new OgunYemekManager();
-
+        OgunManager ogunManager = new OgunManager();
         YemekViewModel secilenYemek = new YemekViewModel();
+        List<OgunViewModel> kullaniciOgunYemekler;
 
         DateTime tarih;
+        double gunlukToplamKalori;
+
 
         private int kullaniciId;
         public KullaniciKontrolPaneli(int mevcutKullaniciId)
@@ -57,8 +62,10 @@ namespace EFDiyetProgramiProje_PL
             {
                 var kullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
                 lblGunlukHedefKalori.Text = Convert.ToString(kullaniciBilgileri.GunlukHedefKalori);
-                lblBMI.Text = Convert.ToString(kullaniciBilgileri.VucutKitleEndeksi);
-                lblBMR.Text = Convert.ToString(kullaniciBilgileri.BazalMetabolizmaHizi);
+                //lblBMI.Text = Convert.ToString(kullaniciBilgileri.VucutKitleEndeksi);
+                lblBMI.Text = Math.Round(kullaniciBilgileri.VucutKitleEndeksi.GetValueOrDefault(), 2).ToString();
+                //lblBMR.Text = Convert.ToString(kullaniciBilgileri.BazalMetabolizmaHizi);
+                lblBMR.Text = Math.Round(kullaniciBilgileri.BazalMetabolizmaHizi.GetValueOrDefault(), 2).ToString();
                 lblBoy.Text = Convert.ToString(kullaniciBilgileri.Boy);
                 lblYas.Text = Convert.ToString(kullaniciBilgileri.Yas);
                 lblHedefKilo.Text = Convert.ToString(kullaniciBilgileri.HedefKilo);
@@ -69,11 +76,17 @@ namespace EFDiyetProgramiProje_PL
 
             monthCalendar1.MaxSelectionCount = 2;
             tarih = monthCalendar1.SelectionStart;
-            YemekListele(1);
-            YemekListele(2);
-            YemekListele(3);
+
+            //kullaniciOgunYemekler = OgunYemekManager.Search(s => s.KullaniciId == mevcutKullaniciId);
+            kullaniciOgunYemekler = ogunManager.GetAll();
+
+            //yemek listele
+            YemekListeleButunOgunler();
+
+            
 
             //lblGunlukToplamKalori.Text = lblKaloriToplamAksam.Text;
+
         }
 
         private void btnKisiselBilgileriGuncelle_Click(object sender, EventArgs e)
@@ -114,72 +127,104 @@ namespace EFDiyetProgramiProje_PL
 
         }
 
-        private void btnEkleSabah_Click(object sender, EventArgs e)
-        {
-            if (!YemekEklemeKontrol())
-            {
-                return;
-            }
-
-            OgunYemekViewModel eklenenYemek = new OgunYemekViewModel();
-            eklenenYemek.YemekId = secilenYemek.Id;
-            eklenenYemek.OgunId = 1;
-            eklenenYemek.Tarih = DateOnly.FromDateTime(tarih);
-            eklenenYemek.KullaniciId = kullaniciId;
-            eklenenYemek.BirimAdedi = Convert.ToInt32(txtAdet.Text);
-
-            OgunYemekManager.Insert(eklenenYemek);
-
-            YemekListele(1);
-        }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             tarih = monthCalendar1.SelectionStart;
-            YemekListele(1);
-            YemekListele(2);
-            YemekListele(3);
+
+            //yemek listele
+            YemekListeleButunOgunler();
         }
 
 
-        void YemekListele(int ogunId)
+        void YemekListeleButunOgunler()
         {
+            int sayac = 0;
+            pnlYemekler.Controls.Clear();
+            gunlukToplamKalori = 0;
+            foreach (var kullaniciOgunYemek in kullaniciOgunYemekler)
+            {
+                YemekListele(kullaniciOgunYemek.Id, sayac);
+                sayac++;
+            }
+            lblGunlukToplamKalori.Text = gunlukToplamKalori.ToString();
+        }
+
+        void YemekListele(int ogunId, int sayac)
+        {
+
+            var ogun = ogunManager.GetById(ogunId);
+
+            if (ogun == null)
+            {
+                ogun = ogunManager.GetDeletedById(ogunId);
+            }
+
+
+            //
+
+            int inc = 250;
+
+            Button buttonEkle = new Button();
+
+            buttonEkle.Text = "Ekle";
+            buttonEkle.Size = new Size(227, 70);
+            buttonEkle.Top = 3;
+            buttonEkle.Click += (sender, e) => btnEkle_Click(sender, e, ogunId);
+            buttonEkle.Left = 3 + inc * sayac;
+
+
+            Label ogunLabel = new Label();
+            ogunLabel.Text = ogun.OgunAdi + ":";
+            ogunLabel.Top = 90;
+            ogunLabel.Left = 3 + inc * sayac;
+            ogunLabel.AutoSize = true;
+
+            Label kaloriLabel = new Label();
+            kaloriLabel.Text = "Toplam Kalori(kcal): ";
+            kaloriLabel.Top = 90;
+            kaloriLabel.Left = 3 + inc * sayac + 70;
+            kaloriLabel.AutoSize = true;
+
+
+            Label kaloriGosterLabel = new Label();
+            kaloriGosterLabel.Text = "";
+            kaloriGosterLabel.Top = 90;
+            kaloriGosterLabel.Left = 3 + inc * sayac + 190;
+            kaloriGosterLabel.AutoSize = true;
+            kaloriGosterLabel.Tag = ogunId;
+
+
+            FlowLayoutPanel flpYemekler = new FlowLayoutPanel();
+            flpYemekler.Size = new Size(225, 415);
+            flpYemekler.Top = 120;
+            flpYemekler.Tag = ogunId;
+            flpYemekler.Left = 3 + inc * sayac;
+            flpYemekler.AutoScroll = true;
+
+
+            pnlYemekler.Controls.Add(buttonEkle);
+            pnlYemekler.Controls.Add(ogunLabel);
+            pnlYemekler.Controls.Add(kaloriLabel);
+            pnlYemekler.Controls.Add(kaloriGosterLabel);
+            pnlYemekler.Controls.Add(flpYemekler);
+
+            //
+
             var ogunYemekler = OgunYemekManager.Search(s => s.Tarih == DateOnly.FromDateTime(tarih) && s.OgunId == ogunId);
 
-            if (ogunId == 1)
-            {
-                flpSabahYemekler.Controls.Clear();
-            }
-            else if (ogunId == 2)
-            {
-                flpOgleYemekler.Controls.Clear();
-            }
-            else if (ogunId == 3)
-            {
-                flpAksamYemekler.Controls.Clear();
-            }
 
 
 
             double? kaloriToplam = 0;
-
             foreach (var ogunYemek in ogunYemekler)
             {
                 kaloriToplam += YemekEkle(ogunYemek, ogunId);
             }
+            kaloriGosterLabel.Text = kaloriToplam.ToString();
 
-            if (ogunId == 1)
-            {
-                lblSabahKaloriToplam.Text = kaloriToplam.ToString();
-            }
-            else if (ogunId == 2)
-            {
-                lblOgleKaloriToplam.Text = kaloriToplam.ToString();
-            }
-            else if (ogunId == 3)
-            {
-                lblAksamKaloriToplam.Text = kaloriToplam.ToString();
-            }
+            gunlukToplamKalori += kaloriToplam.GetValueOrDefault();
+
         }
 
         double? YemekEkle(OgunYemekViewModel ogunYemek, int ogunId)
@@ -187,7 +232,6 @@ namespace EFDiyetProgramiProje_PL
 
             Panel panel = new Panel();
 
-            //var yy = yemekManager.GetDeletedById
 
             var eklenenYemek = yemekManager.Search(s => s.Id == ogunYemek.YemekId).FirstOrDefault();
 
@@ -200,20 +244,20 @@ namespace EFDiyetProgramiProje_PL
             Label yemekAdi = new Label();
             yemekAdi.Text = "Yemek Adı: " + eklenenYemek.YemekAdi;
             yemekAdi.Top = 0;
-            yemekAdi.Width = 110;
+            yemekAdi.AutoSize = true;
 
 
             Label kalori = new Label();
             kalori.Text = "Kalori: " + eklenenYemek.Kalori + " Kcal";
             kalori.Top = 30;
-            kalori.Width = 80;
+            kalori.AutoSize = true;
 
 
 
             Label adet = new Label();
             adet.Text = "Adet: " + ogunYemek.BirimAdedi + " " + eklenenYemek.Birim;
             adet.Top = 60;
-            adet.Width = 80;
+            adet.AutoSize = true;
 
             PictureBox gorsel = new PictureBox();
 
@@ -221,7 +265,7 @@ namespace EFDiyetProgramiProje_PL
             {
                 using (MemoryStream ms = new MemoryStream(eklenenYemek.Gorsel))
                 {
-
+                    //null hatası
                     gorsel.SizeMode |= PictureBoxSizeMode.Zoom;
                     gorsel.Left = 120;
                     gorsel.Top = 10;
@@ -251,24 +295,35 @@ namespace EFDiyetProgramiProje_PL
             panel.Height = 120;
             panel.BorderStyle = BorderStyle.FixedSingle;
 
-            if (ogunId == 1)
+
+
+            //
+            FlowLayoutPanel flpYemek = new FlowLayoutPanel();
+
+            foreach (Control control in pnlYemekler.Controls)
             {
-                flpSabahYemekler.Controls.Add(panel);
+                if(control is FlowLayoutPanel)
+                {
+                    FlowLayoutPanel flp = (FlowLayoutPanel)control;
+                    int tag = (int)flp.Tag;
+                    if (tag == ogunId)
+                    {
+                        flpYemek = (FlowLayoutPanel)control;
+                    }
+                }
             }
-            else if (ogunId == 2)
-            {
-                flpOgleYemekler.Controls.Add(panel);
-            }
-            else if (ogunId == 3)
-            {
-                flpAksamYemekler.Controls.Add(panel);
-            }
+
+            flpYemek.Controls.Add(panel);
+
+            //
+
 
 
             return eklenenYemek.Kalori * ogunYemek.BirimAdedi;
         }
 
-        private void btnEkleOgle_Click(object sender, EventArgs e)
+
+        private void btnEkle_Click(object sender, EventArgs e, int id)
         {
             if (!YemekEklemeKontrol())
             {
@@ -276,34 +331,16 @@ namespace EFDiyetProgramiProje_PL
             }
             OgunYemekViewModel eklenenYemek = new OgunYemekViewModel();
             eklenenYemek.YemekId = secilenYemek.Id;
-            eklenenYemek.OgunId = 2;
+            eklenenYemek.OgunId = id;
             eklenenYemek.Tarih = DateOnly.FromDateTime(tarih);
             eklenenYemek.KullaniciId = kullaniciId;
             eklenenYemek.BirimAdedi = Convert.ToInt32(txtAdet.Text);
 
             OgunYemekManager.Insert(eklenenYemek);
 
-            YemekListele(2);
+            YemekListeleButunOgunler();
         }
 
-        private void btnEkleAksam_Click(object sender, EventArgs e)
-        {
-            if (!YemekEklemeKontrol())
-            {
-                return;
-            }
-
-            OgunYemekViewModel eklenenYemek = new OgunYemekViewModel();
-            eklenenYemek.YemekId = secilenYemek.Id;
-            eklenenYemek.OgunId = 3;
-            eklenenYemek.Tarih = DateOnly.FromDateTime(tarih);
-            eklenenYemek.KullaniciId = kullaniciId;
-            eklenenYemek.BirimAdedi = Convert.ToInt32(txtAdet.Text);
-
-            OgunYemekManager.Insert(eklenenYemek);
-
-            YemekListele(3);
-        }
 
 
         bool YemekEklemeKontrol()
@@ -333,10 +370,8 @@ namespace EFDiyetProgramiProje_PL
 
             OgunYemekManager.Delete(ogunyemek);
 
-            YemekListele(1);
-            YemekListele(2);
-            YemekListele(3);
-
+            //yemek listele
+            YemekListeleButunOgunler();
         }
 
         private void btnGunSonuRaporu_Click(object sender, EventArgs e)
@@ -354,17 +389,20 @@ namespace EFDiyetProgramiProje_PL
                 return;
             }
 
-            double sabahKaloriToplami = Convert.ToDouble(lblSabahKaloriToplam.Text);
-            double ogleKaloriToplami = Convert.ToDouble(lblOgleKaloriToplam.Text);
-            double aksamKaloriToplami = Convert.ToDouble(lblAksamKaloriToplam.Text);
-            double toplamKalori = sabahKaloriToplami + ogleKaloriToplami + aksamKaloriToplami;
+
+            double toplamKalori = 0;
+
             Dictionary<string, double> ogunKalorileri = new Dictionary<string, double>
             {
-                { "Sabah", sabahKaloriToplami },
-                { "Öğle", ogleKaloriToplami },
-                { "Akşam", aksamKaloriToplami }
             };
-
+            foreach (Control control in pnlYemekler.Controls)
+            {
+                if (control is Label && control.Tag != null)
+                {
+                    ogunKalorileri.Add(ogunManager.GetById(Convert.ToInt32(control.Tag)).OgunAdi, Convert.ToDouble(control.Text));
+                    toplamKalori += Convert.ToDouble(control.Text);
+                }
+            }
             pnlRapor.Controls.Clear();
 
             var enCokKaloriTuketilenOgun = ogunKalorileri.OrderByDescending(k => k.Value).FirstOrDefault();
@@ -373,6 +411,7 @@ namespace EFDiyetProgramiProje_PL
                                  $"En Çok Kalori Tüketilen Öğün:\n {enCokKaloriTuketilenOgun.Key}\n ({enCokKaloriTuketilenOgun.Value} kalori)";
 
             DisplayReport(raporMesaji);
+            
 
         }
 
@@ -467,6 +506,11 @@ namespace EFDiyetProgramiProje_PL
         private double GetYemekKalori(int yemekId)
         {
             var yemek = yemekManager.GetById(yemekId);
+
+            if(yemek == null)
+            {
+                yemek = yemekManager.GetDeletedById(yemekId);
+            }
 
             if (yemek != null)
             {

@@ -123,28 +123,10 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
         {
-            /*
-            YemekKategoriViewModel yeniKategori = new YemekKategoriViewModel();
-            yeniKategori.KategoriAdi = cbYeniKategori.Text;
-            cbKategoriSecGuncelleme.Text = cbYeniKategori.Text;
-
-            yemekKategori.Insert(yeniKategori);
-            MessageBox.Show("Yeni Kategori Eklendi");
-
-            cbYeniKategori.Items.Clear();
-            cbKategoriSecGuncelleme.Items.Clear();
-            var kategoriler = yemekKategori.GetAll();
-
-            foreach (var kategori in kategoriler)
-            {
-                cbYeniKategori.Items.Add(kategori.KategoriAdi);
-                cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
-            }
-            */
 
 
-            KullaniciYeniKategoriEkle kullaniciYeniKategoriEkle = new KullaniciYeniKategoriEkle();
-            kullaniciYeniKategoriEkle.Show();
+            YoneticiYeniKategoriEkle yoneticiYeniKategoriEkle = new YoneticiYeniKategoriEkle();
+            yoneticiYeniKategoriEkle.ShowDialog();
 
             cbKategoriSecGuncelleme.Items.Clear();
 
@@ -168,6 +150,23 @@ namespace EFDiyetProgramiProje_PL
             {
                 pbYemekGörseliGuncelleme.ImageLocation = openFileDialog.FileName;
             }
+        }
+
+        private void btnKategoriSil_Click(object sender, EventArgs e)
+        {
+
+            YoneticiKategoriSil yoneticiKategoriSil = new YoneticiKategoriSil();
+            yoneticiKategoriSil.ShowDialog();
+
+            cbKategoriSecGuncelleme.Items.Clear();
+
+            var kategoriler = yemekKategori.GetAll();
+
+            foreach (var kategori in kategoriler)
+            {
+                cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
+            }
+            cbKategoriSecGuncelleme.Text = "Kategori seçiniz...";
         }
     }
 }

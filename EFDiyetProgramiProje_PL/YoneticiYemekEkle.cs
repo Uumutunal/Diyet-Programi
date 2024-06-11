@@ -38,6 +38,7 @@ namespace EFDiyetProgramiProje_PL
             {
                 cbKategoriSec.Items.Add(kategori.KategoriAdi);
             }
+            cbKategoriSec.Text = "Kategori seçiniz...";
 
         }
 
@@ -60,8 +61,12 @@ namespace EFDiyetProgramiProje_PL
             yeniYemek.Birim = txtBirim.Text;
 
             string filePath = pbYemekGörseli.ImageLocation;
-            byte[] imageData = File.ReadAllBytes(filePath);
-            yeniYemek.Gorsel = imageData;
+            if (filePath != null)
+            {
+                byte[] imageData = File.ReadAllBytes(filePath);
+                yeniYemek.Gorsel = imageData;
+            }
+
 
 
             yemekManager.Insert(yeniYemek);
@@ -70,24 +75,9 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
         {
-            /*
-            YemekKategoriViewModel yeniKategori = new YemekKategoriViewModel();
-            yeniKategori.KategoriAdi = cbKategoriSec.Text;
 
-            yemekKategori.Insert(yeniKategori);
-            MessageBox.Show("Yeni Kategori Eklendi");
-
-            cbKategoriSec.Items.Clear();
-            var kategoriler = yemekKategori.GetAll();
-
-            foreach (var kategori in kategoriler)
-            {
-                cbKategoriSec.Items.Add(kategori.KategoriAdi);
-            }
-            */
-
-            KullaniciYeniKategoriEkle kullaniciYeniKategoriEkle = new KullaniciYeniKategoriEkle();
-            kullaniciYeniKategoriEkle.Show();
+            YoneticiYeniKategoriEkle kullaniciYeniKategoriEkle = new YoneticiYeniKategoriEkle();
+            kullaniciYeniKategoriEkle.ShowDialog();
 
             cbKategoriSec.Items.Clear();
 
@@ -104,8 +94,6 @@ namespace EFDiyetProgramiProje_PL
         private void pbYemekGörseli_Click(object sender, EventArgs e)
         {
 
-            //görseli düzelt
-
 
 
             OpenFileDialog openFileDialog = new OpenFileDialog()
@@ -119,6 +107,22 @@ namespace EFDiyetProgramiProje_PL
                 pbYemekGörseli.ImageLocation = openFileDialog.FileName;
 
             }
+        }
+
+        private void btnKategoriSil_Click(object sender, EventArgs e)
+        {
+            YoneticiKategoriSil yoneticiKategoriSil = new YoneticiKategoriSil();
+            yoneticiKategoriSil.ShowDialog();
+
+            cbKategoriSec.Items.Clear();
+
+            var kategoriler = yemekKategori.GetAll();
+
+            foreach (var kategori in kategoriler)
+            {
+                cbKategoriSec.Items.Add(kategori.KategoriAdi);
+            }
+            cbKategoriSec.Text = "Kategori seçiniz...";
         }
     }
 }

@@ -21,7 +21,11 @@ namespace EFDiyetProgramiProje_PL
         public YoneticiOgunGuncelle()
         {
             InitializeComponent();
+            var ogunler = ogunManager.GetAll();
+            ogunler.AddRange(ogunManager.GetAllDeleted());
+
             dgvOgunListesi.DataSource = ogunManager.GetAll();
+            //dgvOgunListesi.DataSource = ogunler;
             lblGuncelleHata.Text = "Lütfen değiştireceğiniz öğün adını listeden seçiniz!";
             
         }
@@ -39,7 +43,9 @@ namespace EFDiyetProgramiProje_PL
             {
                 var ogunAdiVarMi = ogunManager.Search(o => o.OgunAdi == txtYeniOgunAdi.Text).FirstOrDefault();
                 if (ogunAdiVarMi != null)
-                    lblGuncelleHata.Text = "Bu öğün adı listede bulunmaktadır! Başka ögün adı deneyiniz!";
+                {
+                    MessageBox.Show("Bu öğün adı listede bulunmaktadır! Başka ögün adı deneyiniz!");
+                }
                 else if (ogunAdiVarMi == null)
                 {
                     ogun.OgunAdi = txtYeniOgunAdi.Text;

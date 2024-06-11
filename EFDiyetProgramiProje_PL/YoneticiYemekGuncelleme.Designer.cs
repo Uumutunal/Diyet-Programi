@@ -55,6 +55,7 @@
             txtKalori = new TextBox();
             cbYeniKategori = new ComboBox();
             btnKategoriEkle = new Button();
+            btnKategoriSil = new Button();
             ((System.ComponentModel.ISupportInitialize)pbYemekGörseliGuncelleme).BeginInit();
             SuspendLayout();
             // 
@@ -292,12 +293,24 @@
             btnKategoriEkle.UseVisualStyleBackColor = true;
             btnKategoriEkle.Click += btnKategoriEkle_Click;
             // 
+            // btnKategoriSil
+            // 
+            btnKategoriSil.Location = new Point(160, 97);
+            btnKategoriSil.Margin = new Padding(3, 2, 3, 2);
+            btnKategoriSil.Name = "btnKategoriSil";
+            btnKategoriSil.Size = new Size(108, 21);
+            btnKategoriSil.TabIndex = 47;
+            btnKategoriSil.Text = "Kategori Sil";
+            btnKategoriSil.UseVisualStyleBackColor = true;
+            btnKategoriSil.Click += btnKategoriSil_Click;
+            // 
             // YoneticiYemekGuncelleme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(505, 523);
+            Controls.Add(btnKategoriSil);
             Controls.Add(btnKategoriEkle);
             Controls.Add(cbYeniKategori);
             Controls.Add(label13);
@@ -357,5 +370,6 @@
         private TextBox txtKalori;
         private ComboBox cbYeniKategori;
         private Button btnKategoriEkle;
+        private Button btnKategoriSil;
     }
 }

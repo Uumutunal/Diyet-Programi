@@ -1,6 +1,6 @@
 ﻿namespace EFDiyetProgramiProje_PL
 {
-    partial class KullaniciYeniKategoriEkle
+    partial class YoneticiYeniKategoriEkle
     {
         /// <summary>
         /// Required designer variable.

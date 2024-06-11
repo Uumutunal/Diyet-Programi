@@ -51,6 +51,7 @@
             txtKalori = new TextBox();
             label11 = new Label();
             txtBirim = new TextBox();
+            btnKategoriSil = new Button();
             ((System.ComponentModel.ISupportInitialize)pbYemekGörseli).BeginInit();
             SuspendLayout();
             // 
@@ -250,12 +251,24 @@
             txtBirim.Size = new Size(227, 23);
             txtBirim.TabIndex = 26;
             // 
+            // btnKategoriSil
+            // 
+            btnKategoriSil.Location = new Point(164, 83);
+            btnKategoriSil.Margin = new Padding(3, 2, 3, 2);
+            btnKategoriSil.Name = "btnKategoriSil";
+            btnKategoriSil.Size = new Size(108, 21);
+            btnKategoriSil.TabIndex = 48;
+            btnKategoriSil.Text = "Kategori Sil";
+            btnKategoriSil.UseVisualStyleBackColor = true;
+            btnKategoriSil.Click += btnKategoriSil_Click;
+            // 
             // YoneticiYemekEkle
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(570, 500);
+            Controls.Add(btnKategoriSil);
             Controls.Add(label11);
             Controls.Add(txtBirim);
             Controls.Add(label10);
@@ -307,5 +320,6 @@
         private TextBox txtKalori;
         private Label label11;
         private TextBox txtBirim;
+        private Button btnKategoriSil;
     }
 }

@@ -33,12 +33,13 @@ namespace EFDiyetProgramiProje_PL
             txtSifre.UseSystemPasswordChar = true;
             //pictureBox1.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
         }
-        int sayac = 0;
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            sayac++;
-            if (sayac % 2 != 0)
+
+
+            if (txtSifre.UseSystemPasswordChar)
             {
                 txtSifre.UseSystemPasswordChar = false;
                 //pictureBox1.Image = Resources.png_transparent_eye_eyes_password_security_show_password_essential_icon_thumbnail;
@@ -56,11 +57,10 @@ namespace EFDiyetProgramiProje_PL
             //pictureBox2.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
         }
 
-        int sayac2 = 0;
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            sayac2++;
-            if (sayac2 % 2 != 0)
+
+            if (txtSifre.UseSystemPasswordChar)
             {
                 txtSifreTekrar.UseSystemPasswordChar = false;
                 //pictureBox2.Image = Resources.png_transparent_eye_eyes_password_security_show_password_essential_icon_thumbnail;
@@ -157,7 +157,6 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
-                MessageBox.Show("Kayıt Başarılı! Giriş Yapabilirsiniz.");
                 string sifrelenmis = Sha256Hasher.ComputeSha256Hash(sifre);
                 KullaniciViewModel yeniKullanici = new KullaniciViewModel()
                 {
@@ -167,6 +166,7 @@ namespace EFDiyetProgramiProje_PL
                     GuvenlikYaniti = guvenlikYaniti
                 };
                 kullaniciManager.Insert(yeniKullanici);
+                MessageBox.Show("Kayıt Başarılı! Giriş Yapabilirsiniz.");
                 this.Close();
 
             }
