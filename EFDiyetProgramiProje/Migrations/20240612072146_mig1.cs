@@ -20,7 +20,6 @@ namespace EFDiyetProgramiProje_DAL.Migrations
                     KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GuvenlikSorusu = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuvenlikYaniti = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    HatirlaSifre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sifre2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sifre3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -168,8 +167,8 @@ namespace EFDiyetProgramiProje_DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Kullanicilar",
-                columns: new[] { "Id", "CreatedTime", "DataStatus", "DeletedTime", "GuvenlikSorusu", "GuvenlikYaniti", "HatirlaSifre", "KullaniciAdi", "ModifiedTime", "Sifre", "Sifre2", "Sifre3", "Sifre4" },
-                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, null, null, null, "admin", null, "123", null, null, null });
+                columns: new[] { "Id", "CreatedTime", "DataStatus", "DeletedTime", "GuvenlikSorusu", "GuvenlikYaniti", "KullaniciAdi", "ModifiedTime", "Sifre", "Sifre2", "Sifre3", "Sifre4" },
+                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, null, null, "admin", null, "123", null, null, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_KullaniciBilgiler_KullaniciId",

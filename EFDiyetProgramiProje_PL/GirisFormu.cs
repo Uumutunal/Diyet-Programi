@@ -43,19 +43,13 @@ namespace EFDiyetProgramiProje_PL
         private void btnGiris_Click(object sender, EventArgs e)
         {
 
-            string sifrelenmisSifre = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
-
-            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmisSifre).FirstOrDefault();
-
+            var admin = kullaniciManager.Search(k => k.KullaniciAdi == "admin").FirstOrDefault();
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
             if (txtKullaniciAdi.Text == null || txtSifre.Text == null)
             {
                 MessageBox.Show("Kullanýcý adý ve Þifre boþ býrakýlamaz! Lütfen yukarýdaki kýsýmlarý doldurun!");
             }
-            else if (kullanici == null)
-            {
-                MessageBox.Show("Böyle bir kullanýcý bulunamadý! Lütfen kullanýcý adýnýzý ve þifrenizi tekrar giriniz!");
-            }
-            else if (kullanici.KullaniciAdi == "admin" && kullanici.Sifre == sifrelenmisSifre)
+            else if (txtKullaniciAdi.Text == admin.KullaniciAdi && txtSifre.Text == admin.Sifre)
             {
 
                 MessageBox.Show("Admin giriþi baþarýlý!");
@@ -63,6 +57,10 @@ namespace EFDiyetProgramiProje_PL
                 YoneticiKontrolPaneli yoneticiKontrolPaneli = new YoneticiKontrolPaneli();
                 yoneticiKontrolPaneli.ShowDialog();
                 this.Close();
+            }
+            else if (kullanici == null)
+            {
+                MessageBox.Show("Böyle bir kullanýcý bulunamadý! Lütfen kullanýcý adýnýzý ve þifrenizi tekrar giriniz!");
             }
             else
             {
@@ -77,7 +75,7 @@ namespace EFDiyetProgramiProje_PL
                 this.Hide();
                 kullaniciKontrolPaneli.ShowDialog();
                 this.Show();
-            }
+            }   
         }
 
         private void btnSifremiUnuttum_Click(object sender, EventArgs e)
