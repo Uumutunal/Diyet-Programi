@@ -25,6 +25,10 @@ namespace EFDiyetProgramiProje_PL
         {
             InitializeComponent();
             kullaniciAdi = _kullanici;
+            txtYeniSifre.UseSystemPasswordChar = true;
+            pbYeniSifre.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
+            txtYeniSifreTekrar.UseSystemPasswordChar = true;
+            pbYeniSifreTekrar.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
 
             kullanici = kullaniciManager.Search(k => k.KullaniciAdi == kullaniciAdi).FirstOrDefault();
 
@@ -32,11 +36,7 @@ namespace EFDiyetProgramiProje_PL
             cmbGuvenlikSorusu.Text = kullanici.GuvenlikSorusu;
         }
         #region SifreGizleme
-        private void txtYeniSifre_TextChanged(object sender, EventArgs e)
-        {
-            txtYeniSifre.UseSystemPasswordChar = true;
-            pbYeniSifre.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
-        }
+  
         int sayac = 0;
 
         private void pbYeniSifre_Click(object sender, EventArgs e)
@@ -54,11 +54,6 @@ namespace EFDiyetProgramiProje_PL
             }
         }
 
-        private void txtYeniSifreTekrar_TextChanged(object sender, EventArgs e)
-        {
-            txtYeniSifreTekrar.UseSystemPasswordChar = true;
-            pbYeniSifreTekrar.Image = Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
-        }
         int sayac2 = 0;
         private void pbYeniSifreTekrar_Click(object sender, EventArgs e)
         {

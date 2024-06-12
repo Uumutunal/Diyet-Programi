@@ -69,7 +69,7 @@ namespace EFDiyetProgramiProje_PL
         private void cbYemekSecGuncelleme_SelectedIndexChanged(object sender, EventArgs e)
         {
             yemek = yemekManager.Search(s => s.YemekAdi == cbYemekSecGuncelleme.Text).FirstOrDefault();
-
+            
 
             txtBirim.Text = yemek.Birim;
             txtKalori.Text = yemek.Kalori.ToString();
@@ -91,34 +91,45 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnYemekOgunleEkle_Click(object sender, EventArgs e)
         {
-            yemek.Birim = txtBirim.Text;
-
-            if (cbYeniKategori.Text != cbKategoriSecGuncelleme.Text)
+            if (cbYemekSecGuncelleme.SelectedIndex == -1 || cbKategoriSecGuncelleme.SelectedIndex == -1)
+                lblHata.Text = "Lütfen yemek ve kategori seçiniz!";
+            else if (txtBirim.Text == "" || txtKalori.Text == "")
+                lblHata.Text = "Birim ve kalori miktarlarını girmeniz gerekmektedir.";
+            else
             {
-                var yeniKategori = yemekKategori.Search(s => s.KategoriAdi == cbYeniKategori.Text).FirstOrDefault();
-                yemek.YemekKategoriId = yeniKategori.Id;
+                yemek.Birim = txtBirim.Text;
+
+                if (cbYeniKategori.Text != cbKategoriSecGuncelleme.Text)
+                {
+                    var yeniKategori = yemekKategori.Search(s => s.KategoriAdi == cbYeniKategori.Text).FirstOrDefault();
+                    yemek.YemekKategoriId = yeniKategori.Id;
+                }
+
+                bool kaloriDene = Double.TryParse(txtKalori.Text, out double kalori);
+
+                if (kaloriDene)
+                    yemek.Kalori = kalori;
+                else
+                {
+                    lblHata.Text = "Lütfen kalori kısmına rakam giriniz!";
+                }
+
+                yemek.YemekAdi = txtYemekAdiGuncelleme.Text;
+                yemek.Tarif = rtxtTarifiGuncelleme.Text;
+
+                string filePath = pbYemekGörseliGuncelleme.ImageLocation;
+
+                if (filePath != null)
+                {
+                    byte[] imageData = File.ReadAllBytes(filePath);
+                    yemek.Gorsel = imageData;
+                }
+
+
+
+                yemekManager.Update(yemek);
+                MessageBox.Show("Yemek Güncellendi");
             }
-
-            bool kaloriDene = Double.TryParse(txtKalori.Text, out double kalori);
-
-            if (kaloriDene)
-                yemek.Kalori = kalori;
-
-            yemek.YemekAdi = txtYemekAdiGuncelleme.Text;
-            yemek.Tarif = rtxtTarifiGuncelleme.Text;
-
-            string filePath = pbYemekGörseliGuncelleme.ImageLocation;
-
-            if (filePath != null)
-            {
-                byte[] imageData = File.ReadAllBytes(filePath);
-                yemek.Gorsel = imageData;
-            }
-
-
-
-            yemekManager.Update(yemek);
-            MessageBox.Show("Yemek Güncellendi");
         }
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)

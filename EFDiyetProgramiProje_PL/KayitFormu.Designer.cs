@@ -67,7 +67,6 @@
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(202, 27);
             txtSifre.TabIndex = 6;
-            txtSifre.TextChanged += txtSifre_TextChanged;
             // 
             // label1
             // 
@@ -102,11 +101,11 @@
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.Size = new Size(202, 27);
             txtSifreTekrar.TabIndex = 8;
-            txtSifreTekrar.TextChanged += txtSifreTekrar_TextChanged;
             // 
             // cmbGuvenlikSorusu
             // 
             cmbGuvenlikSorusu.FormattingEnabled = true;
+            cmbGuvenlikSorusu.Items.AddRange(new object[] { "İlk evcil hayvanınızın adı nedir?", "İlk öğretmeninizin adı nedir?", "Hangi şehirde doğdunuz?" });
             cmbGuvenlikSorusu.Location = new Point(200, 278);
             cmbGuvenlikSorusu.Margin = new Padding(3, 4, 3, 4);
             cmbGuvenlikSorusu.Name = "cmbGuvenlikSorusu";

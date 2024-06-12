@@ -92,7 +92,7 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
-                MessageBox.Show("Kullanýcý bulunamadý, kullanýcý adýný doðru girdiðinizden amin olun!");
+                MessageBox.Show("Kullanýcý bulunamadý, kullanýcý adýný doðru girdiðinizden emin olun!");
             }
         }
     }

@@ -47,21 +47,25 @@ namespace EFDiyetProgramiProje_PL
         {
 
             yeniYemek = yemekManager.Search(s => s.YemekAdi == cbYemekSecSil.Text.ToString()).FirstOrDefault();
-
-            int a = 2;
-
-            yemekManager.Delete(yeniYemek);
-
-            MessageBox.Show("Yemek Silindi");
-            cbYemekSecSil.Items.Clear();
-            cbYemekSecSil.Text = "";
-
-            var yemekler = yemekManager.GetAll().ToList();
-
-            foreach (var yemek in yemekler)
+            if (yeniYemek == null)
+                lblHata.Text = "Lütfen yemek seçiniz";
+            else
             {
+                int a = 2;
 
-                cbYemekSecSil.Items.Add(yemek.YemekAdi);
+                yemekManager.Delete(yeniYemek);
+
+                MessageBox.Show("Yemek Silindi");
+                cbYemekSecSil.Items.Clear();
+                cbYemekSecSil.Text = "";
+
+                var yemekler = yemekManager.GetAll().ToList();
+
+                foreach (var yemek in yemekler)
+                {
+
+                    cbYemekSecSil.Items.Add(yemek.YemekAdi);
+                }
             }
 
         }

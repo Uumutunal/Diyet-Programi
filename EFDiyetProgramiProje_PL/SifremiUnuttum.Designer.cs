@@ -140,7 +140,6 @@
             txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
             txtYeniSifreTekrar.Size = new Size(177, 23);
             txtYeniSifreTekrar.TabIndex = 24;
-            txtYeniSifreTekrar.TextChanged += txtYeniSifreTekrar_TextChanged;
             // 
             // label2
             // 
@@ -157,7 +156,6 @@
             txtYeniSifre.Name = "txtYeniSifre";
             txtYeniSifre.Size = new Size(177, 23);
             txtYeniSifre.TabIndex = 22;
-            txtYeniSifre.TextChanged += txtYeniSifre_TextChanged;
             // 
             // label1
             // 

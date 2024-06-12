@@ -39,6 +39,7 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
+                lblEkleHata.Text = "";
                 MessageBox.Show("Yeni öğün Başarıyla eklendi!");
                 OgunViewModel yeniOgun = new OgunViewModel()
                 {

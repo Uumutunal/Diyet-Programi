@@ -24,10 +24,10 @@ namespace EFDiyetProgramiProje_DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Şevval
-            //optionsBuilder.UseSqlServer("server=DESKTOP-4UHFHR4;database=DiyetProgramidb4;uid=sa;pwd=1357;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-4UHFHR4;database=DiyetProgramidb5;uid=sa;pwd=1357;trustservercertificate=true");
 
             //Umut
-            optionsBuilder.UseSqlServer("server=DESKTOP-HLJBBVE\\MSSQLSERVER01;database=DiyetProgramiDb99;uid=sa;pwd=123;trustservercertificate=true");
+            //optionsBuilder.UseSqlServer("server=DESKTOP-HLJBBVE\\MSSQLSERVER01;database=DiyetProgramiDb99;uid=sa;pwd=123;trustservercertificate=true");
 
             // buse
             //optionsBuilder.UseSqlServer("server=DESKTOP-DPOS3IC\\MSSQLSERVER1;database=EfDiyetProgramiDb4;uid=sa;pwd=123;trustservercertificate=true");

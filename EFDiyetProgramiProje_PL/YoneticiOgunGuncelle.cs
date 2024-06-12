@@ -41,6 +41,7 @@ namespace EFDiyetProgramiProje_PL
                 lblGuncelleHata.Text = "Yeni öğün adı girmediniz! Lütfen öğün adı giriniz!";
             else
             {
+                lblGuncelleHata.Text = "";
                 var ogunAdiVarMi = ogunManager.Search(o => o.OgunAdi == txtYeniOgunAdi.Text).FirstOrDefault();
                 if (ogunAdiVarMi != null)
                 {

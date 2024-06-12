@@ -25,6 +25,7 @@ namespace EFDiyetProgramiProje_PL
             InitializeComponent();
             dgvOgunListesi.DataSource = ogunManager.GetAll();
             txtOgunAdi.Enabled = false;
+            lblSilmeHata.Text = "";
 
         }
         //
@@ -40,6 +41,7 @@ namespace EFDiyetProgramiProje_PL
                 MessageBox.Show("Öğün başarıyla silindi!");
                 ogunManager.Delete(ogun);
                 dgvOgunListesi.DataSource = ogunManager.GetAll();
+                lblSilmeHata.Text = "";
             }
         }
 

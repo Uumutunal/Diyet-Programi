@@ -26,6 +26,7 @@ namespace EFDiyetProgramiProje_PL
             InitializeComponent();
 
             imageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images");
+            lblYemekEklemeHatalariGöster.Text = "";
 
             if (!Directory.Exists(imageDirectory))
             {
@@ -45,32 +46,40 @@ namespace EFDiyetProgramiProje_PL
         private void btnYemekOgunleEkle_Click(object sender, EventArgs e)
         {
             YemekViewModel yeniYemek = new YemekViewModel();
+            double kalori;
 
-            yeniYemek.YemekAdi = txtYemekAdi.Text;
-            yeniYemek.Tarif = rtxtTarifi.Text;
-            string kategoriAdi = (string)(cbKategoriSec.SelectedItem);
-
-            var kategori = yemekKategori.Search(s => s.KategoriAdi == kategoriAdi).FirstOrDefault();
-            yeniYemek.YemekKategoriId = kategori.Id;
-
-            bool kaloriDene = Double.TryParse(txtKalori.Text, out double kalori);
-
-            if (kaloriDene)
-                yeniYemek.Kalori = kalori;
-
-            yeniYemek.Birim = txtBirim.Text;
-
-            string filePath = pbYemekGörseli.ImageLocation;
-            if (filePath != null)
+            if (txtYemekAdi.Text == "" || txtBirim.Text == "" || txtKalori.Text == "" || cbKategoriSec.SelectedIndex == -1)
+                lblYemekEklemeHatalariGöster.Text = "Tarif bilgisi hariç yemek bilgileri boş bırakılamaz. Tarif bilgisi isteğe bağlıdır.";
+            else if (Double.TryParse(txtKalori.Text, out kalori) == false)
+                lblYemekEklemeHatalariGöster.Text = "Kalori kısmına lütfen rakam giriniz.";
+            else
             {
-                byte[] imageData = File.ReadAllBytes(filePath);
-                yeniYemek.Gorsel = imageData;
+                yeniYemek.YemekAdi = txtYemekAdi.Text;
+                yeniYemek.Tarif = rtxtTarifi.Text;
+                string kategoriAdi = (string)(cbKategoriSec.SelectedItem);
+
+                var kategori = yemekKategori.Search(s => s.KategoriAdi == kategoriAdi).FirstOrDefault();
+                yeniYemek.YemekKategoriId = kategori.Id;
+
+                bool kaloriDene = Double.TryParse(txtKalori.Text, out kalori);
+
+                if (kaloriDene)
+                    yeniYemek.Kalori = kalori;
+
+                yeniYemek.Birim = txtBirim.Text;
+
+                string filePath = pbYemekGörseli.ImageLocation;
+                if (filePath != null)
+                {
+                    byte[] imageData = File.ReadAllBytes(filePath);
+                    yeniYemek.Gorsel = imageData;
+                }
+
+
+
+                yemekManager.Insert(yeniYemek);
+                MessageBox.Show("Yemek Eklendi!");
             }
-
-
-
-            yemekManager.Insert(yeniYemek);
-            MessageBox.Show("Yemek Eklendi!");
         }
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
