@@ -83,7 +83,7 @@ namespace EFDiyetProgramiProje_PL
             //yemek listele
             YemekListeleButunOgunler();
 
-            
+
 
             //lblGunlukToplamKalori.Text = lblKaloriToplamAksam.Text;
 
@@ -302,7 +302,7 @@ namespace EFDiyetProgramiProje_PL
 
             foreach (Control control in pnlYemekler.Controls)
             {
-                if(control is FlowLayoutPanel)
+                if (control is FlowLayoutPanel)
                 {
                     FlowLayoutPanel flp = (FlowLayoutPanel)control;
                     int tag = (int)flp.Tag;
@@ -411,7 +411,7 @@ namespace EFDiyetProgramiProje_PL
                                  $"En Çok Kalori Tüketilen Öğün:\n {enCokKaloriTuketilenOgun.Key}\n ({enCokKaloriTuketilenOgun.Value} kalori)";
 
             DisplayReport(raporMesaji);
-            
+
 
         }
 
@@ -422,50 +422,70 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKiyasRaporu_Click(object sender, EventArgs e)
         {
-
-            DateTime startDate = dtpStartDate.Value.Date;
+            pnlRapor.Controls.Clear();
+            pnlRapor.AutoScroll = true;
+            DateTime startDate = dtpStartDate.Value;
             DateOnly dateOnlyStart = ConvertToDateOnly(startDate);
-            DateTime endDate = dtpEndDate.Value.Date;
+            DateTime endDate = dtpEndDate.Value;
             DateOnly dateOnlyEnd = ConvertToDateOnly(endDate);
 
-            if (startDate > endDate)
+            var kullaniciOgunYemekler = OgunYemekManager.Search(y => y.KullaniciId == kullaniciId && y.Tarih >= dateOnlyStart && y.Tarih <= dateOnlyEnd).ToList();
+
+            if (!kullaniciOgunYemekler.Any())
             {
-                MessageBox.Show("Başlangıç tarihi, bitiş tarihinden önce olmalıdır.");
+                MessageBox.Show("Belirtilen tarih aralığında yemek tüketim bilgisi bulunamadı.");
                 return;
             }
+            int top = 10;
+            OgunRaporuOlustur(dateOnlyStart, kullaniciOgunYemekler, top);
+            top += 200;
+            OgunRaporuOlustur(dateOnlyEnd, kullaniciOgunYemekler, top);
+        }
 
-            // Her iki tarihteki ogunYemekler verilerini al
-            var yemekTuketimleri1 = OgunYemekManager.Search(y => y.Tarih == dateOnlyStart).ToList();
-            var yemekTuketimleri2 = OgunYemekManager.Search(y => y.Tarih == dateOnlyEnd).ToList();
+        private void OgunRaporuOlustur(DateOnly date, List<OgunYemekViewModel> kullaniciOgunYemekler, int top)
+        {
+            var ogunler = ogunManager.GetAll();
+            
 
-            if (!yemekTuketimleri1.Any() || !yemekTuketimleri2.Any())
+            Label lblTarih = new Label
             {
-                MessageBox.Show("Seçilen tarihler aralığında yemek tüketim bilgisi bulunamadı.");
-                return;
+                Text = $"Tarih {date.ToShortDateString()}",
+                AutoSize = true,
+                Location = new Point(10, top)
+            };
+            pnlRapor.Controls.Add(lblTarih);
+            top += 20;
+
+            double toplamKaloriGunu = 0;
+            foreach (var ogun in ogunler)
+            {
+                var ogunYemeklerGunu = kullaniciOgunYemekler.Where(y => y.OgunId == ogun.Id && y.Tarih == date).ToList();
+                double ogunKaloriToplam = 0;
+                foreach (var ogunYemek in ogunYemeklerGunu)
+                {
+                    ogunKaloriToplam += (double)GetYemekKalori(ogunYemek.YemekId) * ogunYemek.BirimAdedi;
+                }
+
+                Label lblOgunRapor = new Label
+                {
+                    Text = $"{ogun.OgunAdi}: {ogunKaloriToplam} Kcal",
+                    AutoSize = true,
+                    Location = new Point(10, top)
+                };
+                pnlRapor.Controls.Add(lblOgunRapor);
+                top += 20;
+
+                toplamKaloriGunu += ogunKaloriToplam;
             }
 
-            // Her iki tarih için sabah, öğle ve akşam için toplam kalorileri hesapla
-            double sabahKaloriToplami1 = CalculateTotalKalori(yemekTuketimleri1, "Sabah");
-            double ogleKaloriToplami1 = CalculateTotalKalori(yemekTuketimleri1, "Öğle");
-            double aksamKaloriToplami1 = CalculateTotalKalori(yemekTuketimleri1, "Akşam");
-
-            double sabahKaloriToplami2 = CalculateTotalKalori(yemekTuketimleri2, "Sabah");
-            double ogleKaloriToplami2 = CalculateTotalKalori(yemekTuketimleri2, "Öğle");
-            double aksamKaloriToplami2 = CalculateTotalKalori(yemekTuketimleri2, "Akşam");
-
-            // Raporu oluştur
-            string raporMesaji = $"Kıyaslama Raporu\n\n" +
-                                 $"Tarih 1 ({startDate.ToShortDateString()}):\n" +
-                                 $"- Sabah: {sabahKaloriToplami1} Kcal\n" +
-                                 $"- Öğle: {ogleKaloriToplami1} Kcal\n" +
-                                 $"- Akşam: {aksamKaloriToplami1} Kcal\n\n" +
-                                 $"Tarih 2 ({endDate.ToShortDateString()}):\n" +
-                                 $"- Sabah: {sabahKaloriToplami2} Kcal\n" +
-                                 $"- Öğle: {ogleKaloriToplami2} Kcal\n" +
-                                 $"- Akşam: {aksamKaloriToplami2} Kcal";
-
-            // Raporu pnlRapor kontrolünde göster
-            DisplayReport(raporMesaji);
+            Label lblToplamKalori = new Label
+            {
+                Text = $"Toplam Kalori: {toplamKaloriGunu} Kcal",
+                AutoSize = true,
+                Location = new Point(10, top)
+            };
+            pnlRapor.Controls.Add(lblToplamKalori);
+            top += 50;
         }
 
         private DateOnly ConvertToDateOnly(DateTime dateTime)
@@ -473,59 +493,30 @@ namespace EFDiyetProgramiProje_PL
             return new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
         }
 
-        private double CalculateTotalKalori(IEnumerable<OgunYemekViewModel> yemekTuketimleri, string ogun)
-        {
-            double toplamKalori = 0;
-
-            // Verilen öğün için yemeklerin toplam kalorisini hesapla
-            foreach (var tuketim in yemekTuketimleri.Where(y => y.OgunId == GetOgunIdFromName(ogun)))
-            {
-                double yemekKalori = GetYemekKalori(tuketim.YemekId);
-                toplamKalori += yemekKalori * tuketim.BirimAdedi;
-            }
-
-            return toplamKalori;
-        }
-        // Öğün adına göre ogunId döndürür
-        private int GetOgunIdFromName(string ogunAdi)
-        {
-            switch (ogunAdi)
-            {
-                case "Sabah":
-                    return 1;
-                case "Öğle":
-                    return 2;
-                case "Akşam":
-                    return 3;
-                default:
-                    return -1; // Hata durumu
-            }
-        }
-
         // Yemeğin kalorisini döndürür
         private double GetYemekKalori(int yemekId)
         {
             var yemek = yemekManager.GetById(yemekId);
 
-            if(yemek == null)
+            if (yemek == null)
             {
                 yemek = yemekManager.GetDeletedById(yemekId);
             }
 
             if (yemek != null)
             {
-                return yemek.Kalori.Value; 
+                return yemek.Kalori.Value;
             }
             else
             {
                 // Yemek bulunamadı, 0 dönüyoruz
-                MessageBox.Show("Yemek bulunamadı."); 
+                MessageBox.Show("Yemek bulunamadı.");
                 return 0;
             }
         }
         private void DisplayReport(string raporMesaji)
         {
-            
+
             pnlRapor.Controls.Clear();
 
             // Raporu göstermek için bir Label oluştur
@@ -561,7 +552,7 @@ namespace EFDiyetProgramiProje_PL
                 .Select(g => g.Key)
                 .FirstOrDefault();
             // Tarih aralığında her yemeğin kaç kez tüketildiğini hesapla
-            var yemekTuketimSayilari = yemekTuketimleri .GroupBy(y => y.YemekId) .ToDictionary(g => g.Key, g => g.Count());
+            var yemekTuketimSayilari = yemekTuketimleri.GroupBy(y => y.YemekId).ToDictionary(g => g.Key, g => g.Count());
 
             if (enCokTuketilenYemekId == null)
             {
@@ -574,7 +565,7 @@ namespace EFDiyetProgramiProje_PL
             if (enCokTuketilenYemek != null)
             {
                 string enCokTuketilenYemekAdi = enCokTuketilenYemek.YemekAdi;
-                int enCokTuketilenYemekSayisi = yemekTuketimSayilari[enCokTuketilenYemekId]; 
+                int enCokTuketilenYemekSayisi = yemekTuketimSayilari[enCokTuketilenYemekId];
 
                 string raporMesaji = $"Yemek Çeşidi Raporu ({startDate.ToShortDateString()} - {endDate.ToShortDateString()})\n" +
                       $"En Çok Yenilen Yemek: {enCokTuketilenYemekAdi} ({enCokTuketilenYemekSayisi} kez)";
