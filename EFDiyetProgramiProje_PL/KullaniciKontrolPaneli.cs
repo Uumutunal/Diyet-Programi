@@ -41,6 +41,7 @@ namespace EFDiyetProgramiProje_PL
         public KullaniciKontrolPaneli(int mevcutKullaniciId)
         {
             InitializeComponent();
+            timer1.Enabled = true;
             kullaniciId = mevcutKullaniciId;
             var mevcutKullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
 
@@ -84,7 +85,7 @@ namespace EFDiyetProgramiProje_PL
             //yemek listele
             YemekListeleButunOgunler();
 
-            
+
 
             //lblGunlukToplamKalori.Text = lblKaloriToplamAksam.Text;
 
@@ -303,7 +304,7 @@ namespace EFDiyetProgramiProje_PL
 
             foreach (Control control in pnlYemekler.Controls)
             {
-                if(control is FlowLayoutPanel)
+                if (control is FlowLayoutPanel)
                 {
                     FlowLayoutPanel flp = (FlowLayoutPanel)control;
                     int tag = (int)flp.Tag;
@@ -412,7 +413,7 @@ namespace EFDiyetProgramiProje_PL
                                  $"En Çok Kalori Tüketilen Öğün:\n {enCokKaloriTuketilenOgun.Key}\n ({enCokKaloriTuketilenOgun.Value} kalori)";
 
             DisplayReport(raporMesaji);
-            
+
 
         }
 
@@ -508,25 +509,25 @@ namespace EFDiyetProgramiProje_PL
         {
             var yemek = yemekManager.GetById(yemekId);
 
-            if(yemek == null)
+            if (yemek == null)
             {
                 yemek = yemekManager.GetDeletedById(yemekId);
             }
 
             if (yemek != null)
             {
-                return yemek.Kalori.Value; 
+                return yemek.Kalori.Value;
             }
             else
             {
                 // Yemek bulunamadı, 0 dönüyoruz
-                MessageBox.Show("Yemek bulunamadı."); 
+                MessageBox.Show("Yemek bulunamadı.");
                 return 0;
             }
         }
         private void DisplayReport(string raporMesaji)
         {
-            
+
             pnlRapor.Controls.Clear();
 
             // Raporu göstermek için bir Label oluştur
@@ -562,7 +563,7 @@ namespace EFDiyetProgramiProje_PL
                 .Select(g => g.Key)
                 .FirstOrDefault();
             // Tarih aralığında her yemeğin kaç kez tüketildiğini hesapla
-            var yemekTuketimSayilari = yemekTuketimleri .GroupBy(y => y.YemekId) .ToDictionary(g => g.Key, g => g.Count());
+            var yemekTuketimSayilari = yemekTuketimleri.GroupBy(y => y.YemekId).ToDictionary(g => g.Key, g => g.Count());
 
             if (enCokTuketilenYemekId == null)
             {
@@ -575,7 +576,7 @@ namespace EFDiyetProgramiProje_PL
             if (enCokTuketilenYemek != null)
             {
                 string enCokTuketilenYemekAdi = enCokTuketilenYemek.YemekAdi;
-                int enCokTuketilenYemekSayisi = yemekTuketimSayilari[enCokTuketilenYemekId]; 
+                int enCokTuketilenYemekSayisi = yemekTuketimSayilari[enCokTuketilenYemekId];
 
                 string raporMesaji = $"Yemek Çeşidi Raporu ({startDate.ToShortDateString()} - {endDate.ToShortDateString()})\n" +
                       $"En Çok Yenilen Yemek: {enCokTuketilenYemekAdi} ({enCokTuketilenYemekSayisi} kez)";
@@ -602,6 +603,30 @@ namespace EFDiyetProgramiProje_PL
                 }
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string[] motivasyonSozleri =
+            {
+                "Sağlığınız, sahip olabileceğiniz en değerli varlıktır.",
+                "Bir şeyi gerçekten istersen, buna engel olabilecek hiçbir şey yoktur.",
+                "Diyet yapmak değil, yaşam tarzını değiştirmek önemlidir.",
+                "Her büyük başarı, küçük adımlarla başlar.",
+                "Kendine iyi bak. Seninle geçireceğin hayatın geri kalanı için tek bedenin var. ",
+                "Diyet yapmak, kendinize olan sevginizi göstermenin en iyi yoludur. ",
+                "İyi bir ruh halinden sadece bir egzersiz uzaklıktasın.",
+                "İlerlemek için mücadele et, mükemmellik için değil.",
+                "Sağlığın korunması, hastalığın tedavisinden daha kolaydır.",
+                "Diyetinizde hedeflerinizi açık ve ölçülebilir yapın, böylece ilerlemeyi takip edebilirsiniz.",
+                "Başarı, güçlü bir niyetle başlar ve sürekli bir çaba ile devam eder.",
+                "Başarılı olmak için, her gün bir adım atmanız yeterlidir.",
+                "Bu kez vazgeçmezsen neler olacağını görmek istemez misin?",
+            };
+            Random random = new Random();
+            int uzunluk = motivasyonSozleri.Length;
+            lblMotivasyonSozleri.Text = motivasyonSozleri[random.Next(0, uzunluk)];
+            
         }
     }
 }
