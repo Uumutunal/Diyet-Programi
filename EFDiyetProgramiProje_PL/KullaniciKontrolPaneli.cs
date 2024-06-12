@@ -33,6 +33,7 @@ namespace EFDiyetProgramiProje_PL
         List<OgunViewModel> kullaniciOgunYemekler;
 
         DateTime tarih;
+
         double gunlukToplamKalori;
 
 
