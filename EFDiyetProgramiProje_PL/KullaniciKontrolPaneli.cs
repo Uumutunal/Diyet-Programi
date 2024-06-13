@@ -160,9 +160,6 @@ namespace EFDiyetProgramiProje_PL
                 ogun = ogunManager.GetDeletedById(ogunId);
             }
 
-
-            //
-
             int inc = 250;
 
             Button buttonEkle = new Button();
@@ -209,12 +206,8 @@ namespace EFDiyetProgramiProje_PL
             pnlYemekler.Controls.Add(kaloriGosterLabel);
             pnlYemekler.Controls.Add(flpYemekler);
 
-            //
 
             var ogunYemekler = OgunYemekManager.Search(s => s.Tarih == DateOnly.FromDateTime(tarih) && s.OgunId == ogunId);
-
-
-
 
             double? kaloriToplam = 0;
             foreach (var ogunYemek in ogunYemekler)
@@ -315,10 +308,6 @@ namespace EFDiyetProgramiProje_PL
 
             flpYemek.Controls.Add(panel);
 
-            //
-
-
-
             return eklenenYemek.Kalori * ogunYemek.BirimAdedi;
         }
 
@@ -376,9 +365,10 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGunSonuRaporu_Click(object sender, EventArgs e)
         {
+            pnlRapor.Controls.Clear();
 
             DateTime selectedDateTime = DateTime.Today;
-            DateOnly selectedDate = ConvertToDateTimeOnly(selectedDateTime);
+            DateOnly selectedDate = ConvertToDateOnly(selectedDateTime);
 
             var yemekTuketimleri = OgunYemekManager.Search(y => y.Tarih == selectedDate);
 
@@ -413,11 +403,6 @@ namespace EFDiyetProgramiProje_PL
             DisplayReport(raporMesaji);
 
 
-        }
-
-        private DateOnly ConvertToDateTimeOnly(DateTime dateTime)
-        {
-            return new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
         }
 
         private void btnKiyasRaporu_Click(object sender, EventArgs e)

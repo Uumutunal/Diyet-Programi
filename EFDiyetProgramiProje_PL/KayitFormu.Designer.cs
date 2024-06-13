@@ -107,6 +107,7 @@
             // cmbGuvenlikSorusu
             // 
             cmbGuvenlikSorusu.FormattingEnabled = true;
+            cmbGuvenlikSorusu.Items.AddRange(new object[] { "İlk Evcil Hayvanınızın Adı?", "En Sevdiğiniz Öğretmeniniz?", "Annenizin Doğum Yılı?" });
             cmbGuvenlikSorusu.Location = new Point(200, 278);
             cmbGuvenlikSorusu.Margin = new Padding(3, 4, 3, 4);
             cmbGuvenlikSorusu.Name = "cmbGuvenlikSorusu";

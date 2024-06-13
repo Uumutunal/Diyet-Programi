@@ -35,9 +35,16 @@ namespace EFDiyetProgramiProje_PL
         private void chkSifreyiGoster_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSifreyiGoster.Checked)
+            {
                 txtSifre.UseSystemPasswordChar = false;
+                chkSifreyiGoster.Text = "Þifreyi Gizle";
+            }
             else
+            {
                 txtSifre.UseSystemPasswordChar = true;
+                chkSifreyiGoster.Text = "Þifreyi Göster";
+            }
+                
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
