@@ -54,7 +54,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(136, 149);
+            label2.Location = new Point(112, 203);
             label2.Name = "label2";
             label2.Size = new Size(42, 20);
             label2.TabIndex = 7;
@@ -62,7 +62,7 @@
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(198, 147);
+            txtSifre.Location = new Point(174, 201);
             txtSifre.Margin = new Padding(3, 4, 3, 4);
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(202, 27);
@@ -72,7 +72,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(87, 87);
+            label1.Location = new Point(63, 141);
             label1.Name = "label1";
             label1.Size = new Size(95, 20);
             label1.TabIndex = 5;
@@ -80,7 +80,7 @@
             // 
             // txtKullaniciAdi
             // 
-            txtKullaniciAdi.Location = new Point(198, 83);
+            txtKullaniciAdi.Location = new Point(174, 137);
             txtKullaniciAdi.Margin = new Padding(3, 4, 3, 4);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Size = new Size(202, 27);
@@ -89,7 +89,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(97, 213);
+            label3.Location = new Point(73, 267);
             label3.Name = "label3";
             label3.Size = new Size(86, 20);
             label3.TabIndex = 9;
@@ -97,7 +97,7 @@
             // 
             // txtSifreTekrar
             // 
-            txtSifreTekrar.Location = new Point(198, 209);
+            txtSifreTekrar.Location = new Point(174, 263);
             txtSifreTekrar.Margin = new Padding(3, 4, 3, 4);
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.Size = new Size(202, 27);
@@ -108,7 +108,7 @@
             // 
             cmbGuvenlikSorusu.FormattingEnabled = true;
             cmbGuvenlikSorusu.Items.AddRange(new object[] { "İlk Evcil Hayvanınızın Adı?", "En Sevdiğiniz Öğretmeniniz?", "Annenizin Doğum Yılı?" });
-            cmbGuvenlikSorusu.Location = new Point(200, 278);
+            cmbGuvenlikSorusu.Location = new Point(176, 332);
             cmbGuvenlikSorusu.Margin = new Padding(3, 4, 3, 4);
             cmbGuvenlikSorusu.Name = "cmbGuvenlikSorusu";
             cmbGuvenlikSorusu.Size = new Size(202, 28);
@@ -117,7 +117,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(67, 284);
+            label5.Location = new Point(43, 338);
             label5.Name = "label5";
             label5.Size = new Size(116, 20);
             label5.TabIndex = 13;
@@ -126,7 +126,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(31, 346);
+            label6.Location = new Point(7, 400);
             label6.Name = "label6";
             label6.Size = new Size(156, 20);
             label6.TabIndex = 14;
@@ -134,7 +134,7 @@
             // 
             // txtGuvenlikYaniti
             // 
-            txtGuvenlikYaniti.Location = new Point(200, 342);
+            txtGuvenlikYaniti.Location = new Point(176, 396);
             txtGuvenlikYaniti.Margin = new Padding(3, 4, 3, 4);
             txtGuvenlikYaniti.Name = "txtGuvenlikYaniti";
             txtGuvenlikYaniti.Size = new Size(202, 27);
@@ -142,7 +142,7 @@
             // 
             // btnKayitOl
             // 
-            btnKayitOl.Location = new Point(282, 392);
+            btnKayitOl.Location = new Point(258, 446);
             btnKayitOl.Margin = new Padding(3, 4, 3, 4);
             btnKayitOl.Name = "btnKayitOl";
             btnKayitOl.Size = new Size(111, 55);
@@ -155,9 +155,9 @@
             // 
             label7.ImageKey = "loginline.jpg";
             label7.ImageList = ımageList1;
-            label7.Location = new Point(-44, 404);
+            label7.Location = new Point(-8, -11);
             label7.Name = "label7";
-            label7.Size = new Size(320, 208);
+            label7.Size = new Size(258, 132);
             label7.TabIndex = 17;
             // 
             // ımageList1
@@ -173,7 +173,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label8.ForeColor = SystemColors.ActiveCaption;
-            label8.Location = new Point(145, 9);
+            label8.Location = new Point(256, 56);
             label8.Name = "label8";
             label8.Size = new Size(168, 54);
             label8.TabIndex = 31;
@@ -181,7 +181,7 @@
             // 
             // btnGiris
             // 
-            btnGiris.Location = new Point(147, 392);
+            btnGiris.Location = new Point(123, 446);
             btnGiris.Margin = new Padding(3, 4, 3, 4);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(111, 55);
@@ -192,7 +192,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(407, 212);
+            pictureBox2.Location = new Point(383, 266);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(39, 27);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -202,7 +202,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(407, 149);
+            pictureBox1.Location = new Point(383, 203);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(39, 27);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -215,7 +215,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(456, 617);
+            ClientSize = new Size(456, 514);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnGiris);

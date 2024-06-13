@@ -518,7 +518,7 @@
             lblMotivasyonSozleri.BackColor = Color.WhiteSmoke;
             lblMotivasyonSozleri.Font = new Font("Garamond", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblMotivasyonSozleri.ForeColor = SystemColors.ActiveCaption;
-            lblMotivasyonSozleri.Location = new Point(702, 19);
+            lblMotivasyonSozleri.Location = new Point(401, 9);
             lblMotivasyonSozleri.Name = "lblMotivasyonSozleri";
             lblMotivasyonSozleri.Size = new Size(240, 31);
             lblMotivasyonSozleri.TabIndex = 90;
