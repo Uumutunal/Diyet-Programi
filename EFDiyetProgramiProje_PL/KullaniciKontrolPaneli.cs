@@ -430,7 +430,7 @@ namespace EFDiyetProgramiProje_PL
         private void OgunRaporuOlustur(DateOnly date, List<OgunYemekViewModel> kullaniciOgunYemekler, int top)
         {
             var ogunler = ogunManager.GetAll();
-            
+
 
             Label lblTarih = new Label
             {
@@ -576,6 +576,30 @@ namespace EFDiyetProgramiProje_PL
                     gorsel.Image = Image.FromStream(ms);
                 }
             }
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string[] motivasyonSozleri =
+            {
+                "Sağlığınız, sahip olabileceğiniz en değerli varlıktır.",
+                "Bir şeyi gerçekten istersen, buna engel olabilecek hiçbir şey yoktur.",
+                "Diyet yapmak değil, yaşam tarzını değiştirmek önemlidir.",
+                "Her büyük başarı, küçük adımlarla başlar.",
+                "Kendine iyi bak. Seninle geçireceğin hayatın geri kalanı için tek bedenin var. ",
+                "Diyet yapmak, kendinize olan sevginizi göstermenin en iyi yoludur. ",
+                "İyi bir ruh halinden sadece bir egzersiz uzaklıktasın.",
+                "İlerlemek için mücadele et, mükemmellik için değil.",
+                "Sağlığın korunması, hastalığın tedavisinden daha kolaydır.",
+                "Diyetinizde hedeflerinizi açık ve ölçülebilir yapın, böylece ilerlemeyi takip edebilirsiniz.",
+                "Başarı, güçlü bir niyetle başlar ve sürekli bir çaba ile devam eder.",
+                "Başarılı olmak için, her gün bir adım atmanız yeterlidir.",
+                "Bu kez vazgeçmezsen neler olacağını görmek istemez misin?",
+            };
+            Random random = new Random();
+            int uzunluk = motivasyonSozleri.Length;
+            lblMotivasyonSozleri.Text = motivasyonSozleri[random.Next(0, uzunluk)];
 
         }
     }

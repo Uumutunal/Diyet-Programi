@@ -76,6 +76,7 @@
             label9 = new Label();
             label14 = new Label();
             pnlYemekler = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -97,6 +98,7 @@
             ımageList1.Images.SetKeyName(10, "icons8-diet-50 (4).png");
             ımageList1.Images.SetKeyName(11, "icons8-diet-50 (5).png");
             ımageList1.Images.SetKeyName(12, "icons8-diet-50 (6).png");
+            ımageList1.Images.SetKeyName(13, "icons8-exit-50.png");
             // 
             // btnKullaniciBilgileriGuncelle
             // 
@@ -513,22 +515,27 @@
             // lblMotivasyonSozleri
             // 
             lblMotivasyonSozleri.AutoSize = true;
-            lblMotivasyonSozleri.Font = new Font("Garamond", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblMotivasyonSozleri.BackColor = Color.WhiteSmoke;
+            lblMotivasyonSozleri.Font = new Font("Garamond", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblMotivasyonSozleri.ForeColor = SystemColors.ActiveCaption;
-            lblMotivasyonSozleri.Location = new Point(706, 9);
+            lblMotivasyonSozleri.Location = new Point(702, 19);
             lblMotivasyonSozleri.Name = "lblMotivasyonSozleri";
-            lblMotivasyonSozleri.Size = new Size(293, 38);
+            lblMotivasyonSozleri.Size = new Size(240, 31);
             lblMotivasyonSozleri.TabIndex = 90;
             lblMotivasyonSozleri.Text = "Motivasyon Sözleri";
             // 
             // btnOturumuKapat
             // 
+            btnOturumuKapat.ImageAlign = ContentAlignment.TopCenter;
+            btnOturumuKapat.ImageKey = "icons8-exit-50.png";
+            btnOturumuKapat.ImageList = ımageList1;
             btnOturumuKapat.Location = new Point(86, 781);
             btnOturumuKapat.Margin = new Padding(3, 4, 3, 4);
             btnOturumuKapat.Name = "btnOturumuKapat";
             btnOturumuKapat.Size = new Size(122, 104);
             btnOturumuKapat.TabIndex = 91;
-            btnOturumuKapat.Text = "Oturumu Kapat";
+            btnOturumuKapat.Text = "    Oturumu       Kapat";
+            btnOturumuKapat.TextAlign = ContentAlignment.BottomCenter;
             btnOturumuKapat.UseVisualStyleBackColor = true;
             btnOturumuKapat.Click += btnOturumuKapat_Click;
             // 
@@ -600,6 +607,11 @@
             pnlYemekler.Name = "pnlYemekler";
             pnlYemekler.Size = new Size(865, 725);
             pnlYemekler.TabIndex = 106;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 10000;
+            timer1.Tick += timer1_Tick;
             // 
             // KullaniciKontrolPaneli
             // 
@@ -695,5 +707,6 @@
         private Label label9;
         private Label label14;
         private Panel pnlYemekler;
+        private System.Windows.Forms.Timer timer1;
     }
 }
