@@ -60,54 +60,53 @@
             lblYemekEklemeHatalariGöster.AutoSize = true;
             lblYemekEklemeHatalariGöster.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblYemekEklemeHatalariGöster.ForeColor = Color.Red;
-            lblYemekEklemeHatalariGöster.Location = new Point(249, 486);
+            lblYemekEklemeHatalariGöster.Location = new Point(176, 528);
             lblYemekEklemeHatalariGöster.Name = "lblYemekEklemeHatalariGöster";
-            lblYemekEklemeHatalariGöster.Size = new Size(39, 15);
+            lblYemekEklemeHatalariGöster.Size = new Size(50, 20);
             lblYemekEklemeHatalariGöster.TabIndex = 18;
             lblYemekEklemeHatalariGöster.Text = "label5";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(65, 317);
+            label4.Location = new Point(65, 358);
             label4.Name = "label4";
-            label4.Size = new Size(84, 15);
+            label4.Size = new Size(105, 20);
             label4.TabIndex = 14;
             label4.Text = "Yemek Görseli:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(109, 201);
+            label3.Location = new Point(114, 239);
             label3.Name = "label3";
-            label3.Size = new Size(35, 15);
+            label3.Size = new Size(44, 20);
             label3.TabIndex = 15;
             label3.Text = "Tarifi:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(83, 112);
+            label2.Location = new Point(84, 139);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(82, 20);
             label2.TabIndex = 16;
             label2.Text = "Yemek Adı:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(74, 57);
+            label1.Location = new Point(74, 65);
             label1.Name = "label1";
-            label1.Size = new Size(75, 15);
+            label1.Size = new Size(96, 20);
             label1.TabIndex = 17;
             label1.Text = "Kategori Seç:";
             // 
             // btnYemekOgunleEkle
             // 
-            btnYemekOgunleEkle.Location = new Point(202, 439);
-            btnYemekOgunleEkle.Margin = new Padding(3, 2, 3, 2);
+            btnYemekOgunleEkle.Location = new Point(236, 492);
             btnYemekOgunleEkle.Name = "btnYemekOgunleEkle";
-            btnYemekOgunleEkle.Size = new Size(150, 37);
+            btnYemekOgunleEkle.Size = new Size(171, 32);
             btnYemekOgunleEkle.TabIndex = 13;
             btnYemekOgunleEkle.Text = "KAYDET";
             btnYemekOgunleEkle.UseVisualStyleBackColor = true;
@@ -115,10 +114,9 @@
             // 
             // btnKategoriEkle
             // 
-            btnKategoriEkle.Location = new Point(283, 82);
-            btnKategoriEkle.Margin = new Padding(3, 2, 3, 2);
+            btnKategoriEkle.Location = new Point(176, 94);
             btnKategoriEkle.Name = "btnKategoriEkle";
-            btnKategoriEkle.Size = new Size(108, 21);
+            btnKategoriEkle.Size = new Size(141, 32);
             btnKategoriEkle.TabIndex = 12;
             btnKategoriEkle.Text = "Yeni Kategori Ekle";
             btnKategoriEkle.UseVisualStyleBackColor = true;
@@ -127,19 +125,17 @@
             // cbKategoriSec
             // 
             cbKategoriSec.FormattingEnabled = true;
-            cbKategoriSec.Location = new Point(164, 53);
-            cbKategoriSec.Margin = new Padding(3, 2, 3, 2);
+            cbKategoriSec.Location = new Point(176, 60);
             cbKategoriSec.Name = "cbKategoriSec";
-            cbKategoriSec.Size = new Size(227, 23);
+            cbKategoriSec.Size = new Size(288, 28);
             cbKategoriSec.TabIndex = 11;
             // 
             // pbYemekGörseli
             // 
             pbYemekGörseli.BackColor = Color.Silver;
-            pbYemekGörseli.Location = new Point(164, 317);
-            pbYemekGörseli.Margin = new Padding(3, 2, 3, 2);
+            pbYemekGörseli.Location = new Point(176, 358);
             pbYemekGörseli.Name = "pbYemekGörseli";
-            pbYemekGörseli.Size = new Size(227, 109);
+            pbYemekGörseli.Size = new Size(288, 128);
             pbYemekGörseli.SizeMode = PictureBoxSizeMode.StretchImage;
             pbYemekGörseli.TabIndex = 10;
             pbYemekGörseli.TabStop = false;
@@ -147,19 +143,17 @@
             // 
             // rtxtTarifi
             // 
-            rtxtTarifi.Location = new Point(164, 201);
-            rtxtTarifi.Margin = new Padding(3, 2, 3, 2);
+            rtxtTarifi.Location = new Point(176, 239);
             rtxtTarifi.Name = "rtxtTarifi";
-            rtxtTarifi.Size = new Size(227, 113);
+            rtxtTarifi.Size = new Size(288, 113);
             rtxtTarifi.TabIndex = 9;
             rtxtTarifi.Text = "";
             // 
             // txtYemekAdi
             // 
-            txtYemekAdi.Location = new Point(164, 108);
-            txtYemekAdi.Margin = new Padding(3, 2, 3, 2);
+            txtYemekAdi.Location = new Point(176, 134);
             txtYemekAdi.Name = "txtYemekAdi";
-            txtYemekAdi.Size = new Size(227, 23);
+            txtYemekAdi.Size = new Size(288, 27);
             txtYemekAdi.TabIndex = 8;
             // 
             // label5
@@ -167,9 +161,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label5.ForeColor = SystemColors.ActiveCaption;
-            label5.Location = new Point(183, 8);
+            label5.Location = new Point(198, 0);
             label5.Name = "label5";
-            label5.Size = new Size(178, 43);
+            label5.Size = new Size(221, 54);
             label5.TabIndex = 19;
             label5.Text = "YEMEK EKLE";
             // 
@@ -185,78 +179,75 @@
             // 
             label6.ImageKey = "linefood.png";
             label6.ImageList = ımageList1;
-            label6.Location = new Point(510, -1);
+            label6.Location = new Point(502, -3);
             label6.Name = "label6";
-            label6.Size = new Size(61, 215);
+            label6.Size = new Size(70, 287);
             label6.TabIndex = 21;
             // 
             // label7
             // 
             label7.ImageKey = "linefood.png";
             label7.ImageList = ımageList1;
-            label7.Location = new Point(510, 208);
+            label7.Location = new Point(502, 275);
             label7.Name = "label7";
-            label7.Size = new Size(61, 215);
+            label7.Size = new Size(70, 287);
             label7.TabIndex = 21;
             // 
             // label8
             // 
             label8.ImageKey = "linefood - Kopya.png";
             label8.ImageList = ımageList1;
-            label8.Location = new Point(-7, 214);
+            label8.Location = new Point(-8, 285);
             label8.Name = "label8";
-            label8.Size = new Size(66, 209);
+            label8.Size = new Size(75, 279);
             label8.TabIndex = 22;
             // 
             // label9
             // 
             label9.ImageKey = "linefood - Kopya.png";
             label9.ImageList = ımageList1;
-            label9.Location = new Point(-7, -2);
+            label9.Location = new Point(-8, -3);
             label9.Name = "label9";
-            label9.Size = new Size(66, 215);
+            label9.Size = new Size(75, 287);
             label9.TabIndex = 23;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(109, 139);
+            label10.Location = new Point(114, 175);
             label10.Name = "label10";
-            label10.Size = new Size(40, 15);
+            label10.Size = new Size(51, 20);
             label10.TabIndex = 25;
             label10.Text = "Kalori:";
             // 
             // txtKalori
             // 
-            txtKalori.Location = new Point(164, 135);
-            txtKalori.Margin = new Padding(3, 2, 3, 2);
+            txtKalori.Location = new Point(176, 170);
             txtKalori.Name = "txtKalori";
-            txtKalori.Size = new Size(227, 23);
+            txtKalori.Size = new Size(288, 27);
             txtKalori.TabIndex = 24;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(111, 166);
+            label11.Location = new Point(116, 211);
             label11.Name = "label11";
-            label11.Size = new Size(38, 15);
+            label11.Size = new Size(47, 20);
             label11.TabIndex = 27;
             label11.Text = "Birim:";
             // 
             // txtBirim
             // 
-            txtBirim.Location = new Point(164, 162);
-            txtBirim.Margin = new Padding(3, 2, 3, 2);
+            txtBirim.Location = new Point(176, 206);
             txtBirim.Name = "txtBirim";
-            txtBirim.Size = new Size(227, 23);
+            txtBirim.Size = new Size(288, 27);
             txtBirim.TabIndex = 26;
             // 
             // btnKategoriSil
             // 
-            btnKategoriSil.Location = new Point(164, 83);
-            btnKategoriSil.Margin = new Padding(3, 2, 3, 2);
+            btnKategoriSil.Location = new Point(323, 96);
             btnKategoriSil.Name = "btnKategoriSil";
-            btnKategoriSil.Size = new Size(108, 21);
+            btnKategoriSil.Size = new Size(141, 30);
             btnKategoriSil.TabIndex = 48;
             btnKategoriSil.Text = "Kategori Sil";
             btnKategoriSil.UseVisualStyleBackColor = true;
@@ -264,10 +255,10 @@
             // 
             // YoneticiYemekEkle
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(570, 500);
+            ClientSize = new Size(575, 565);
             Controls.Add(btnKategoriSil);
             Controls.Add(label11);
             Controls.Add(txtBirim);
@@ -289,7 +280,6 @@
             Controls.Add(pbYemekGörseli);
             Controls.Add(rtxtTarifi);
             Controls.Add(txtYemekAdi);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "YoneticiYemekEkle";
             Text = "YoneticiYemekEkle";
             ((System.ComponentModel.ISupportInitialize)pbYemekGörseli).EndInit();

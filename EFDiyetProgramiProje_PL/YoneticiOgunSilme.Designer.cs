@@ -53,18 +53,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(151, 162);
+            label3.Location = new Point(173, 216);
             label3.Name = "label3";
-            label3.Size = new Size(61, 15);
+            label3.Size = new Size(75, 20);
             label3.TabIndex = 31;
             label3.Text = "Öğün Adı:";
             // 
             // btnSil
             // 
-            btnSil.Location = new Point(251, 185);
-            btnSil.Margin = new Padding(3, 2, 3, 2);
+            btnSil.Location = new Point(287, 247);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(105, 22);
+            btnSil.Size = new Size(120, 29);
             btnSil.TabIndex = 30;
             btnSil.Text = "SİL";
             btnSil.UseVisualStyleBackColor = true;
@@ -72,22 +71,20 @@
             // 
             // txtOgunAdi
             // 
-            txtOgunAdi.Location = new Point(222, 158);
-            txtOgunAdi.Margin = new Padding(3, 2, 3, 2);
+            txtOgunAdi.Location = new Point(254, 211);
             txtOgunAdi.Name = "txtOgunAdi";
             txtOgunAdi.ReadOnly = true;
-            txtOgunAdi.Size = new Size(135, 23);
+            txtOgunAdi.Size = new Size(154, 27);
             txtOgunAdi.TabIndex = 29;
             // 
             // dgvOgunListesi
             // 
             dgvOgunListesi.BackgroundColor = SystemColors.ButtonFace;
             dgvOgunListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOgunListesi.Location = new Point(78, 49);
-            dgvOgunListesi.Margin = new Padding(3, 2, 3, 2);
+            dgvOgunListesi.Location = new Point(89, 65);
             dgvOgunListesi.Name = "dgvOgunListesi";
             dgvOgunListesi.RowHeadersWidth = 51;
-            dgvOgunListesi.Size = new Size(279, 97);
+            dgvOgunListesi.Size = new Size(319, 129);
             dgvOgunListesi.TabIndex = 28;
             dgvOgunListesi.SelectionChanged += dgvOgunListesi_SelectionChanged;
             // 
@@ -96,9 +93,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label5.ForeColor = SystemColors.ActiveCaption;
-            label5.Location = new Point(78, 6);
+            label5.Location = new Point(89, 8);
             label5.Name = "label5";
-            label5.Size = new Size(182, 43);
+            label5.Size = new Size(229, 54);
             label5.TabIndex = 27;
             label5.Text = "ÖĞÜN SİLME";
             // 
@@ -106,18 +103,18 @@
             // 
             label2.ImageKey = "öğünline1 - Kopya.jpg";
             label2.ImageList = ımageList1;
-            label2.Location = new Point(374, -4);
+            label2.Location = new Point(427, -5);
             label2.Name = "label2";
-            label2.Size = new Size(68, 255);
+            label2.Size = new Size(78, 340);
             label2.TabIndex = 25;
             // 
             // label1
             // 
             label1.ImageKey = "öğünline1.jpg";
             label1.ImageList = ımageList1;
-            label1.Location = new Point(-9, -4);
+            label1.Location = new Point(-10, -5);
             label1.Name = "label1";
-            label1.Size = new Size(81, 250);
+            label1.Size = new Size(93, 333);
             label1.TabIndex = 26;
             // 
             // lblSilmeHata
@@ -125,18 +122,18 @@
             lblSilmeHata.AutoSize = true;
             lblSilmeHata.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblSilmeHata.ForeColor = Color.Red;
-            lblSilmeHata.Location = new Point(138, 216);
+            lblSilmeHata.Location = new Point(89, 292);
             lblSilmeHata.Name = "lblSilmeHata";
-            lblSilmeHata.Size = new Size(39, 15);
+            lblSilmeHata.Size = new Size(51, 20);
             lblSilmeHata.TabIndex = 33;
             lblSilmeHata.Text = "label4";
             // 
             // YoneticiOgunSilme
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(440, 241);
+            ClientSize = new Size(503, 321);
             Controls.Add(lblSilmeHata);
             Controls.Add(label3);
             Controls.Add(btnSil);
@@ -145,7 +142,6 @@
             Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "YoneticiOgunSilme";
             Text = "YoneticiOgunSilme";
             ((System.ComponentModel.ISupportInitialize)dgvOgunListesi).EndInit();
