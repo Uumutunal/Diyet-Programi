@@ -63,13 +63,19 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnRaporGoster_Click(object sender, EventArgs e)
         {
-
+            YoneticiRaporEkrani yoneticiRaporEkrani = new YoneticiRaporEkrani();
+            yoneticiRaporEkrani.ShowDialog();
         }
 
         private void btnSifreDegistir_Click(object sender, EventArgs e)
         {
-            YoneticiSifreDegistir yoneticiSifreDegistir =new YoneticiSifreDegistir();
+            YoneticiSifreDegistir yoneticiSifreDegistir = new YoneticiSifreDegistir();
             yoneticiSifreDegistir.ShowDialog();
+        }
+
+        private void btnOturumuKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

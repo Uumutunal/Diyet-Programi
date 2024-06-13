@@ -62,7 +62,7 @@ namespace EFDiyetProgramiProje_PL
                 this.Hide();
                 YoneticiKontrolPaneli yoneticiKontrolPaneli = new YoneticiKontrolPaneli();
                 yoneticiKontrolPaneli.ShowDialog();
-                this.Close();
+                this.Show();
             }
             else
             {
@@ -77,7 +77,7 @@ namespace EFDiyetProgramiProje_PL
                 this.Hide();
                 kullaniciKontrolPaneli.ShowDialog();
                 this.Show();
-            }
+            }   
         }
 
         private void btnSifremiUnuttum_Click(object sender, EventArgs e)

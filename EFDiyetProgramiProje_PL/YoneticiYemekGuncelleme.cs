@@ -82,8 +82,10 @@ namespace EFDiyetProgramiProje_PL
                 {
 
                     pbYemekGörseliGuncelleme.SizeMode = PictureBoxSizeMode.Zoom;
-
-                    pbYemekGörseliGuncelleme.Image = Image.FromStream(ms);
+                    if(ms.Length > 0)
+                    {
+                        pbYemekGörseliGuncelleme.Image = Image.FromStream(ms);
+                    }
                 }
             }
 

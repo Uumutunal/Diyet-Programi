@@ -41,6 +41,7 @@
             btnOgunSilme = new Button();
             btnOgunGuncelleme = new Button();
             btnOgunEkleme = new Button();
+            btnOturumuKapat = new Button();
             SuspendLayout();
             // 
             // label5
@@ -60,7 +61,7 @@
             btnSifreDegistir.ImageAlign = ContentAlignment.TopCenter;
             btnSifreDegistir.ImageKey = "icons8-password-50.png";
             btnSifreDegistir.ImageList = ımageList1;
-            btnSifreDegistir.Location = new Point(294, 294);
+            btnSifreDegistir.Location = new Point(294, 293);
             btnSifreDegistir.Margin = new Padding(3, 2, 3, 2);
             btnSifreDegistir.Name = "btnSifreDegistir";
             btnSifreDegistir.Size = new Size(113, 90);
@@ -93,7 +94,7 @@
             btnYemekSilme.ImageAlign = ContentAlignment.TopCenter;
             btnYemekSilme.ImageKey = "icons8-no-food-50.png";
             btnYemekSilme.ImageList = ımageList1;
-            btnYemekSilme.Location = new Point(294, 191);
+            btnYemekSilme.Location = new Point(294, 186);
             btnYemekSilme.Margin = new Padding(3, 2, 3, 2);
             btnYemekSilme.Name = "btnYemekSilme";
             btnYemekSilme.Size = new Size(113, 90);
@@ -109,7 +110,7 @@
             btnRaporGoster.ImageAlign = ContentAlignment.TopCenter;
             btnRaporGoster.ImageKey = "icons8-report-50.png";
             btnRaporGoster.ImageList = ımageList1;
-            btnRaporGoster.Location = new Point(163, 294);
+            btnRaporGoster.Location = new Point(163, 293);
             btnRaporGoster.Margin = new Padding(3, 2, 3, 2);
             btnRaporGoster.Name = "btnRaporGoster";
             btnRaporGoster.Size = new Size(113, 90);
@@ -125,7 +126,7 @@
             btnKullanicilariGoruntule.ImageAlign = ContentAlignment.TopCenter;
             btnKullanicilariGoruntule.ImageKey = "icons8-users-50.png";
             btnKullanicilariGoruntule.ImageList = ımageList1;
-            btnKullanicilariGoruntule.Location = new Point(35, 294);
+            btnKullanicilariGoruntule.Location = new Point(35, 293);
             btnKullanicilariGoruntule.Margin = new Padding(3, 2, 3, 2);
             btnKullanicilariGoruntule.Name = "btnKullanicilariGoruntule";
             btnKullanicilariGoruntule.Size = new Size(113, 90);
@@ -141,7 +142,7 @@
             btnYemekGuncelleme.ImageAlign = ContentAlignment.TopCenter;
             btnYemekGuncelleme.ImageKey = "icons8-food-donor-50.png";
             btnYemekGuncelleme.ImageList = ımageList1;
-            btnYemekGuncelleme.Location = new Point(163, 191);
+            btnYemekGuncelleme.Location = new Point(163, 186);
             btnYemekGuncelleme.Margin = new Padding(3, 2, 3, 2);
             btnYemekGuncelleme.Name = "btnYemekGuncelleme";
             btnYemekGuncelleme.Size = new Size(113, 90);
@@ -157,7 +158,7 @@
             btnYemekEkleme.ImageAlign = ContentAlignment.TopCenter;
             btnYemekEkleme.ImageKey = "icons8-cooking-50.png";
             btnYemekEkleme.ImageList = ımageList1;
-            btnYemekEkleme.Location = new Point(35, 191);
+            btnYemekEkleme.Location = new Point(35, 186);
             btnYemekEkleme.Margin = new Padding(3, 2, 3, 2);
             btnYemekEkleme.Name = "btnYemekEkleme";
             btnYemekEkleme.Size = new Size(113, 90);
@@ -215,12 +216,29 @@
             btnOgunEkleme.UseVisualStyleBackColor = true;
             btnOgunEkleme.Click += btnOgunEkleme_Click;
             // 
+            // btnOturumuKapat
+            // 
+            btnOturumuKapat.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnOturumuKapat.ImageAlign = ContentAlignment.TopCenter;
+            btnOturumuKapat.ImageKey = "icons8-report-50.png";
+            btnOturumuKapat.ImageList = ımageList1;
+            btnOturumuKapat.Location = new Point(163, 400);
+            btnOturumuKapat.Margin = new Padding(3, 2, 3, 2);
+            btnOturumuKapat.Name = "btnOturumuKapat";
+            btnOturumuKapat.Size = new Size(113, 90);
+            btnOturumuKapat.TabIndex = 47;
+            btnOturumuKapat.Text = "Oturumu Kapat";
+            btnOturumuKapat.TextAlign = ContentAlignment.BottomCenter;
+            btnOturumuKapat.UseVisualStyleBackColor = true;
+            btnOturumuKapat.Click += btnOturumuKapat_Click;
+            // 
             // YoneticiKontrolPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(435, 400);
+            ClientSize = new Size(435, 503);
+            Controls.Add(btnOturumuKapat);
             Controls.Add(label5);
             Controls.Add(btnSifreDegistir);
             Controls.Add(btnYemekSilme);
@@ -261,5 +279,6 @@
         private Button btnYemekGuncelleme;
         private Button btnYemekEkleme;
         private Button btnOgunSilme;
+        private Button btnOturumuKapat;
     }
 }

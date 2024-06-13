@@ -91,8 +91,22 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnKisiselBilgileriGuncelle_Click(object sender, EventArgs e)
         {
-            KullaniciBilgileri kullaniciBilgileri = new KullaniciBilgileri(kullaniciId);
-            kullaniciBilgileri.ShowDialog();
+            KullaniciBilgileri kullaniciBilgi = new KullaniciBilgileri(kullaniciId);
+            kullaniciBilgi.ShowDialog();
+
+            kullaniciBilgiManager = new KullaniciBilgiManager();
+
+            var kullaniciBilgileri = kullaniciBilgiManager.Search(k => k.KullaniciId == kullaniciId).FirstOrDefault();
+            lblGunlukHedefKalori.Text = Convert.ToString(kullaniciBilgileri.GunlukHedefKalori);
+            //lblBMI.Text = Convert.ToString(kullaniciBilgileri.VucutKitleEndeksi);
+            lblBMI.Text = Math.Round(kullaniciBilgileri.VucutKitleEndeksi.GetValueOrDefault(), 2).ToString();
+            //lblBMR.Text = Convert.ToString(kullaniciBilgileri.BazalMetabolizmaHizi);
+            lblBMR.Text = Math.Round(kullaniciBilgileri.BazalMetabolizmaHizi.GetValueOrDefault(), 2).ToString();
+            lblBoy.Text = Convert.ToString(kullaniciBilgileri.Boy);
+            lblYas.Text = Convert.ToString(kullaniciBilgileri.Yas);
+            lblHedefKilo.Text = Convert.ToString(kullaniciBilgileri.HedefKilo);
+            lblKilo.Text = Convert.ToString(kullaniciBilgileri.Kilo);
+            lblCinsiyet.Text = kullaniciBilgileri.Cinsiyet;
         }
 
         private void btnKullaniciBilgileriGuncelle_Click(object sender, EventArgs e)
@@ -270,7 +284,11 @@ namespace EFDiyetProgramiProje_PL
                     gorsel.Left = 120;
                     gorsel.Top = 10;
                     gorsel.Size = new Size(75, 75);
-                    gorsel.Image = Image.FromStream(ms);
+                    if(ms.Length != 0)
+                    {
+                        gorsel.Image = Image.FromStream(ms);
+                    }
+
                 }
             }
 

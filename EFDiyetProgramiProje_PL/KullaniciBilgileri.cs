@@ -123,7 +123,6 @@ namespace EFDiyetProgramiProje_PL
                     };
 
                     kullaniciBilgiManager.Insert(yeniKullaniciBilgi);
-                    this.Hide();
                     KullaniciKontrolPaneli kullaniciKontrolPanel = new KullaniciKontrolPaneli(kullaniciId);
                     kullaniciKontrolPanel.ShowDialog();
                 }
@@ -145,10 +144,9 @@ namespace EFDiyetProgramiProje_PL
                     kullaniciBilgiViewModel.GunlukHedefKalori = gunlukHedefKalori;
 
                     kullaniciBilgiManager.Update(kullaniciBilgiViewModel);
-                    this.Hide();
                 }
                 MessageBox.Show("Kullanıcı bilgileri başarı ile güncellendi!");
-
+                this.Close();
 
             }
         }
