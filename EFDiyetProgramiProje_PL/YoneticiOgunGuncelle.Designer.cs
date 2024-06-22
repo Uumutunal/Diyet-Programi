@@ -123,11 +123,11 @@
             lblGuncelleHata.AutoSize = true;
             lblGuncelleHata.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblGuncelleHata.ForeColor = Color.Red;
-            lblGuncelleHata.Location = new Point(157, 215);
+            lblGuncelleHata.Location = new Point(86, 208);
             lblGuncelleHata.Name = "lblGuncelleHata";
-            lblGuncelleHata.Size = new Size(39, 15);
+            lblGuncelleHata.Size = new Size(0, 15);
             lblGuncelleHata.TabIndex = 32;
-            lblGuncelleHata.Text = "label4";
+            lblGuncelleHata.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // YoneticiOgunGuncelle
             // 

@@ -127,9 +127,9 @@
             lblSilmeHata.ForeColor = Color.Red;
             lblSilmeHata.Location = new Point(138, 216);
             lblSilmeHata.Name = "lblSilmeHata";
-            lblSilmeHata.Size = new Size(39, 15);
+            lblSilmeHata.Size = new Size(0, 15);
             lblSilmeHata.TabIndex = 33;
-            lblSilmeHata.Text = "label4";
+            lblSilmeHata.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // YoneticiOgunSilme
             // 

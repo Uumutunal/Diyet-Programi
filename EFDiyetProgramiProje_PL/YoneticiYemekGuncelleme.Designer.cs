@@ -47,13 +47,11 @@
             txtYemekAdiGuncelleme = new TextBox();
             cbYemekSecGuncelleme = new ComboBox();
             label10 = new Label();
-            label11 = new Label();
             label12 = new Label();
             label13 = new Label();
             txtBirim = new TextBox();
             label14 = new Label();
             txtKalori = new TextBox();
-            cbYeniKategori = new ComboBox();
             btnKategoriEkle = new Button();
             btnKategoriSil = new Button();
             ((System.ComponentModel.ISupportInitialize)pbYemekGörseliGuncelleme).BeginInit();
@@ -163,6 +161,7 @@
             // 
             // cbKategoriSecGuncelleme
             // 
+            cbKategoriSecGuncelleme.DropDownStyle = ComboBoxStyle.DropDownList;
             cbKategoriSecGuncelleme.FormattingEnabled = true;
             cbKategoriSecGuncelleme.Location = new Point(159, 47);
             cbKategoriSecGuncelleme.Margin = new Padding(3, 2, 3, 2);
@@ -202,6 +201,7 @@
             // 
             // cbYemekSecGuncelleme
             // 
+            cbYemekSecGuncelleme.DropDownStyle = ComboBoxStyle.DropDownList;
             cbYemekSecGuncelleme.FormattingEnabled = true;
             cbYemekSecGuncelleme.Location = new Point(160, 120);
             cbYemekSecGuncelleme.Margin = new Padding(3, 2, 3, 2);
@@ -219,15 +219,6 @@
             label10.TabIndex = 33;
             label10.Text = "Yemek Seç:";
             // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(75, 76);
-            label11.Name = "label11";
-            label11.Size = new Size(79, 15);
-            label11.TabIndex = 32;
-            label11.Text = "Yeni Kategori:";
-            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -235,9 +226,9 @@
             label12.ForeColor = Color.Red;
             label12.Location = new Point(199, 492);
             label12.Name = "label12";
-            label12.Size = new Size(44, 15);
+            label12.Size = new Size(0, 15);
             label12.TabIndex = 40;
-            label12.Text = "label12";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -273,15 +264,6 @@
             txtKalori.Size = new Size(227, 23);
             txtKalori.TabIndex = 41;
             // 
-            // cbYeniKategori
-            // 
-            cbYeniKategori.FormattingEnabled = true;
-            cbYeniKategori.Location = new Point(159, 72);
-            cbYeniKategori.Margin = new Padding(3, 2, 3, 2);
-            cbYeniKategori.Name = "cbYeniKategori";
-            cbYeniKategori.Size = new Size(227, 23);
-            cbYeniKategori.TabIndex = 45;
-            // 
             // btnKategoriEkle
             // 
             btnKategoriEkle.Location = new Point(279, 97);
@@ -312,7 +294,6 @@
             ClientSize = new Size(505, 523);
             Controls.Add(btnKategoriSil);
             Controls.Add(btnKategoriEkle);
-            Controls.Add(cbYeniKategori);
             Controls.Add(label13);
             Controls.Add(txtBirim);
             Controls.Add(label14);
@@ -325,7 +306,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label11);
             Controls.Add(label2);
             Controls.Add(label10);
             Controls.Add(label1);
@@ -362,13 +342,11 @@
         private TextBox txtYemekAdiGuncelleme;
         private ComboBox cbYemekSecGuncelleme;
         private Label label10;
-        private Label label11;
         private Label label12;
         private Label label13;
         private TextBox txtBirim;
         private Label label14;
         private TextBox txtKalori;
-        private ComboBox cbYeniKategori;
         private Button btnKategoriEkle;
         private Button btnKategoriSil;
     }

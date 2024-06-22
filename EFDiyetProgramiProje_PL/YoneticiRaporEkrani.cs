@@ -52,6 +52,8 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnGunSonu_Click(object sender, EventArgs e)
         {
+            lblHataMesaji.Text = "";
+
             if (dgvKullanicilar.SelectedRows.Count == 0)
             {
                 lblHataMesaji.Text = "Lütfen bir kullanıcı seçin.";
@@ -107,6 +109,8 @@ namespace EFDiyetProgramiProje_PL
             DateTime startDate = dtpBaslangic.Value;
             DateTime endDate = dtpBitis.Value;
 
+            lblHataMesaji.Text = "";
+
             if (dgvKullanicilar.SelectedRows.Count == 0)
             {
                 lblHataMesaji.Text = "Lütfen bir kullanıcı seçin.";
@@ -158,6 +162,9 @@ namespace EFDiyetProgramiProje_PL
 
         private void btnYemekCesidi_Click(object sender, EventArgs e)
         {
+
+            lblHataMesaji.Text = "";
+
             if (dgvYemekler.SelectedRows.Count == 0)
             {
                 lblHataMesaji.Text = "Lütfen bir yemek seçin.";

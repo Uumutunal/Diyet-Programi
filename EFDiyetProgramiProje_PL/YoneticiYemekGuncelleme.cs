@@ -29,7 +29,7 @@ namespace EFDiyetProgramiProje_PL
             foreach (var kategori in kategoriler)
             {
                 cbKategoriSecGuncelleme.Items.Add(kategori.KategoriAdi);
-                cbYeniKategori.Items.Add(kategori.KategoriAdi);
+                //cbYeniKategori.Items.Add(kategori.KategoriAdi);
             }
 
             var yemekler = yemekManager.GetAll();
@@ -49,7 +49,7 @@ namespace EFDiyetProgramiProje_PL
             var yemekler = yemekManager.Search(y => y.YemekKategoriId == kategori.Id);
 
 
-            cbYeniKategori.Text = cbKategoriSecGuncelleme.Text;
+            //cbYeniKategori.Text = cbKategoriSecGuncelleme.Text;
 
 
 
@@ -86,21 +86,26 @@ namespace EFDiyetProgramiProje_PL
                     {
                         pbYemekGörseliGuncelleme.Image = Image.FromStream(ms);
                     }
+                    else
+                    {
+                        pbYemekGörseliGuncelleme.Image = null;
+                    }
                 }
             }
+
 
         }
 
         private void btnYemekOgunleEkle_Click(object sender, EventArgs e)
         {
             yemek.Birim = txtBirim.Text;
-
+            /*
             if (cbYeniKategori.Text != cbKategoriSecGuncelleme.Text)
             {
                 var yeniKategori = yemekKategori.Search(s => s.KategoriAdi == cbYeniKategori.Text).FirstOrDefault();
                 yemek.YemekKategoriId = yeniKategori.Id;
             }
-
+            */
             bool kaloriDene = Double.TryParse(txtKalori.Text, out double kalori);
 
             if (kaloriDene)

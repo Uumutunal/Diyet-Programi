@@ -56,9 +56,9 @@
             label12.ForeColor = Color.Red;
             label12.Location = new Point(212, 398);
             label12.Name = "label12";
-            label12.Size = new Size(44, 15);
+            label12.Size = new Size(0, 15);
             label12.TabIndex = 59;
-            label12.Text = "label12";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -164,6 +164,7 @@
             // 
             // cbYemekSecSil
             // 
+            cbYemekSecSil.DropDownStyle = ComboBoxStyle.DropDownList;
             cbYemekSecSil.FormattingEnabled = true;
             cbYemekSecSil.Location = new Point(166, 88);
             cbYemekSecSil.Margin = new Padding(3, 2, 3, 2);
@@ -174,6 +175,7 @@
             // 
             // cbKategoriSecSil
             // 
+            cbKategoriSecSil.DropDownStyle = ComboBoxStyle.DropDownList;
             cbKategoriSecSil.FormattingEnabled = true;
             cbKategoriSecSil.Location = new Point(165, 58);
             cbKategoriSecSil.Margin = new Padding(3, 2, 3, 2);
@@ -196,6 +198,7 @@
             rtxtTarifiGuncelleme.Location = new Point(165, 124);
             rtxtTarifiGuncelleme.Margin = new Padding(3, 2, 3, 2);
             rtxtTarifiGuncelleme.Name = "rtxtTarifiGuncelleme";
+            rtxtTarifiGuncelleme.ReadOnly = true;
             rtxtTarifiGuncelleme.Size = new Size(227, 105);
             rtxtTarifiGuncelleme.TabIndex = 43;
             rtxtTarifiGuncelleme.Text = "";

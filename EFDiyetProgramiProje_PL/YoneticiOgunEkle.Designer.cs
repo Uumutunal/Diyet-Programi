@@ -127,9 +127,9 @@
             lblEkleHata.ForeColor = Color.Red;
             lblEkleHata.Location = new Point(158, 218);
             lblEkleHata.Name = "lblEkleHata";
-            lblEkleHata.Size = new Size(39, 15);
+            lblEkleHata.Size = new Size(0, 15);
             lblEkleHata.TabIndex = 33;
-            lblEkleHata.Text = "label4";
+            lblEkleHata.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // YoneticiOgunEkle
             // 

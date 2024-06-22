@@ -62,9 +62,9 @@
             lblYemekEklemeHatalariGöster.ForeColor = Color.Red;
             lblYemekEklemeHatalariGöster.Location = new Point(249, 486);
             lblYemekEklemeHatalariGöster.Name = "lblYemekEklemeHatalariGöster";
-            lblYemekEklemeHatalariGöster.Size = new Size(39, 15);
+            lblYemekEklemeHatalariGöster.Size = new Size(0, 15);
             lblYemekEklemeHatalariGöster.TabIndex = 18;
-            lblYemekEklemeHatalariGöster.Text = "label5";
+            lblYemekEklemeHatalariGöster.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 

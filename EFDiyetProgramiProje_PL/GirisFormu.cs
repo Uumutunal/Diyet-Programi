@@ -45,7 +45,8 @@ namespace EFDiyetProgramiProje_PL
 
             string sifrelenmisSifre = Sha256Hasher.ComputeSha256Hash(txtSifre.Text);
 
-            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == sifrelenmisSifre).FirstOrDefault();
+            var kullanici = kullaniciManager.Search(k => k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
+            var sifre = kullaniciManager.Search(k => k.Sifre == sifrelenmisSifre && k.KullaniciAdi == txtKullaniciAdi.Text).FirstOrDefault();
 
             if (txtKullaniciAdi.Text == null || txtSifre.Text == null)
             {
@@ -59,10 +60,16 @@ namespace EFDiyetProgramiProje_PL
             {
 
                 MessageBox.Show("Admin giriþi baþarýlý!");
+                txtKullaniciAdi.Text = "";
+                txtSifre.Text = "";
                 this.Hide();
                 YoneticiKontrolPaneli yoneticiKontrolPaneli = new YoneticiKontrolPaneli();
                 yoneticiKontrolPaneli.ShowDialog();
                 this.Show();
+            }
+            else if (kullanici != null && sifre == null)
+            {
+                MessageBox.Show("Hatalý þifre girdiniz, tekrar deneyiniz!");
             }
             else
             {
