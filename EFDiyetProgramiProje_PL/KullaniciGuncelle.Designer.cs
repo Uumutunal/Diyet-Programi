@@ -55,25 +55,27 @@
             // 
             lblSifre.AutoSize = true;
             lblSifre.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            lblSifre.Location = new Point(76, 101);
+            lblSifre.Location = new Point(31, 134);
             lblSifre.Name = "lblSifre";
-            lblSifre.Size = new Size(33, 15);
+            lblSifre.Size = new Size(42, 20);
             lblSifre.TabIndex = 65;
             lblSifre.Text = "Şifre:";
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(245, 101);
+            txtSifre.Location = new Point(224, 134);
+            txtSifre.Margin = new Padding(3, 4, 3, 4);
             txtSifre.Name = "txtSifre";
-            txtSifre.Size = new Size(177, 23);
+            txtSifre.Size = new Size(202, 27);
             txtSifre.TabIndex = 64;
             txtSifre.TextChanged += txtSifre_TextChanged;
             // 
             // btnKullaniciPanelineDon
             // 
-            btnKullaniciPanelineDon.Location = new Point(313, 364);
+            btnKullaniciPanelineDon.Location = new Point(302, 484);
+            btnKullaniciPanelineDon.Margin = new Padding(3, 4, 3, 4);
             btnKullaniciPanelineDon.Name = "btnKullaniciPanelineDon";
-            btnKullaniciPanelineDon.Size = new Size(151, 34);
+            btnKullaniciPanelineDon.Size = new Size(173, 45);
             btnKullaniciPanelineDon.TabIndex = 63;
             btnKullaniciPanelineDon.Text = "Kullanıcı Paneline Dön";
             btnKullaniciPanelineDon.UseVisualStyleBackColor = true;
@@ -82,10 +84,9 @@
             // pbYeniSifreTekrar
             // 
             pbYeniSifreTekrar.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
-            pbYeniSifreTekrar.Location = new Point(430, 310);
-            pbYeniSifreTekrar.Margin = new Padding(3, 2, 3, 2);
+            pbYeniSifreTekrar.Location = new Point(435, 412);
             pbYeniSifreTekrar.Name = "pbYeniSifreTekrar";
-            pbYeniSifreTekrar.Size = new Size(34, 20);
+            pbYeniSifreTekrar.Size = new Size(39, 27);
             pbYeniSifreTekrar.SizeMode = PictureBoxSizeMode.Zoom;
             pbYeniSifreTekrar.TabIndex = 62;
             pbYeniSifreTekrar.TabStop = false;
@@ -94,10 +95,9 @@
             // pbYeniSifre
             // 
             pbYeniSifre.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
-            pbYeniSifre.Location = new Point(430, 268);
-            pbYeniSifre.Margin = new Padding(3, 2, 3, 2);
+            pbYeniSifre.Location = new Point(435, 356);
             pbYeniSifre.Name = "pbYeniSifre";
-            pbYeniSifre.Size = new Size(34, 20);
+            pbYeniSifre.Size = new Size(39, 27);
             pbYeniSifre.SizeMode = PictureBoxSizeMode.Zoom;
             pbYeniSifre.TabIndex = 61;
             pbYeniSifre.TabStop = false;
@@ -105,9 +105,10 @@
             // 
             // btnKullaniciGuncelle
             // 
-            btnKullaniciGuncelle.Location = new Point(76, 364);
+            btnKullaniciGuncelle.Location = new Point(31, 484);
+            btnKullaniciGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnKullaniciGuncelle.Name = "btnKullaniciGuncelle";
-            btnKullaniciGuncelle.Size = new Size(164, 34);
+            btnKullaniciGuncelle.Size = new Size(187, 45);
             btnKullaniciGuncelle.TabIndex = 60;
             btnKullaniciGuncelle.Text = "Kullanıcı Bilgisi Güncelle";
             btnKullaniciGuncelle.UseVisualStyleBackColor = true;
@@ -115,26 +116,27 @@
             // 
             // txtYeniGuvenlikSorusuYaniti
             // 
-            txtYeniGuvenlikSorusuYaniti.Location = new Point(245, 227);
+            txtYeniGuvenlikSorusuYaniti.Location = new Point(224, 302);
+            txtYeniGuvenlikSorusuYaniti.Margin = new Padding(3, 4, 3, 4);
             txtYeniGuvenlikSorusuYaniti.Name = "txtYeniGuvenlikSorusuYaniti";
-            txtYeniGuvenlikSorusuYaniti.Size = new Size(177, 23);
+            txtYeniGuvenlikSorusuYaniti.Size = new Size(202, 27);
             txtYeniGuvenlikSorusuYaniti.TabIndex = 59;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(76, 227);
+            label4.Location = new Point(31, 302);
             label4.Name = "label4";
-            label4.Size = new Size(152, 15);
+            label4.Size = new Size(187, 20);
             label4.TabIndex = 58;
             label4.Text = "Yeni Güvenlik Sorusu Yanıtı:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(76, 186);
+            label7.Location = new Point(31, 247);
             label7.Name = "label7";
-            label7.Size = new Size(120, 15);
+            label7.Size = new Size(147, 20);
             label7.TabIndex = 57;
             label7.Text = "Yeni Güvenlik Sorusu:";
             // 
@@ -142,68 +144,71 @@
             // 
             cmbYeniGuvenlikSorusu.FormattingEnabled = true;
             cmbYeniGuvenlikSorusu.Items.AddRange(new object[] { "İlk Evcil Hayvanınızın Adı?", "En Sevdiğiniz Öğretmeniniz?", "Annenizin Doğum Yılı?" });
-            cmbYeniGuvenlikSorusu.Location = new Point(245, 185);
+            cmbYeniGuvenlikSorusu.Location = new Point(224, 246);
+            cmbYeniGuvenlikSorusu.Margin = new Padding(3, 4, 3, 4);
             cmbYeniGuvenlikSorusu.Name = "cmbYeniGuvenlikSorusu";
-            cmbYeniGuvenlikSorusu.Size = new Size(177, 23);
+            cmbYeniGuvenlikSorusu.Size = new Size(202, 28);
             cmbYeniGuvenlikSorusu.TabIndex = 56;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(76, 310);
+            label8.Location = new Point(31, 412);
             label8.Name = "label8";
-            label8.Size = new Size(92, 15);
+            label8.Size = new Size(117, 20);
             label8.TabIndex = 55;
             label8.Text = "Yeni Şifre Tekrar:";
             // 
             // txtYeniSifreTekrar
             // 
-            txtYeniSifreTekrar.Location = new Point(245, 310);
+            txtYeniSifreTekrar.Location = new Point(224, 412);
+            txtYeniSifreTekrar.Margin = new Padding(3, 4, 3, 4);
             txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
-            txtYeniSifreTekrar.Size = new Size(177, 23);
+            txtYeniSifreTekrar.Size = new Size(202, 27);
             txtYeniSifreTekrar.TabIndex = 54;
             txtYeniSifreTekrar.TextChanged += txtYeniSifreTekrar_TextChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(76, 268);
+            label9.Location = new Point(31, 356);
             label9.Name = "label9";
-            label9.Size = new Size(58, 15);
+            label9.Size = new Size(73, 20);
             label9.TabIndex = 53;
             label9.Text = "Yeni Şifre:";
             // 
             // txtYeniSifre
             // 
-            txtYeniSifre.Location = new Point(245, 268);
+            txtYeniSifre.Location = new Point(224, 356);
+            txtYeniSifre.Margin = new Padding(3, 4, 3, 4);
             txtYeniSifre.Name = "txtYeniSifre";
-            txtYeniSifre.Size = new Size(177, 23);
+            txtYeniSifre.Size = new Size(202, 27);
             txtYeniSifre.TabIndex = 52;
             txtYeniSifre.TextChanged += txtYeniSifre_TextChanged;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(76, 144);
+            label10.Location = new Point(31, 191);
             label10.Name = "label10";
-            label10.Size = new Size(101, 15);
+            label10.Size = new Size(126, 20);
             label10.TabIndex = 51;
             label10.Text = "Yeni Kullanıcı Adı:";
             // 
             // txtYeniKullaniciAdi
             // 
-            txtYeniKullaniciAdi.Location = new Point(245, 144);
+            txtYeniKullaniciAdi.Location = new Point(224, 191);
+            txtYeniKullaniciAdi.Margin = new Padding(3, 4, 3, 4);
             txtYeniKullaniciAdi.Name = "txtYeniKullaniciAdi";
-            txtYeniKullaniciAdi.Size = new Size(177, 23);
+            txtYeniKullaniciAdi.Size = new Size(202, 27);
             txtYeniKullaniciAdi.TabIndex = 50;
             // 
             // pbSifre
             // 
             pbSifre.Image = Properties.Resources.png_transparent_hide_hide_eye_hide_password_essential_icon_thumbnail;
-            pbSifre.Location = new Point(430, 101);
-            pbSifre.Margin = new Padding(3, 2, 3, 2);
+            pbSifre.Location = new Point(435, 134);
             pbSifre.Name = "pbSifre";
-            pbSifre.Size = new Size(34, 20);
+            pbSifre.Size = new Size(39, 27);
             pbSifre.SizeMode = PictureBoxSizeMode.Zoom;
             pbSifre.TabIndex = 66;
             pbSifre.TabStop = false;
@@ -213,19 +218,19 @@
             // 
             label3.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label3.ForeColor = SystemColors.ActiveCaption;
-            label3.Location = new Point(76, 9);
+            label3.Location = new Point(31, 11);
             label3.Name = "label3";
-            label3.Size = new Size(264, 86);
+            label3.Size = new Size(302, 115);
             label3.TabIndex = 67;
             label3.Text = "HESAP BİLGİLERİ         GÜNCELLE";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // KullaniciGuncelle
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(525, 441);
+            ClientSize = new Size(502, 547);
             Controls.Add(label3);
             Controls.Add(pbSifre);
             Controls.Add(lblSifre);
@@ -244,7 +249,6 @@
             Controls.Add(txtYeniSifre);
             Controls.Add(label10);
             Controls.Add(txtYeniKullaniciAdi);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "KullaniciGuncelle";
             Text = "KullaniciGuncelle";
             ((System.ComponentModel.ISupportInitialize)pbYeniSifreTekrar).EndInit();
