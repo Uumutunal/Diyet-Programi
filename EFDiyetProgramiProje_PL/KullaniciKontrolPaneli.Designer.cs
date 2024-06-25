@@ -76,6 +76,7 @@
             label9 = new Label();
             label14 = new Label();
             pnlYemekler = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -606,6 +607,10 @@
             pnlYemekler.Size = new Size(865, 725);
             pnlYemekler.TabIndex = 106;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // KullaniciKontrolPaneli
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -700,5 +705,6 @@
         private Label label9;
         private Label label14;
         private Panel pnlYemekler;
+        private System.Windows.Forms.Timer timer1;
     }
 }
