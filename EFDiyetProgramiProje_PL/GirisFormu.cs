@@ -56,7 +56,7 @@ namespace EFDiyetProgramiProje_PL
             {
                 MessageBox.Show("Böyle bir kullanýcý bulunamadý! Lütfen kullanýcý adýnýzý ve þifrenizi tekrar giriniz!");
             }
-            else if (kullanici.KullaniciAdi == "admin" && kullanici.Sifre == sifrelenmisSifre)
+            else if (kullanici.KullaniciAdi == "admin" && kullanici.Sifre == txtSifre.Text)
             {
 
                 MessageBox.Show("Admin giriþi baþarýlý!");
@@ -99,7 +99,7 @@ namespace EFDiyetProgramiProje_PL
             }
             else
             {
-                MessageBox.Show("Kullanýcý bulunamadý, kullanýcý adýný doðru girdiðinizden amin olun!");
+                MessageBox.Show("Kullanýcý bulunamadý, kullanýcý adýný doðru girdiðinizden emin olun!");
             }
         }
     }
